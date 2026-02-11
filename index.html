@@ -44,34 +44,34 @@
 <body>
 
   <!-- Vidéo principale -->
-  <video id="video" muted playsinline loop>
-    <source src="video.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo.
-  </video>
+ <video id="video" muted playsinline loop>
+  <source src="video.mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la vidéo.
+</video>
 
-  <!-- Section bio / contact -->
-  <div class="section">
-    <div>
-      <h1>Ulrike Siemer</h1>
-      <p>Sculpture – Installation – Arts visuels</p>
-      <p>Contact : ulrike@email.com</p>
-    </div>
-  </div>
+<script>
+const video = document.getElementById("video");
 
-  <script>
-    // Lecture automatique au scroll
-    const video = document.getElementById("video");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          video.play();
-        } else {
-          video.pause();
-        }
+// Activer autoplay quand la vidéo est visible au scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      video.play().catch(e => {
+        // Sécurité si la lecture échoue (ex: navigateur bloque autoplay avec son)
+        console.log("Lecture vidéo impossible", e);
       });
-    });
-    observer.observe(video);
-  </script>
+    } else {
+      video.pause();
+    }
+  });
+});
 
-</body>
-</html>
+// Observer sur la vidéo
+observer.observe(video);
+
+// Boucle continue même si on scroll rapidement
+video.addEventListener('ended', () => {
+  video.currentTime = 0;
+  video.play();
+});
+</script>
