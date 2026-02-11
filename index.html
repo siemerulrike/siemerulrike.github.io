@@ -1,173 +1,190 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Ulrike Siemer – Portfolio</title>
+<meta charset="UTF-8">
+<title>Ulrike Siemer – Portfolio</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: white;
-      color: blue;
-      font-family: Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
-    }
+<style>
+body {
+  margin: 0;
+  background: white;
+  color: #0033cc; /* bleu */
+  font-family: Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
 
-    /* VIDEO + TEXTE */
+/* ===== VIDEO SECTION ===== */
 
-    .video-text-container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 100vh;
-      background: white;
-      padding: 40px 0;
-      flex-wrap: wrap;
-    }
+.video-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 5%;
+}
 
-    .video-text-container video {
-      flex: 0 0 40%;
-      max-height: 90vh;
-      object-fit: cover;
-      margin: 10px;
-    }
+.video-section video {
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+}
 
-    .overlay-text {
-      flex: 0 0 40%;
-      font-size: 2.5em;
-      font-weight: 300;
-      margin: 10px;
-    }
+.video-title {
+  margin-top: 30px;
+  font-size: 1.8em;
+  font-weight: 300;
+  text-align: center;
+}
 
-    /* PHOTOS */
+/* ===== PHOTO SECTION ===== */
 
-    .photo-section {
-      background: white;
-      padding: 80px 5%;
-    }
+.photo-section {
+  padding: 120px 5%;
+}
 
-    .photo-title {
-      font-size: 2em;
-      margin-bottom: 40px;
-      font-weight: 300;
-    }
+.photo-title {
+  font-size: 2em;
+  margin-bottom: 60px;
+  font-weight: 300;
+}
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
 
-    .photo-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+.photo-item {
+  position: relative;
+  overflow: hidden;
+}
 
-    /* RESPONSIVE */
+.photo-item img {
+  width: 100%;
+  display: block;
+}
 
-    @media screen and (max-width: 768px) {
+.photo-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.1em;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
 
-      .video-text-container {
-        flex-direction: column;
-        align-items: center;
-      }
+/* apparition au scroll */
+.photo-item.visible .photo-caption {
+  opacity: 1;
+}
 
-      .video-text-container video,
-      .overlay-text {
-        flex: 0 0 90%;
-        width: 90%;
-        margin: 10px 0;
-        text-align: center;
-        font-size: 2em;
-      }
+/* ===== RESPONSIVE ===== */
 
-      .photo-grid {
-        grid-template-columns: 1fr;
-      }
+@media screen and (max-width: 768px) {
 
-      .photo-title {
-        font-size: 1.5em;
-      }
-    }
-  </style>
+  .video-section video {
+    width: 95%;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-title {
+    font-size: 1.5em;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- VIDEO 1 -->
-  <div class="video-text-container">
-    <video id="video1" muted playsinline loop autoplay>
-      <source src="ocean objects.mp4" type="video/mp4">
-    </video>
-    <div class="overlay-text">
-      objects × ocean, 2026
+<!-- VIDEO 1 -->
+<div class="video-section">
+  <video id="video1" muted playsinline loop autoplay>
+    <source src="ocean-objects.mp4" type="video/mp4">
+  </video>
+  <div class="video-title">objects × ocean, 2026</div>
+</div>
+
+<!-- VIDEO 2 -->
+<div class="video-section">
+  <video id="video2" muted playsinline loop autoplay>
+    <source src="video2.mp4" type="video/mp4">
+  </video>
+  <div class="video-title">Passer les vitesses, 2026</div>
+</div>
+
+<!-- PHOTOS -->
+<div class="photo-section">
+  <h2 class="photo-title">
+    The shapes of smell<br>
+    window display design at Smell Stories, 2025
+  </h2>
+
+  <div class="photo-grid">
+
+    <div class="photo-item">
+      <img src="photo1.jpg">
+      <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
-  </div>
 
-  <!-- VIDEO 2 -->
-  <div class="video-text-container">
-    <video id="video2" muted playsinline loop autoplay>
-      <source src="video2.mp4" type="video/mp4">
-    </video>
-    <div class="overlay-text">
-      Passer les vitesses, 2026
+    <div class="photo-item">
+      <img src="photo2.jpg">
+      <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
-  </div>
 
-  <!-- SECTION PHOTOS -->
-  <div class="photo-section">
-    <h2 class="photo-title">
-      The shapes of smell<br>
-      window display design at Smell Stories, 2025
-    </h2>
-
-    <div class="photo-grid">
-      <div class="photo-item">
-        <img src="smell1.jpg" alt="">
-      </div>
-
-      <div class="photo-item">
-        <img src="smell2.jpg" alt="">
-      </div>
-
-      <div class="photo-item">
-        <img src="smell3.jpg" alt="">
-      </div>
-
-      <div class="photo-item">
-        <img src="smell4.jpg" alt="">
-      </div>
+    <div class="photo-item">
+      <img src="photo3.jpg">
+      <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
+
+    <div class="photo-item">
+      <img src="photo4.jpg">
+      <div class="photo-caption">The shapes of smell, 2025</div>
+    </div>
+
   </div>
+</div>
 
-  <script>
-    function setupVideoScroll(videoId) {
-      const video = document.getElementById(videoId);
+<script>
+/* VIDEO PLAY / PAUSE ON SCROLL */
+function setupVideoScroll(videoId) {
+  const video = document.getElementById(videoId);
 
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            video.play().catch(e => console.log(e));
-          } else {
-            video.pause();
-          }
-        });
-      }, { threshold: 0.3 });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        video.play().catch(e => console.log(e));
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.4 });
 
-      observer.observe(video);
+  observer.observe(video);
+}
 
-      video.addEventListener('ended', () => {
-        video.currentTime = 0;
-        video.play();
-      });
+setupVideoScroll('video1');
+setupVideoScroll('video2');
+
+/* PHOTO TEXT APPEAR ON SCROLL */
+const photos = document.querySelectorAll('.photo-item');
+
+const photoObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
     }
+  });
+}, { threshold: 0.4 });
 
-    setupVideoScroll('video1');
-    setupVideoScroll('video2');
-  </script>
+photos.forEach(photo => {
+  photoObserver.observe(photo);
+});
+</script>
 
 </body>
 </html>
