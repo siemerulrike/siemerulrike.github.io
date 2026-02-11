@@ -43,49 +43,53 @@
 
 <body>
 
+<!-- CONTENEUR GLOBAL -->
 <div class="video-text-container">
-  <!-- Vidéo à gauche -->
-  <video id="video1" muted playsinline loop>
-    <source src="video.mp4" type="video/mp4">
+  <!-- Première vidéo -->
+  <video id="video1" muted playsinline loop autoplay>
+    <source src="video1.mp4" type="video/mp4">
     Votre navigateur ne supporte pas la vidéo.
   </video>
+  <!-- Texte à droite / dessous sur mobile -->
+  <div class="overlay-text">objects × ocean, 2026</div>
+</div>
 
-  <!-- Texte à droite -->
-  <div id="overlay-text1">objects × ocean, 2026</div>
+<div class="video-text-container">
+  <!-- Deuxième vidéo -->
+  <video id="video2" muted playsinline loop autoplay>
+    <source src="video2.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+  <div class="overlay-text">objects × ocean, 2026 – suite</div>
 </div>
 
 <script>
-const video = document.getElementById("video1");
-const overlay = document.getElementById("overlay-text1");
+function setupVideoScroll(videoId) {
+  const video = document.getElementById(videoId);
 
-// Intersection Observer pour autoplay / pause
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      video.play().catch(e => console.log(e));
-    } else {
-      video.pause();
-    }
+  // Intersection Observer pour autoplay / pause
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        video.play().catch(e => console.log(e));
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(video);
+
+  // Boucle continue
+  video.addEventListener('ended', () => {
+    video.currentTime = 0;
+    video.play();
   });
-}, { threshold: 0.3 });
+}
 
-observer.observe(video);
-
-// Boucle continue
-video.addEventListener('ended', () => {
-  video.currentTime = 0;
-  video.play();
-});
-
-// Animation du texte en fonction du scroll
-window.addEventListener('scroll', () => {
-  const rect = video.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
-  const visible = Math.max(0, Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0));
-  const ratio = visible / rect.height; // 0 à 1
-  overlay.style.opacity = ratio;
-  overlay.style.transform = `translateY(${20*(1-ratio)}px)`; // petit effet vertical
-});
+// Appliquer aux vidéos
+setupVideoScroll('video1');
+setupVideoScroll('video2');
 </script>
 
 <style>
@@ -98,10 +102,11 @@ window.addEventListener('scroll', () => {
   min-height: 100vh;
   background: black;
   color: white;
+  padding: 20px 0;
 }
 
 .video-text-container video {
-  width: 40%;      /* ajuster pour portrait */
+  width: 40%;      /* portrait */
   height: auto;
   max-height: 90vh;
   object-fit: cover;
@@ -109,11 +114,27 @@ window.addEventListener('scroll', () => {
   margin-right: 5%;
 }
 
-#overlay-text1 {
-  width: 40%;        /* texte à droite */
+.overlay-text {
+  width: 40%;
   font-size: 2.5em;
   font-family: Helvetica, Arial, sans-serif;
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  text-align: left;
+}
+
+/* RESPONSIVE : sur petits écrans, texte sous la vidéo */
+@media screen and (max-width: 768px) {
+  .video-text-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+
+  .video-text-container video,
+  .overlay-text {
+    width: 90%;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 2em;
+  }
 }
 </style>
