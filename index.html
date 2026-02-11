@@ -14,28 +14,41 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== VIDEO SECTION ===== */
+/* ===== VIDEO SECTION FULL SCREEN ===== */
 .video-section {
-  min-height: 70vh;
+  position: relative;
+  width: 100vw;       /* plein écran largeur */
+  height: 100vh;      /* plein écran hauteur */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 5%;
 }
 
 .video-section video {
-  width: 80%;
-  max-width: 1200px;
-  height: auto; /* respecte 2.35:1 */
-  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* garde proportions, remplit l'écran */
+  z-index: 1;
 }
 
 .video-title {
-  margin-top: 15px;
-  font-size: 1.8em;
+  position: relative;
+  z-index: 2;                  /* devant la vidéo */
+  color: white;
+  font-size: 2em;
   font-weight: 300;
   text-align: center;
+  text-shadow: 0 0 15px rgba(0,0,0,0.6); /* lisible sur la vidéo */
+  padding: 0 20px;             /* marge côté */
 }
 
 /* ===== PHOTO SECTION ===== */
@@ -81,9 +94,8 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
-
-  .video-section video {
-    width: 95%;
+  .video-title {
+    font-size: 1.5em;
   }
 
   .photo-grid {
@@ -93,23 +105,20 @@ body {
   .photo-title {
     font-size: 1.5em;
   }
-
-  .video-title {
-    font-size: 1.5em;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO 1 -->
+<!-- VIDEO 1 FULL SCREEN -->
 <div class="video-section">
   <video id="video1" muted playsinline loop autoplay>
     <source src="ocean-objects.mp4" type="video/mp4">
   </video>
   <div class="video-title">objects × ocean, 2026</div>
 </div>
+
 <!-- PHOTOS -->
 <div class="photo-section">
   <h2 class="photo-title">
@@ -157,7 +166,6 @@ function setupVideoScroll(videoId) {
 }
 
 setupVideoScroll('video1');
-setupVideoScroll('video2');
 
 /* ===== PHOTO TEXT APPEAR ON SCROLL ===== */
 const photos = document.querySelectorAll('.photo-item');
