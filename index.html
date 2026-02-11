@@ -43,35 +43,61 @@
 
 <body>
 
-  <!-- Vidéo principale -->
  <video id="video" muted playsinline loop>
   <source src="video.mp4" type="video/mp4">
   Votre navigateur ne supporte pas la vidéo.
 </video>
 
+<!-- Texte discret et animé -->
+<div id="overlay-text">objects × ocean, 2026</div>
+
 <script>
 const video = document.getElementById("video");
+const overlay = document.getElementById("overlay-text");
 
-// Activer autoplay quand la vidéo est visible au scroll
+// Intersection Observer pour autoplay / pause
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
-      video.play().catch(e => {
-        // Sécurité si la lecture échoue (ex: navigateur bloque autoplay avec son)
-        console.log("Lecture vidéo impossible", e);
-      });
+      video.play().catch(e => console.log(e));
     } else {
       video.pause();
     }
   });
-});
+}, { threshold: 0.3 });
 
-// Observer sur la vidéo
 observer.observe(video);
 
-// Boucle continue même si on scroll rapidement
+// Boucle continue
 video.addEventListener('ended', () => {
   video.currentTime = 0;
   video.play();
 });
+
+// Animation du texte en fonction du scroll
+window.addEventListener('scroll', () => {
+  const rect = video.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  const visible = Math.max(0, Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0));
+  const ratio = visible / rect.height; // 0 à 1
+  overlay.style.opacity = ratio; // fondu progressif
+  overlay.style.transform = `translate(-50%, ${30 - 10*(1-ratio)}%)`; // petit effet vertical
+});
 </script>
+
+<style>
+/* Texte superposé */
+#overlay-text {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 30%);
+  color: white;
+  font-size: 3em;
+  font-family: Helvetica, Arial, sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+</style>
