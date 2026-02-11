@@ -163,4 +163,41 @@ setupVideoScroll('video2');
   </div>
 </div>
 }
+/* SECTION PHOTOS */
+
+.photo-section {
+  background: black;
+  color: white;
+  padding: 80px 5%;
+}
+
+.photo-title {
+  font-size: 2em;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-title {
+    font-size: 1.5em;
+  }
+}
 </style>
