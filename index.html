@@ -5,6 +5,7 @@
 <title>Ulrike Siemer – Portfolio</title>
 
 <style>
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
   background: white;
@@ -14,46 +15,44 @@ body {
 }
 
 /* ===== VIDEO SECTION ===== */
-
 .video-section {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 5%;
+  padding: 40px 5%;
 }
 
 .video-section video {
   width: 80%;
   max-width: 1200px;
-  height: auto;
+  height: auto; /* respecte 2.35:1 */
   display: block;
 }
 
 .video-title {
-  margin-top: 30px;
+  margin-top: 15px;
   font-size: 1.8em;
   font-weight: 300;
   text-align: center;
 }
 
 /* ===== PHOTO SECTION ===== */
-
 .photo-section {
-  padding: 40px 5%;
+  padding: 60px 5%;
 }
 
 .photo-title {
   font-size: 2em;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   font-weight: 300;
 }
 
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
+  gap: 40px;
 }
 
 .photo-item {
@@ -81,7 +80,6 @@ body {
 }
 
 /* ===== RESPONSIVE ===== */
-
 @media screen and (max-width: 768px) {
 
   .video-section video {
@@ -95,6 +93,10 @@ body {
   .photo-title {
     font-size: 1.5em;
   }
+
+  .video-title {
+    font-size: 1.5em;
+  }
 }
 </style>
 </head>
@@ -104,9 +106,17 @@ body {
 <!-- VIDEO 1 -->
 <div class="video-section">
   <video id="video1" muted playsinline loop autoplay>
-    <source src="ocean objects.mp4" type="video/mp4">
+    <source src="ocean-objects.mp4" type="video/mp4">
   </video>
   <div class="video-title">objects × ocean, 2026</div>
+</div>
+
+<!-- VIDEO 2 -->
+<div class="video-section">
+  <video id="video2" muted playsinline loop autoplay>
+    <source src="video2.mp4" type="video/mp4">
+  </video>
+  <div class="video-title">Passer les vitesses, 2026</div>
 </div>
 
 <!-- PHOTOS -->
@@ -117,35 +127,32 @@ body {
   </h2>
 
   <div class="photo-grid">
-
     <div class="photo-item">
-      <img src="smell1.jpg">
+      <img src="smell1.jpg" alt="The shapes of smell 1">
       <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
 
     <div class="photo-item">
-      <img src="smell2.jpg">
+      <img src="smell2.jpg" alt="The shapes of smell 2">
       <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
 
     <div class="photo-item">
-      <img src="smell3.jpg">
+      <img src="smell3.jpg" alt="The shapes of smell 3">
       <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
 
     <div class="photo-item">
-      <img src="smell4.jpg">
+      <img src="smell4.jpg" alt="The shapes of smell 4">
       <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
-
   </div>
 </div>
 
 <script>
-/* VIDEO PLAY / PAUSE ON SCROLL */
+/* ===== VIDEO PLAY / PAUSE ON SCROLL ===== */
 function setupVideoScroll(videoId) {
   const video = document.getElementById(videoId);
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
@@ -155,16 +162,14 @@ function setupVideoScroll(videoId) {
       }
     });
   }, { threshold: 0.4 });
-
   observer.observe(video);
 }
 
 setupVideoScroll('video1');
 setupVideoScroll('video2');
 
-/* PHOTO TEXT APPEAR ON SCROLL */
+/* ===== PHOTO TEXT APPEAR ON SCROLL ===== */
 const photos = document.querySelectorAll('.photo-item');
-
 const photoObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
