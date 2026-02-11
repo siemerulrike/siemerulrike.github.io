@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Ulrike Siemer – Portfolio</title>
+
   <style>
-    /* Styles minimalistes pour portfolio */
     body {
       margin: 0;
       background: black;
@@ -13,191 +13,161 @@
       overflow-x: hidden;
     }
 
-    video {
+    /* VIDEO + TEXTE */
+
+    .video-text-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      height: 100vh;
+      min-height: 100vh;
+      background: black;
+      padding: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .video-text-container video {
+      flex: 0 0 40%;
+      max-height: 90vh;
       object-fit: cover;
+      margin: 10px;
+    }
+
+    .overlay-text {
+      flex: 0 0 40%;
+      font-size: 2.5em;
+      font-weight: 300;
+      margin: 10px;
+    }
+
+    /* PHOTOS */
+
+    .photo-section {
+      background: black;
+      padding: 80px 5%;
+    }
+
+    .photo-title {
+      font-size: 2em;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: auto;
       display: block;
     }
 
-    .section {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
+    /* RESPONSIVE */
 
-    .section h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
+    @media screen and (max-width: 768px) {
 
-    .section p {
-      font-size: 1em;
-      opacity: 0.8;
+      .video-text-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .video-text-container video,
+      .overlay-text {
+        flex: 0 0 90%;
+        width: 90%;
+        margin: 10px 0;
+        text-align: center;
+        font-size: 2em;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-title {
+        font-size: 1.5em;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- CONTENEUR GLOBAL -->
-<div class="video-text-container">
-  <!-- Première vidéo -->
-  <video id="video1" muted playsinline loop autoplay>
-    <source src="video.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo.
-  </video>
-  <!-- Texte à droite / dessous sur mobile -->
-  <div class="overlay-text">objects × ocean, 2026</div>
-</div>
-
-<div class="video-text-container">
-  <!-- Deuxième vidéo -->
-  <video id="video2" muted playsinline loop autoplay>
-    <source src="video2.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo.
-  </video>
-  <div class="overlay-text">Passer les vitesses, 2026</div>
-</div>
-
-<script>
-function setupVideoScroll(videoId) {
-  const video = document.getElementById(videoId);
-
-  // Intersection Observer pour autoplay / pause
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        video.play().catch(e => console.log(e));
-      } else {
-        video.pause();
-      }
-    });
-  }, { threshold: 0.3 });
-
-  observer.observe(video);
-
-  // Boucle continue
-  video.addEventListener('ended', () => {
-    video.currentTime = 0;
-    video.play();
-  });
-}
-
-// Appliquer aux vidéos
-setupVideoScroll('video1');
-setupVideoScroll('video2');
-</script>
-
-<style>
-.video-text-container {
-  display: flex;
-  flex-direction: row; /* vidéo à gauche, texte à droite */
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  background: black;
-  color: white;
-  padding: 20px 0;
-  flex-wrap: wrap; /* permet texte sous vidéo sur mobile */
-}
-
-.video-text-container video {
-  flex: 0 0 40%;      
-  max-height: 90vh;
-  object-fit: cover;
-  margin: 10px;
-}
-
-.overlay-text {
-  flex: 0 0 40%;
-  font-size: 2.5em;
-  font-family: Helvetica, Arial, sans-serif;
-  text-align: left;
-  margin: 10px;
-}
-
-/* RESPONSIVE : texte sous la vidéo sur petits écrans */
-@media screen and (max-width: 768px) {
-  .video-text-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .video-text-container video,
-  .overlay-text {
-    flex: 0 0 90%;
-    width: 90%;
-    max-width: 90%;
-    margin: 10px 0;
-    text-align: center;
-    font-size: 2em;
-  }
-<!-- SECTION PHOTOS -->
-<div class="photo-section">
-  <h2 class="photo-title">
-    The shapes of smell<br>
-    window display design at Smell Stories, 2025
-  </h2>
-
-  <div class="photo-grid">
-    <div class="photo-item">
-      <img src="photo1.jpg" alt="The shapes of smell 1">
-    </div>
-
-    <div class="photo-item">
-      <img src="photo2.jpg" alt="The shapes of smell 2">
-    </div>
-
-    <div class="photo-item">
-      <img src="photo3.jpg" alt="The shapes of smell 3">
-    </div>
-
-    <div class="photo-item">
-      <img src="photo4.jpg" alt="The shapes of smell 4">
+  <!-- VIDEO 1 -->
+  <div class="video-text-container">
+    <video id="video1" muted playsinline loop autoplay>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+    <div class="overlay-text">
+      objects × ocean, 2026
     </div>
   </div>
-</div>
-}
-/* SECTION PHOTOS */
 
-.photo-section {
-  background: black;
-  color: white;
-  padding: 80px 5%;
-}
+  <!-- VIDEO 2 -->
+  <div class="video-text-container">
+    <video id="video2" muted playsinline loop autoplay>
+      <source src="video2.mp4" type="video/mp4">
+    </video>
+    <div class="overlay-text">
+      Passer les vitesses, 2026
+    </div>
+  </div>
 
-.photo-title {
-  font-size: 2em;
-  font-family: Helvetica, Arial, sans-serif;
-  margin-bottom: 40px;
-  font-weight: normal;
-}
+  <!-- SECTION PHOTOS -->
+  <div class="photo-section">
+    <h2 class="photo-title">
+      The shapes of smell<br>
+      window display design at Smell Stories, 2025
+    </h2>
 
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
+    <div class="photo-grid">
+      <div class="photo-item">
+        <img src="photo1.jpg" alt="">
+      </div>
 
-.photo-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+      <div class="photo-item">
+        <img src="photo2.jpg" alt="">
+      </div>
 
-/* Mobile */
-@media screen and (max-width: 768px) {
-  .photo-grid {
-    grid-template-columns: 1fr;
-  }
+      <div class="photo-item">
+        <img src="photo3.jpg" alt="">
+      </div>
 
-  .photo-title {
-    font-size: 1.5em;
-  }
-}
-</style>
+      <div class="photo-item">
+        <img src="photo4.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setupVideoScroll(videoId) {
+      const video = document.getElementById(videoId);
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            video.play().catch(e => console.log(e));
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(video);
+
+      video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        video.play();
+      });
+    }
+
+    setupVideoScroll('video1');
+    setupVideoScroll('video2');
+  </script>
+
+</body>
+</html>
