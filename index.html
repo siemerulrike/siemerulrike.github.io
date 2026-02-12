@@ -5,14 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ulrike Siemer – Portfolio</title>
 
-<style>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+<style>
 /* ===== GLOBAL ===== */
 body {
   margin: 0;
   background: white;
   color: #0033cc;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Playfair Display', serif;
   overflow-x: hidden;
 }
 
@@ -38,15 +40,17 @@ body {
   z-index: 1;
 }
 
-.video-title {
-  position: relative;
-  z-index: 2;
-  color: white;
-  font-size: 2em;
-  font-weight: 300;
+.video-top-text {
+  position: absolute;
+  top: 30px;
+  width: 100%;
   text-align: center;
-  text-shadow: 0 0 15px rgba(0,0,0,0.6);
-  padding: 0 20px;
+  font-size: 2.5em;
+  font-weight: 600;
+  color: white;
+  text-shadow: none;
+  z-index: 2;
+  font-family: 'Playfair Display', serif;
 }
 
 /* ===== PHOTO SECTION ===== */
@@ -59,16 +63,19 @@ body {
   margin-bottom: 50px;
   font-weight: 300;
   line-height: 1.4;
+  font-family: 'Playfair Display', serif;
 }
 
 /* ===== GRID DESKTOP ===== */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colonnes desktop */
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
+
 .photo-item {
   flex: 1;
+  position: relative;
 }
 
 .photo-item img {
@@ -95,6 +102,7 @@ body {
   padding: 6px 10px;
   opacity: 0;
   transition: opacity 0.6s ease;
+  font-family: 'Playfair Display', serif;
 }
 
 /* apparition au scroll */
@@ -102,42 +110,31 @@ body {
   opacity: 1;
 }
 
-/* ===== RESPONSIVE ===== */
-@media screen and (max-width: 768px) {
-
-  .video-title {
-    font-size: 1.5em;
-  }
-
- .photo-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes smartphone */
-    gap: 20px;
-  }
-
-}
-
-  .photo-title {
-    font-size: 1.5em;
-  }
-
-}
+/* ===== VIDEO DESCRIPTION (optionnel) ===== */
 .video-description {
   padding: 40px 5%;
   font-size: 1.5em;
   font-weight: 300;
   line-height: 1.4;
-  text-align: center; /* optionnel, si tu veux centrer le texte */
-}
-.video-top-text {
-  position: absolute;
-  top: 30px; /* distance depuis le haut de la vidéo */
-  width: 100%;
   text-align: center;
-  font-size: 2.5em;
-  font-weight: 600;
-  color: white;
-  text-shadow: 0 0 15px rgba(0,0,0,0.7);
-  z-index: 2;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+
+  .video-top-text {
+    font-size: 2em;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .photo-title {
+    font-size: 1.5em;
+  }
 }
 </style>
 </head>
@@ -153,7 +150,7 @@ body {
 </div>
 
 <div class="video-description">
-  Ulrike Siemer – paper mâché objects, scenography and window display design
+  paper mâché objects, scenography and window display design
 </div>
 
 <!-- PHOTOS -->
@@ -164,29 +161,25 @@ body {
   </h2>
 
   <div class="photo-grid">
-
     <div class="photo-item">
       <img src="smell1.jpg" alt="The shapes of smell 1">
       <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
-
     <div class="photo-item">
       <img src="smell2.jpg" alt="The shapes of smell 2">
       <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
-
     <div class="photo-item">
       <img src="smell3.jpg" alt="The shapes of smell 3">
       <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
-
     <div class="photo-item">
       <img src="smell4.jpg" alt="The shapes of smell 4">
       <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
-
   </div>
-  <!-- SECOND PHOTO SECTION -->
+</div>
+
 <div class="photo-section">
   <h2 class="photo-title">
     Clés<br>
@@ -194,33 +187,26 @@ body {
   </h2>
 
   <div class="photo-grid">
-
     <div class="photo-item">
       <img src="cles1.jpg" alt="Clés 1">
       <div class="photo-caption">Clés, 2026</div>
     </div>
-
     <div class="photo-item">
       <img src="cles2.jpg" alt="Clés 2">
       <div class="photo-caption">Clés, 2026</div>
     </div>
-
     <div class="photo-item">
       <img src="cles3.jpg" alt="Clés 3">
       <div class="photo-caption">Clés, 2026</div>
     </div>
-
     <div class="photo-item">
       <img src="cles4.jpg" alt="Clés 4">
       <div class="photo-caption">Clés, 2026</div>
     </div>
-
   </div>
-</div>
 </div>
 
 <script>
-
 /* ===== VIDEO PLAY / PAUSE ON SCROLL ===== */
 function setupVideoScroll(videoId) {
   const video = document.getElementById(videoId);
@@ -235,12 +221,10 @@ function setupVideoScroll(videoId) {
   }, { threshold: 0.4 });
   observer.observe(video);
 }
-
 setupVideoScroll('video1');
 
 /* ===== PHOTO TEXT APPEAR ON SCROLL ===== */
 const photos = document.querySelectorAll('.photo-item');
-
 const photoObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -252,7 +236,6 @@ const photoObserver = new IntersectionObserver(entries => {
 photos.forEach(photo => {
   photoObserver.observe(photo);
 });
-
 </script>
 
 </body>
