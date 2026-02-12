@@ -2,14 +2,16 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ulrike Siemer – Portfolio</title>
 
 <style>
+
 /* ===== GLOBAL ===== */
 body {
   margin: 0;
   background: white;
-  color: #0033cc; /* bleu */
+  color: #0033cc;
   font-family: Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
@@ -17,11 +19,9 @@ body {
 /* ===== VIDEO SECTION FULL SCREEN ===== */
 .video-section {
   position: relative;
-  width: 100vw;       /* plein écran largeur */
-  height: 100vh;      /* plein écran hauteur */
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,41 +33,42 @@ body {
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
   transform: translate(-50%, -50%);
-  object-fit: cover; /* garde proportions, remplit l'écran */
+  object-fit: cover;
   z-index: 1;
 }
 
 .video-title {
   position: relative;
-  z-index: 2;                  /* devant la vidéo */
+  z-index: 2;
   color: white;
   font-size: 2em;
   font-weight: 300;
   text-align: center;
-  text-shadow: 0 0 15px rgba(0,0,0,0.6); /* lisible sur la vidéo */
-  padding: 0 20px;             /* marge côté */
+  text-shadow: 0 0 15px rgba(0,0,0,0.6);
+  padding: 0 20px;
 }
 
 /* ===== PHOTO SECTION ===== */
 .photo-section {
-  padding: 60px 5%;
+  padding: 80px 5%;
 }
 
 .photo-title {
   font-size: 2em;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   font-weight: 300;
+  line-height: 1.4;
 }
 
+/* ===== GRID DESKTOP ===== */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
+/* ===== PHOTO ITEM ===== */
 .photo-item {
   position: relative;
   overflow: hidden;
@@ -75,14 +76,26 @@ body {
 
 .photo-item img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
+  transition: transform 0.6s ease;
 }
 
+/* léger zoom au hover */
+.photo-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== CAPTION ===== */
 .photo-caption {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  font-size: 1.1em;
+  bottom: 15px;
+  left: 15px;
+  font-size: 1em;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 10px;
   opacity: 0;
   transition: opacity 0.6s ease;
 }
@@ -94,18 +107,22 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
+
   .video-title {
     font-size: 1.5em;
   }
 
   .photo-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .photo-title {
     font-size: 1.5em;
   }
+
 }
+
 </style>
 </head>
 
@@ -127,6 +144,7 @@ body {
   </h2>
 
   <div class="photo-grid">
+
     <div class="photo-item">
       <img src="smell1.jpg" alt="The shapes of smell 1">
       <div class="photo-caption">The shapes of smell, 2025</div>
@@ -146,10 +164,12 @@ body {
       <img src="smell4.jpg" alt="The shapes of smell 4">
       <div class="photo-caption">The shapes of smell, 2025</div>
     </div>
+
   </div>
 </div>
 
 <script>
+
 /* ===== VIDEO PLAY / PAUSE ON SCROLL ===== */
 function setupVideoScroll(videoId) {
   const video = document.getElementById(videoId);
@@ -169,17 +189,19 @@ setupVideoScroll('video1');
 
 /* ===== PHOTO TEXT APPEAR ON SCROLL ===== */
 const photos = document.querySelectorAll('.photo-item');
+
 const photoObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.3 });
 
 photos.forEach(photo => {
   photoObserver.observe(photo);
 });
+
 </script>
 
 </body>
