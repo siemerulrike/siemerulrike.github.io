@@ -136,6 +136,46 @@ body {
     font-size: 1.5em;
   }
 }
+  /* Bouton contact fixe */
+.contact-button {
+  position: fixed;        /* reste visible pendant le scroll */
+  bottom: 20px;
+  right: 20px;
+  background: #0033cc;
+  color: white;
+  padding: 10px 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 9999;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #002299;
+  transform: translateY(-2px);
+}
+
+/* Section contact en bas */
+.contact-section {
+  padding: 80px 5%;
+  background: #f5f5f5;
+  font-family: 'Playfair Display', serif;
+  color: #0033cc;
+}
+
+.contact-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
 </style>
 </head>
 
@@ -237,6 +277,15 @@ photos.forEach(photo => {
   photoObserver.observe(photo);
 });
 </script>
+<!-- Bouton contact en bas à droite -->
+<a href="#contact-section" class="contact-button">Contact</a>
 
+<!-- Section contact tout en bas de la page -->
+<div id="contact-section" class="contact-section">
+  <h2>Contact</h2>
+  <p>Email : contact@ulrike-siemer.com</p>
+  <p>Téléphone : +32 123 456 789</p>
+  <p>Adresse : Rue de l’Artiste, Bruxelles, Belgique</p>
+</div>
 </body>
 </html>
