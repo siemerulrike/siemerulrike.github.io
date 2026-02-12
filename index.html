@@ -63,10 +63,10 @@ body {
 
 /* ===== GRID DESKTOP ===== */
 .photo-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes desktop */
   gap: 30px;
 }
-
 .photo-item {
   flex: 1;
 }
@@ -109,10 +109,12 @@ body {
     font-size: 1.5em;
   }
 
-  .photo-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+ .photo-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes smartphone */
+    gap: 20px;
   }
+
+}
 
   .photo-title {
     font-size: 1.5em;
