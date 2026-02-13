@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 /* ===== GLOBAL ===== */
 body {
   margin: 0;
@@ -20,7 +19,6 @@ body {
 }
 
 /* ===== VIDEO SECTION ===== */
-
 .video-section {
   width: 100%;
   padding-top: 60px;
@@ -48,7 +46,6 @@ body {
 }
 
 /* ===== SECTION TITLES ===== */
-
 .section-title {
   padding: 100px 5% 40px 5%;
   font-size: 2.2em;
@@ -56,7 +53,6 @@ body {
 }
 
 /* ===== PHOTO SECTION ===== */
-
 .photo-section {
   padding: 0 5% 80px 5%;
 }
@@ -68,163 +64,6 @@ body {
   line-height: 1.4;
 }
 
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-.photo-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* ===== CONTACT BUTTON ===== */
-
-.contact-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #0033cc;
-  color: white;
-  padding: 10px 20px;
-  font-weight: 600;
-  font-size: 1em;
-  text-decoration: none;
-  border-radius: 5px;
-  z-index: 9999;
-  transition: background 0.3s ease;
-}
-
-.contact-button:hover {
-  background: #002299;
-}
-
-/* ===== CONTACT SECTION ===== */
-
-.contact-section {
-  padding: 100px 5%;
-  background: #f5f5f5;
-}
-
-.contact-section h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-}
-
-.contact-section p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media screen and (max-width: 768px) {
-
-  .video-top-text {
-    font-size: 2em;
-  }
-
-  .video-subtitle {
-    font-size: 1.2em;
-  }
-
-  .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .section-title {
-    font-size: 1.8em;
-  }
-
-  .photo-title {
-    font-size: 1.4em;
-  }
-
-  .contact-button {
-    padding: 8px 16px;
-    font-size: 0.9em;
-  }
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- VIDEO SECTION -->
-<div class="video-section">
-  <div class="video-top-text">Ulrike Siemer</div>
-  <div class="video-subtitle">
-    paper mâché objects, scenography and window display design
-  </div>
-
-  <video muted loop autoplay playsinline>
-    <source src="ocean-objects.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- RECENT PROJECTS TITLE -->
-<div class="section-title">
-  Recent Projects
-</div>
-
-<!-- PROJECT 1 -->
-<div class="photo-section">
-  <div class="photo-title">
-    The shapes of smell<br>
-    window display design at Smell Stories, 2025
-  </div>
-
-  <div class="photo-grid">
-    <div class="photo-item"><img src="smell1.jpg"></div>
-    <div class="photo-item"><img src="smell2.jpg"></div>
-    <div class="photo-item"><img src="smell3.jpg"></div>
-    <div class="photo-item"><img src="smell4.jpg"></div>
-  </div>
-</div>
-
-<!-- PROJECT 2 -->
-<div class="photo-section">
-  <div class="photo-title">
-    Clés<br>
-    sculpture series, 2026
-  </div>
-
-  <div class="photo-grid">
-    <div class="photo-item"><img src="cles1.jpg"></div>
-    <div class="photo-item"><img src="cles2.jpg"></div>
-    <div class="photo-item"><img src="cles3.jpg"></div>
-    <div class="photo-item"><img src="cles4.jpg"></div>
-  </div>
-</div>
-
-<!-- CONTACT BUTTON -->
-<a href="#contact-section" class="contact-button">Contact</a>
-
-<!-- CONTACT SECTION -->
-<div id="contact-section" class="contact-section">
-  <h2>Contact</h2>
-  <p>Email : contact@ulrike-siemer.com</p>
-  <p>Instagram : @ulrike.siemer</p>
-  <p>Based in Belgium</p>
-</div>
-
-</body>
-</html>}
-
-.photo-title {
-  font-size: 2em;
-  margin-bottom: 50px;
-  font-weight: 300;
-  line-height: 1.4;
-}
-
-/* ===== GRID DESKTOP ===== */
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -247,7 +86,6 @@ body {
   transform: scale(1.05);
 }
 
-/* ===== CAPTION ===== */
 .photo-caption {
   position: absolute;
   bottom: 15px;
@@ -264,10 +102,10 @@ body {
   opacity: 1;
 }
 
-/* ===== CONTACT BUTTON FIXE ===== */
+/* ===== CONTACT BUTTON (HAUT DROITE) ===== */
 .contact-button {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   right: 20px;
   background: #0033cc;
   color: white;
@@ -309,7 +147,7 @@ body {
     font-size: 2em;
   }
 
-  .video-description {
+  .video-subtitle {
     font-size: 1.2em;
   }
 
@@ -328,81 +166,54 @@ body {
     font-size: 0.9em;
   }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO -->
+<!-- CONTACT BUTTON -->
+<a href="#contact-section" class="contact-button">Contact</a>
+
+<!-- VIDEO SECTION -->
 <div class="video-section">
   <div class="video-top-text">Ulrike Siemer</div>
-
-  <video id="video1" muted playsinline loop autoplay>
+  <div class="video-subtitle">
+    paper mâché objects, scenography and window display design
+  </div>
+  <video id="video1" muted loop autoplay playsinline>
     <source src="ocean-objects.mp4" type="video/mp4">
   </video>
 </div>
 
-<div class="video-description">
-  paper mâché objects, scenography and window display design
-</div>
-
-<!-- PHOTOS SECTION 1 -->
+<!-- PROJECT 1 -->
 <div class="photo-section">
-  <h2 class="photo-title">
+  <div class="photo-title">
     The shapes of smell<br>
     window display design at Smell Stories, 2025
-  </h2>
+  </div>
 
   <div class="photo-grid">
-    <div class="photo-item">
-      <img src="smell1.jpg">
-      <div class="photo-caption">The shapes of smell, 2025</div>
-    </div>
-    <div class="photo-item">
-      <img src="smell2.jpg">
-      <div class="photo-caption">The shapes of smell, 2025</div>
-    </div>
-    <div class="photo-item">
-      <img src="smell3.jpg">
-      <div class="photo-caption">The shapes of smell, 2025</div>
-    </div>
-    <div class="photo-item">
-      <img src="smell4.jpg">
-      <div class="photo-caption">The shapes of smell, 2025</div>
-    </div>
+    <div class="photo-item"><img src="smell1.jpg"><div class="photo-caption">The shapes of smell, 2025</div></div>
+    <div class="photo-item"><img src="smell2.jpg"><div class="photo-caption">The shapes of smell, 2025</div></div>
+    <div class="photo-item"><img src="smell3.jpg"><div class="photo-caption">The shapes of smell, 2025</div></div>
+    <div class="photo-item"><img src="smell4.jpg"><div class="photo-caption">The shapes of smell, 2025</div></div>
   </div>
 </div>
 
-<!-- PHOTOS SECTION 2 -->
+<!-- PROJECT 2 -->
 <div class="photo-section">
-  <h2 class="photo-title">
+  <div class="photo-title">
     Clés<br>
     sculpture series, 2026
-  </h2>
+  </div>
 
   <div class="photo-grid">
-    <div class="photo-item">
-      <img src="cles1.jpg">
-      <div class="photo-caption">Clés, 2026</div>
-    </div>
-    <div class="photo-item">
-      <img src="cles2.jpg">
-      <div class="photo-caption">Clés, 2026</div>
-    </div>
-    <div class="photo-item">
-      <img src="cles3.jpg">
-      <div class="photo-caption">Clés, 2026</div>
-    </div>
-    <div class="photo-item">
-      <img src="cles4.jpg">
-      <div class="photo-caption">Clés, 2026</div>
-    </div>
+    <div class="photo-item"><img src="cles1.jpg"><div class="photo-caption">Clés, 2026</div></div>
+    <div class="photo-item"><img src="cles2.jpg"><div class="photo-caption">Clés, 2026</div></div>
+    <div class="photo-item"><img src="cles3.jpg"><div class="photo-caption">Clés, 2026</div></div>
+    <div class="photo-item"><img src="cles4.jpg"><div class="photo-caption">Clés, 2026</div></div>
   </div>
 </div>
-
-<!-- CONTACT BUTTON -->
-<a href="#contact-section" class="contact-button">Contact</a>
 
 <!-- CONTACT SECTION -->
 <div id="contact-section" class="contact-section">
@@ -413,7 +224,6 @@ body {
 </div>
 
 <script>
-
 /* VIDEO PLAY / PAUSE ON SCROLL */
 function setupVideoScroll(videoId) {
   const video = document.getElementById(videoId);
@@ -443,7 +253,6 @@ const photoObserver = new IntersectionObserver(entries => {
 photos.forEach(photo => {
   photoObserver.observe(photo);
 });
-
 </script>
 
 </body>
