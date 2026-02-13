@@ -89,15 +89,21 @@ body {
   
 }/* ===== PROJECT VIDEO (under photos) ===== */
 .project-video {
-  margin-top: 60px;
+  margin-top: 80px;
+  text-align: center;
+}
+
+/* ===== PROJECT VIDEO (centered & smaller) ===== */
+.project-video {
+  margin-top: 80px;
+  text-align: center;
 }
 
 .project-video video {
-  width: 100%;
-  height: 65vh;
-  max-height: 800px;
-  object-fit: cover;
-  display: block;
+  width: 70%;      /* plus petit */
+  max-width: 1000px;
+  height: auto;    /* garde le ratio 2.35:1 */
+  display: inline-block;
 }
 
 /* ===== CONTACT BUTTON (HAUT DROITE) ===== */
@@ -141,6 +147,9 @@ body {
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
 
+.project-video video {
+  width: 95%;
+} 
   .video-top-text {
     font-size: 2em;
   }
@@ -319,6 +328,7 @@ body {
 
 /* RESPONSIVE: stack on smaller screens */
 @media screen and (max-width: 768px) {
+  
   .contact-container {
     flex-direction: column;
     align-items: flex-start;
