@@ -210,19 +210,22 @@ body {
 <div id="contact-section" class="contact-section">
   <h2>Contact</h2>
 
-  <!-- BIO -->
-  <p class="contact-bio">
-    Ulrike creates sculptures and objects in papier-mâché, often used in scenography, window displays, and decor for films or photoshoots. Her work combines playful forms, vibrant colors, and everyday details, exploring how objects can be touched, worn, or used in different contexts.
-  </p>
+  <div class="contact-container">
+    <!-- LEFT: Contact info -->
+    <div class="contact-left">
+      <p><strong>E-mail:</strong> <a href="mailto:siemerulrike@gmail.com">siemerulrike@gmail.com</a></p>
+      <p><strong>Phone:</strong> +32 476 83 25 76</p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ulrikesie" target="_blank">@ulrikesie</a></p>
+      <p>Lives and works in Brussels.</p>
+    </div>
 
-  <!-- Divider -->
-  <hr class="contact-divider">
-
-  <!-- LOCATION & CONTACT INFO -->
-  <p><strong>Lives and works in:</strong> Brussels</p>
-  <p><strong>E-mail:</strong> <a href="mailto:siemerulrike@gmail.com">siemerulrike@gmail.com</a></p>
-  <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ulrikesie" target="_blank">@ulrikesie</a></p>
-  <p><strong>Phone:</strong> +32 476 83 25 76</p>
+    <!-- RIGHT: Short bio -->
+    <div class="contact-right">
+      <p>
+        Ulrike creates sculptures and objects in papier-mâché, often used in scenography, window displays, and decor for films or photoshoots. Her work combines playful forms, vibrant colors, and everyday details, exploring how objects can be touched, worn, or used in different contexts.
+      </p>
+    </div>
+  </div>
 </div>
 
 <style>
@@ -234,35 +237,58 @@ body {
 
 .contact-section h2 {
   font-size: 2em;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-.contact-bio {
-  font-size: 1.1em;
-  margin-bottom: 30px;
-  line-height: 1.6;
-  max-width: 700px;
+/* Container for two columns */
+.contact-container {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.contact-divider {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 30px 0;
+/* LEFT column: contact info */
+.contact-left {
+  flex: 1 1 300px;
+  max-width: 400px;
 }
 
-.contact-section p {
+.contact-left p {
   font-size: 1.1em;
   margin-bottom: 15px;
 }
 
-.contact-section a {
+.contact-left a {
   color: #0033cc;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.contact-section a:hover {
+.contact-left a:hover {
   color: #002299;
+}
+
+/* RIGHT column: bio */
+.contact-right {
+  flex: 1 1 300px;
+  max-width: 600px;
+}
+
+.contact-right p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE: stack on smaller screens */
+@media screen and (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-left, .contact-right {
+    max-width: 100%;
+  }
 }
 </style>
 
