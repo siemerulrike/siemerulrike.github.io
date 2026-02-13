@@ -218,7 +218,10 @@ body {
       <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ulrikesie" target="_blank">@ulrikesie</a></p>
       <p>Lives and works in Brussels.</p>
     </div>
-
+<!-- CENTER: portrait photo -->
+<div class="contact-photo-container">
+  <img src="ulrike-portrait.jpg" alt="Ulrike Siemer" class="contact-photo">
+</div>
     <!-- RIGHT: Short bio -->
     <div class="contact-right">
       <p>
@@ -279,15 +282,30 @@ body {
   font-size: 1.1em;
   line-height: 1.6;
 }
+/* CENTER: portrait photo */
+.contact-photo-container {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-photo {
+  width: 120px; /* taille adaptée pour portrait */
+  height: auto;
+  border-radius: 8px; /* coins légèrement arrondis */
+  object-fit: cover;
+}
+
 
 /* RESPONSIVE: stack on smaller screens */
 @media screen and (max-width: 768px) {
   .contact-container {
     flex-direction: column;
+    align-items: flex-start;
   }
 
-  .contact-left, .contact-right {
-    max-width: 100%;
+  .contact-photo {
+    width: 100px; /* plus petit sur mobile */
   }
 }
 </style>
