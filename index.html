@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ulrike Siemer – Portfolio</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -20,20 +19,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ===== VIDEO SECTION (NOT FULL SCREEN) ===== */
-.video-section {
-  width: 100%;
-  padding: 80px 5% 40px 5%;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.video-top-text {
-  font-size: 2.8em;
-  font-weight: 600;
-  margin-bottom: 40px;
-}
-
 /* ===== VIDEO SECTION ===== */
 
 .video-section {
@@ -42,25 +27,195 @@ body {
   text-align: center;
 }
 
+.video-top-text {
+  font-size: 2.8em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.video-subtitle {
+  font-size: 1.4em;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
 .video-section video {
-  width: 100%;           /* pleine largeur */
-  height: 70vh;          /* hauteur contrôlée */
-  max-height: 800px;     /* limite sur grands écrans */
-  object-fit: cover;     /* garde bon cadrage */
+  width: 100%;
+  height: 65vh;
+  max-height: 800px;
+  object-fit: cover;
   display: block;
 }
 
-.video-description {
-  text-align: center;
-  font-size: 1.4em;
-  font-weight: 300;
-  padding: 20px 5% 60px 5%;
+/* ===== SECTION TITLES ===== */
+
+.section-title {
+  padding: 100px 5% 40px 5%;
+  font-size: 2.2em;
+  font-weight: 600;
 }
 
 /* ===== PHOTO SECTION ===== */
+
 .photo-section {
-  padding: 80px 5%;
+  padding: 0 5% 80px 5%;
 }
+
+.photo-title {
+  font-size: 1.8em;
+  margin-bottom: 40px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== CONTACT BUTTON ===== */
+
+.contact-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0033cc;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 9999;
+  transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #002299;
+}
+
+/* ===== CONTACT SECTION ===== */
+
+.contact-section {
+  padding: 100px 5%;
+  background: #f5f5f5;
+}
+
+.contact-section h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.contact-section p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media screen and (max-width: 768px) {
+
+  .video-top-text {
+    font-size: 2em;
+  }
+
+  .video-subtitle {
+    font-size: 1.2em;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .section-title {
+    font-size: 1.8em;
+  }
+
+  .photo-title {
+    font-size: 1.4em;
+  }
+
+  .contact-button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- VIDEO SECTION -->
+<div class="video-section">
+  <div class="video-top-text">Ulrike Siemer</div>
+  <div class="video-subtitle">
+    paper mâché objects, scenography and window display design
+  </div>
+
+  <video muted loop autoplay playsinline>
+    <source src="ocean-objects.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- RECENT PROJECTS TITLE -->
+<div class="section-title">
+  Recent Projects
+</div>
+
+<!-- PROJECT 1 -->
+<div class="photo-section">
+  <div class="photo-title">
+    The shapes of smell<br>
+    window display design at Smell Stories, 2025
+  </div>
+
+  <div class="photo-grid">
+    <div class="photo-item"><img src="smell1.jpg"></div>
+    <div class="photo-item"><img src="smell2.jpg"></div>
+    <div class="photo-item"><img src="smell3.jpg"></div>
+    <div class="photo-item"><img src="smell4.jpg"></div>
+  </div>
+</div>
+
+<!-- PROJECT 2 -->
+<div class="photo-section">
+  <div class="photo-title">
+    Clés<br>
+    sculpture series, 2026
+  </div>
+
+  <div class="photo-grid">
+    <div class="photo-item"><img src="cles1.jpg"></div>
+    <div class="photo-item"><img src="cles2.jpg"></div>
+    <div class="photo-item"><img src="cles3.jpg"></div>
+    <div class="photo-item"><img src="cles4.jpg"></div>
+  </div>
+</div>
+
+<!-- CONTACT BUTTON -->
+<a href="#contact-section" class="contact-button">Contact</a>
+
+<!-- CONTACT SECTION -->
+<div id="contact-section" class="contact-section">
+  <h2>Contact</h2>
+  <p>Email : contact@ulrike-siemer.com</p>
+  <p>Instagram : @ulrike.siemer</p>
+  <p>Based in Belgium</p>
+</div>
+
+</body>
+</html>}
 
 .photo-title {
   font-size: 2em;
