@@ -86,6 +86,18 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  
+}/* ===== PROJECT VIDEO (under photos) ===== */
+.project-video {
+  margin-top: 60px;
+}
+
+.project-video video {
+  width: 100%;
+  height: 65vh;
+  max-height: 800px;
+  object-fit: cover;
+  display: block;
 }
 
 /* ===== CONTACT BUTTON (HAUT DROITE) ===== */
@@ -213,12 +225,19 @@ body {
     Installation
   </div>
 
-  <div class="photo-grid">
-    <div class="photo-item"><img src="petitdej1.jpg" alt="Clés 1"></div>
-    <div class="photo-item"><img src="petitdej2.jpg" alt="Clés 2"></div>
-    <div class="photo-item"><img src="petitdej3.jpg" alt="Clés 3"></div>
-    <div class="photo-item"><img src="petitdej4.jpg" alt="Clés 4"></div>
-  </div>
+ <div class="photo-grid">
+  <div class="photo-item"><img src="petitdej1.jpg" alt="Petit déjeuner 1"></div>
+  <div class="photo-item"><img src="petitdej2.jpg" alt="Petit déjeuner 2"></div>
+  <div class="photo-item"><img src="petitdej3.jpg" alt="Petit déjeuner 3"></div>
+  <div class="photo-item"><img src="petitdej4.jpg" alt="Petit déjeuner 4"></div>
+</div>
+
+<!-- VIDEO PETIT DEJEUNER -->
+<div class="project-video">
+  <video id="video2" muted autoplay loop playsinline>
+    <source src="petitdej.mp4" type="video/mp4">
+  </video>
+</div>
 </div>
   
 <!-- CONTACT SECTION -->
@@ -323,6 +342,7 @@ function setupVideoScroll(videoId) {
   observer.observe(video);
 }
 setupVideoScroll('video1');
+setupVideoScroll('video2');
 
 /* PHOTO FADE-IN ON SCROLL */
 const photos = document.querySelectorAll('.photo-item');
