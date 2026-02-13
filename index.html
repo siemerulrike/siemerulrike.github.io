@@ -105,7 +105,36 @@ body {
   height: auto;    /* garde le ratio 2.35:1 */
   display: inline-block;
 }
+/* ===== PETIT DEJEUNER LAYOUT ===== */
+.petitdej-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 40px;
+}
 
+/* PHOTOS LEFT */
+.petitdej-photos {
+  width: 60%;
+}
+
+.petitdej-photos img {
+  width: 100%;
+  display: block;
+  margin-bottom: 30px;
+}
+
+/* VIDEO RIGHT */
+.petitdej-video {
+  width: 60%;
+  margin-left: auto; /* pousse à droite */
+}
+
+.petitdej-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 /* ===== CONTACT BUTTON (HAUT DROITE) ===== */
 .contact-button {
   position: fixed;
@@ -146,7 +175,11 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
-
+.petitdej-photos,
+.petitdej-video {
+  width: 100%;
+  margin-left: 0;
+}
 .project-video video {
   width: 95%;
 } 
@@ -234,19 +267,22 @@ body {
     Installation
   </div>
 
- <div class="photo-grid">
-  <div class="photo-item"><img src="petitdej1.jpg" alt="Petit déjeuner 1"></div>
-  <div class="photo-item"><img src="petitdej2.jpg" alt="Petit déjeuner 2"></div>
-  <div class="photo-item"><img src="petitdej3.jpg" alt="Petit déjeuner 3"></div>
-  <div class="photo-item"><img src="petitdej4.jpg" alt="Petit déjeuner 4"></div>
-</div>
+  <!-- LEFT PHOTOS -->
+  <div class="petitdej-layout">
 
-<!-- VIDEO PETIT DEJEUNER -->
-<div class="project-video">
-  <video id="video2" muted autoplay loop playsinline>
-    <source src="petitdej.mp4" type="video/mp4">
-  </video>
-</div>
+    <div class="petitdej-photos">
+      <img src="petitdej1.jpg" alt="Petit déjeuner 1">
+      <img src="petitdej4.jpg" alt="Petit déjeuner 4">
+    </div>
+
+    <!-- RIGHT VIDEO -->
+    <div class="petitdej-video">
+      <video id="video2" muted autoplay loop playsinline>
+        <source src="petitdej.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
 </div>
   
 <!-- CONTACT SECTION -->
