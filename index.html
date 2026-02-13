@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 /* ===== GLOBAL ===== */
 body {
   margin: 0;
@@ -16,6 +17,27 @@ body {
   font-family: 'Playfair Display', serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+/* ===== CONTACT BUTTON (BOTTOM RIGHT) ===== */
+.contact-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0033cc;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 9999;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #002299;
+  transform: translateY(-2px);
 }
 
 /* ===== VIDEO SECTION ===== */
@@ -86,74 +108,19 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  
-}/* ===== PROJECT VIDEO (under photos) ===== */
-.project-video {
-  margin-top: 80px;
-  text-align: center;
 }
 
-/* ===== PROJECT VIDEO (centered & smaller) ===== */
-.project-video {
-  margin-top: 80px;
-  text-align: center;
-}
-
-.project-video video {
-  width: 70%;      /* plus petit */
-  max-width: 1000px;
-  height: auto;    /* garde le ratio 2.35:1 */
-  display: inline-block;
-}
-/* ===== PETIT DEJEUNER LAYOUT ===== */
-.petitdej-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-  margin-top: 40px;
-}
-
-/* PHOTOS LEFT */
-.petitdej-photos {
-  width: 60%;
-}
-
-.petitdej-photos img {
-  width: 100%;
-  display: block;
-  margin-bottom: 30px;
-}
-
-/* VIDEO RIGHT */
+/* ===== PETIT DEJEUNER VIDEO (RIGHT) ===== */
 .petitdej-video {
-  width: 60%;
-  margin-left: auto; /* pousse à droite */
+  width: 50%;
+  margin-left: auto;
+  margin-top: 60px;
 }
 
 .petitdej-video video {
   width: 100%;
   height: auto;
   display: block;
-}
-/* ===== CONTACT BUTTON (HAUT DROITE) ===== */
-.contact-button {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #0033cc;
-  color: white;
-  padding: 10px 20px;
-  font-weight: 600;
-  font-size: 1em;
-  text-decoration: none;
-  border-radius: 5px;
-  z-index: 9999;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.contact-button:hover {
-  background: #002299;
-  transform: translateY(-2px);
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -164,162 +131,9 @@ body {
 
 .contact-section h2 {
   font-size: 2em;
-  margin-bottom: 30px;
-}
-
-.contact-section p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-/* ===== RESPONSIVE ===== */
-@media screen and (max-width: 768px) {
-.petitdej-photos,
-.petitdej-video {
-  width: 100%;
-  margin-left: 0;
-}
-.project-video video {
-  width: 95%;
-} 
-  .video-top-text {
-    font-size: 2em;
-  }
-
-  .video-subtitle {
-    font-size: 1.2em;
-  }
-
-  .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .photo-title {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-  }
-
-  .contact-button {
-    padding: 8px 16px;
-    font-size: 0.9em;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- CONTACT BUTTON -->
-<a href="#contact-section" class="contact-button">Contact</a>
-
-<!-- VIDEO SECTION -->
-<div class="video-section">
-  <div class="video-top-text">Ulrike Siemer</div>
-  <div class="video-subtitle">
-    paper mâché objects, scenography and window display design
-  </div>
-  <video id="video1" muted autoplay loop playsinline>
-    <source src="oceanobjects.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- RECENT PROJECTS TITLE -->
-<div class="section-title">
-  Recent Projects
-</div>
-
-<!-- PROJECT 1 -->
-<div class="photo-section">
-  <div class="photo-title">
-    The shapes of smell<br>
-    window display design at Smell Stories, 2025
-  </div>
-
-  <div class="photo-grid">
-    <div class="photo-item"><img src="smell1.jpg" alt="The shapes of smell 1"></div>
-    <div class="photo-item"><img src="smell2.jpg" alt="The shapes of smell 2"></div>
-    <div class="photo-item"><img src="smell3.jpg" alt="The shapes of smell 3"></div>
-    <div class="photo-item"><img src="smell4.jpg" alt="The shapes of smell 4"></div>
-  </div>
-</div>
-
-<!-- PROJECT 2 -->
-<div class="photo-section">
-  <div class="photo-title">
-    Clés<br>
-    sculpture series, 2026
-  </div>
-
-  <div class="photo-grid">
-    <div class="photo-item"><img src="cles1.jpg" alt="Clés 1"></div>
-    <div class="photo-item"><img src="cles2.jpg" alt="Clés 2"></div>
-    <div class="photo-item"><img src="cles3.jpg" alt="Clés 3"></div>
-    <div class="photo-item"><img src="cles4.jpg" alt="Clés 4"></div>
-  </div>
-</div>
-
-<!-- PROJECT 3 -->
-<div class="photo-section">
-  <div class="photo-title">
-    Petit déjeuner, 2025<br>
-    Installation
-  </div>
-
-  <!-- LEFT PHOTOS -->
-  <div class="petitdej-layout">
-
-    <div class="petitdej-photos">
-      <img src="petitdej1.jpg" alt="Petit déjeuner 1">
-      <img src="petitdej4.jpg" alt="Petit déjeuner 4">
-    </div>
-
-    <!-- RIGHT VIDEO -->
-    <div class="petitdej-video">
-      <video id="video2" muted autoplay loop playsinline>
-        <source src="petitdej.mp4" type="video/mp4">
-      </video>
-    </div>
-
-  </div>
-</div>
-  
-<!-- CONTACT SECTION -->
-<div id="contact-section" class="contact-section">
-  <h2>Contact</h2>
-
-  <div class="contact-container">
-    <!-- LEFT: Contact info -->
-    <div class="contact-left">
-      <p><strong>E-mail:</strong> <a href="mailto:siemerulrike@gmail.com">siemerulrike@gmail.com</a></p>
-      <p><strong>Phone:</strong> +32 476 83 25 76</p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ulrikesie" target="_blank">@ulrikesie</a></p>
-      <p>Lives and works in Brussels.</p>
-    </div>
-</div>
-    <!-- RIGHT: Short bio -->
-    <div class="contact-right">
-      <p>
-        Ulrike creates sculptures and objects in papier-mâché, often used in scenography, window displays, and decor for films or photoshoots. Her work combines playful forms, vibrant colors, and everyday details, exploring how objects can be touched, worn, or used in different contexts.
-      </p>
-    </div>
-  </div>
-</div>
-
-<style>
-/* Contact section styling */
-.contact-section {
-  padding: 100px 5%;
-  background: #f5f5f5;
-}
-
-.contact-section h2 {
-  font-size: 2em;
   margin-bottom: 40px;
 }
 
-/* Container for two columns */
 .contact-container {
   display: flex;
   gap: 50px;
@@ -327,7 +141,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* LEFT column: contact info */
 .contact-left {
   flex: 1 1 300px;
   max-width: 400px;
@@ -341,14 +154,12 @@ body {
 .contact-left a {
   color: #0033cc;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .contact-left a:hover {
   color: #002299;
 }
 
-/* RIGHT column: bio */
 .contact-right {
   flex: 1 1 300px;
   max-width: 600px;
@@ -358,22 +169,126 @@ body {
   font-size: 1.1em;
   line-height: 1.6;
 }
-/* 
-}
 
-
-/* RESPONSIVE: stack on smaller screens */
+/* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
-  
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .petitdej-video {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .video-top-text {
+    font-size: 2em;
+  }
+
+  .video-subtitle {
+    font-size: 1.2em;
+  }
+
   .contact-container {
     flex-direction: column;
-    align-items: flex-start;
   }
+
 }
+
 </style>
+</head>
+
+<body>
+
+<a href="#contact-section" class="contact-button">Contact</a>
+
+<!-- VIDEO SECTION -->
+<div class="video-section">
+  <div class="video-top-text">Ulrike Siemer</div>
+  <div class="video-subtitle">
+    paper mâché objects, scenography and window display design
+  </div>
+  <video id="video1" muted autoplay loop playsinline>
+    <source src="oceanobjects.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="section-title">Recent Projects</div>
+
+<!-- PROJECT 1 -->
+<div class="photo-section">
+  <div class="photo-title">
+    The shapes of smell<br>
+    window display design at Smell Stories, 2025
+  </div>
+  <div class="photo-grid">
+    <div class="photo-item"><img src="smell1.jpg"></div>
+    <div class="photo-item"><img src="smell2.jpg"></div>
+    <div class="photo-item"><img src="smell3.jpg"></div>
+    <div class="photo-item"><img src="smell4.jpg"></div>
+  </div>
+</div>
+
+<!-- PROJECT 2 -->
+<div class="photo-section">
+  <div class="photo-title">
+    Clés<br>
+    sculpture series, 2026
+  </div>
+  <div class="photo-grid">
+    <div class="photo-item"><img src="cles1.jpg"></div>
+    <div class="photo-item"><img src="cles2.jpg"></div>
+    <div class="photo-item"><img src="cles3.jpg"></div>
+    <div class="photo-item"><img src="cles4.jpg"></div>
+  </div>
+</div>
+
+<!-- PROJECT 3 -->
+<div class="photo-section">
+  <div class="photo-title">
+    Petit déjeuner, 2025<br>
+    Installation
+  </div>
+
+  <!-- 2 PHOTOS SAME SIZE AS OTHERS -->
+  <div class="photo-grid">
+    <div class="photo-item"><img src="petitdej1.jpg"></div>
+    <div class="photo-item"><img src="petitdej4.jpg"></div>
+  </div>
+
+  <!-- VIDEO RIGHT -->
+  <div class="petitdej-video">
+    <video id="video2" muted autoplay loop playsinline>
+      <source src="petitdej.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact-section" class="contact-section">
+  <h2>Contact</h2>
+
+  <div class="contact-container">
+
+    <div class="contact-left">
+      <p><strong>E-mail:</strong> <a href="mailto:siemerulrike@gmail.com">siemerulrike@gmail.com</a></p>
+      <p><strong>Phone:</strong> +32 476 83 25 76</p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ulrikesie" target="_blank">@ulrikesie</a></p>
+      <p>Lives and works in Brussels.</p>
+    </div>
+
+    <div class="contact-right">
+      <p>
+        Ulrike creates sculptures and objects in papier-mâché, often used in scenography, window displays, and decor for films or photoshoots. Her work combines playful forms, vibrant colors, and everyday details, exploring how objects can be touched, worn, or used in different contexts.
+      </p>
+    </div>
+
+  </div>
+</div>
 
 <script>
-/* VIDEO PLAY / PAUSE ON SCROLL */
 function setupVideoScroll(videoId) {
   const video = document.getElementById(videoId);
   const observer = new IntersectionObserver(entries => {
@@ -387,10 +302,10 @@ function setupVideoScroll(videoId) {
   }, { threshold: 0.1 });
   observer.observe(video);
 }
+
 setupVideoScroll('video1');
 setupVideoScroll('video2');
 
-/* PHOTO FADE-IN ON SCROLL */
 const photos = document.querySelectorAll('.photo-item');
 const photoObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
