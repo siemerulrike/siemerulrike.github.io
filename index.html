@@ -204,7 +204,30 @@ body {
   display: block;
   margin-bottom: 40px;
 }
+/* ===== PIKNIK GRID ===== */
 
+.piknik-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 0 5% 80px 5%;
+}
+
+.piknik-grid img,
+.piknik-grid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+  .piknik-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
 </style>
 </head>
 
@@ -274,26 +297,26 @@ body {
   </div>
 </div>
 <!-- PIKNIKDOUILLE -->
-<section class="video-section">
+<div class="photo-section">
+  <div class="photo-title">
+    Piknikdouille<br>
+    drag performance, 2025
+  </div>
 
-  <div class="video-top-text">Piknikdouille</div>
-  <div class="video-subtitle">drag performance, 2025</div>
+  <div class="piknik-grid">
+    <img src="picnic1.jpg">
 
-  <!-- Image 1 -->
-  <img src="picnic1.jpg" class="media-full">
+    <video autoplay muted loop playsinline>
+      <source src="picnic2.mp4" type="video/mp4">
+    </video>
 
-  <!-- Video 1 -->
-  <video autoplay muted loop playsinline class="media-full">
-    <source src="picnic2.mp4" type="video/mp4">
-  </video>
+    <img src="picnic3.jpg">
 
-  <!-- Image 2 -->
-  <img src="picnic3.jpg" class="media-full">
-
-  <!-- Video 2 -->
-  <video autoplay muted loop playsinline class="media-full">
-    <source src="picnic4.mp4" type="video/mp4">
-  </video>
+    <video autoplay muted loop playsinline>
+      <source src="picnic4.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
 
 </section>
   
