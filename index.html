@@ -221,6 +221,23 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
+  /* ===== RESPONSIVE PROJECT DESCRIPTIONS ===== */
+@media screen and (max-width: 768px) {
+
+  .photo-title {
+    font-size: 1.3em; /* slightly smaller on mobile */
+    margin-bottom: 8px;
+  }
+
+  .photo-description {
+    font-size: 0.95em; /* slightly smaller on mobile */
+    margin-bottom: 20px;
+  }
+
+  .photo-grid {
+    gap: 15px; /* keeps spacing smaller for narrow screens */
+  }
+}
 }
 </style>
 </head>
@@ -242,11 +259,31 @@ body {
 
 <div class="section-title">Recent Projects</div>
 
+<style>
+/* ===== PROJECT TITLES ===== */
+.photo-title {
+  font-size: 1.5em; /* slightly smaller */
+  margin-bottom: 10px; /* less spacing */
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* ===== PROJECT DESCRIPTION ===== */
+.photo-description {
+  font-size: 1em; /* smaller than title */
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 30px; /* space before images */
+  color: #0033cc;
+}
+</style>
+
 <!-- PROJECT 1 -->
 <div class="photo-section">
-  <div class="photo-title">
-    The shapes of smell<br>
-    window display design, 2025
+  <div class="photo-title">The Shapes of Smell, 2025</div>
+  <div class="photo-description">
+    A scent can hold an entire moment: coffee in the morning, a familiar flower, the warmth of freshly ironed fabric.<br>
+    This window installation at Smell Stories transforms fragrances into sculptural forms. Through the Smell Generator, visitors discover a scent’s drawn shape, spray the matching perfume, and take home a small scented memory.
   </div>
   <div class="photo-grid">
     <div class="photo-item"><img src="smell1.jpg"></div>
@@ -258,9 +295,10 @@ body {
 
 <!-- PROJECT 2 -->
 <div class="photo-section">
-  <div class="photo-title">
-    J'ai perdu mes clés<br>
-    exhibition and window display, 2025
+  <div class="photo-title">J'ai perdu mes clés, 2025</div>
+  <div class="photo-description">
+    Have you ever lost your keys, eaten pasta with tomato sauce until your mouth turned orange, smoked a cigarette, cracked an egg, danced in cowboy boots?<br>
+    This exhibition and window display at Chien Andalou, a coffee and art space, unfolds sculptural scenes in papier-mâché. Everyday gestures and familiar objects become intimate installations, inviting visitors to reconnect with their own memories.
   </div>
   <div class="photo-grid">
     <div class="photo-item"><img src="cles1.jpg"></div>
@@ -272,58 +310,29 @@ body {
 
 <!-- PROJECT 3 -->
 <div class="photo-section">
-  <div class="photo-title">
-    Petit déjeuner<br>
-    Installation,2025
+  <div class="photo-title">Petit Déjeuner, 2025</div>
+  <div class="photo-description">
+    An installation and performance exploring the poetry of everyday life. Papier-mâché objects and staged gestures transform ordinary moments into intimate, playful scenes.
   </div>
-
- <div class="photo-grid">
-  <div class="photo-item">
-    <img src="petitdej1.jpg">
-  </div>
-
-  <div class="photo-item">
-    <video autoplay muted loop playsinline>
-      <source src="petitdej2.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="photo-item">
-    <img src="petitdej4.jpg">
-  </div>
-
-  <div class="photo-item">
-    <video autoplay muted loop playsinline>
-      <source src="petitdej3.mp4" type="video/mp4">
-    </video>
+  <div class="photo-grid">
+    <div class="photo-item"><img src="petitdej1.jpg"></div>
+    <div class="photo-item"><video autoplay muted loop playsinline><source src="petitdej2.mp4" type="video/mp4"></video></div>
+    <div class="photo-item"><img src="petitdej4.jpg"></div>
+    <div class="photo-item"><video autoplay muted loop playsinline><source src="petitdej3.mp4" type="video/mp4"></video></div>
   </div>
 </div>
-<!-- PIKNIKDOUILLE -->
+
+<!-- PROJECT 4 -->
 <div class="photo-section">
-  <div class="photo-title">
-    Piknikdouille<br>
-    drag performance, 2025
+  <div class="photo-title">Piknikdouille, 2025</div>
+  <div class="photo-description">
+    A drag performance takes the form of a picnic in the park. In collaboration with drag artist Kidzmoon, the project unfolds a playful and strange story, blending performance, storytelling, and outdoor spectacle.
   </div>
-
- <div class="photo-grid">
-  <div class="photo-item">
-    <img src="picnic1.jpg">
-  </div>
-
-  <div class="photo-item">
-    <video autoplay muted loop playsinline>
-      <source src="picnic2.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="photo-item">
-    <img src="picnic3.jpg">
-  </div>
-
-  <div class="photo-item">
-    <video autoplay muted loop playsinline>
-      <source src="picnic4.mp4" type="video/mp4">
-    </video>
+  <div class="photo-grid">
+    <div class="photo-item"><img src="picnic1.jpg"></div>
+    <div class="photo-item"><video autoplay muted loop playsinline><source src="picnic2.mp4" type="video/mp4"></video></div>
+    <div class="photo-item"><img src="picnic3.jpg"></div>
+    <div class="photo-item"><video autoplay muted loop playsinline><source src="picnic4.mp4" type="video/mp4"></video></div>
   </div>
 </div>
 </div>
