@@ -116,18 +116,6 @@ body {
   display: block;
 }
 
-/* ===== PETIT DEJEUNER VIDEO (RIGHT) ===== */
-.petitdej-video {
-  width: 50%;
-  margin-left: auto;
-  margin-top: 60px;
-}
-
-.petitdej-video video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 /* ===== CONTACT SECTION ===== */
 .contact-section {
@@ -289,16 +277,24 @@ body {
     Installation,2025
   </div>
 
-  <!-- 2 PHOTOS SAME SIZE AS OTHERS -->
-  <div class="photo-grid">
-    <div class="photo-item"><img src="petitdej1.jpg"></div>
-    <div class="photo-item"><img src="petitdej4.jpg"></div>
+ <div class="photo-grid">
+  <div class="photo-item">
+    <img src="petitdej1.jpg">
   </div>
 
-  <!-- VIDEO RIGHT -->
-  <div class="petitdej-video">
-    <video id="video2" muted autoplay loop playsinline>
-      <source src="petitdej.mp4" type="video/mp4">
+  <div class="photo-item">
+    <video autoplay muted loop playsinline>
+      <source src="petitdej2.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="photo-item">
+    <img src="petitdej4.jpg">
+  </div>
+
+  <div class="photo-item">
+    <video autoplay muted loop playsinline>
+      <source src="petitdej3.mp4" type="video/mp4">
     </video>
   </div>
 </div>
