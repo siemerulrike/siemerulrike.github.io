@@ -154,51 +154,48 @@ body {
 
 /* ===== RESPONSIVE MOBILE ===== */
 @media screen and (max-width: 768px) {
+
   /* Contact */
   .contact-grid {
-    flex-direction: column; /* texte au-dessus, photo dessous */
+    flex-direction: column;
     align-items: flex-start;
     gap: 30px;
     text-align: left;
   }
+
   .contact-title {
     font-size: 28px;
     margin-bottom: 30px;
     text-align: left;
   }
+
   .contact-infos {
     font-size: 16px;
-    text-align: left;
   }
+
   .contact-bio {
     max-width: 90%;
     margin-top: 20px;
-    text-align: left;
   }
+
   .contact-image {
-    width: 70%;               /* largeur mobile */
+    width: 70%;
     max-width: 320px;
-    display: block;           /* important pour que l’image ne soit pas centrée par le flex */
-    margin-left: 0 !important; /* force l’alignement à gauche */
-    margin-right: auto;       /* optionnel pour garder la marge droite libre */
+    margin-left: 0;
+    margin-right: auto;
   }
 
-  .contact-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-}
-
-  /* Grille projets : 2 par ligne */
+  /* ✅ Grille projets : 2 images par ligne sur mobile */
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
+
   .photo-title {
     font-size: 1.3em;
     margin-bottom: 8px;
   }
+
   .photo-description {
     font-size: 0.95em;
     margin-bottom: 20px;
