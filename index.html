@@ -117,29 +117,35 @@ body {
 }
 
 
-/* ===== CONTACT SECTION NEW ===== */
+/* ===== CONTACT NEW LAYOUT ===== */
 
 .contact-section {
-  padding: 160px 8%;
+  padding: 80px 8% 140px 8%; /* moins d’espace en haut */
   background: #f5f5f5;
-  text-align: center;
 }
 
 .contact-section h2 {
   font-size: 2.2em;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 
 .contact-container {
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 420px 1fr;
+  align-items: center;
+  max-width: 1400px;
   margin: 0 auto;
+  gap: 40px;
+}
+
+.contact-left {
+  font-size: 1.05em;
+  line-height: 1.8;
 }
 
 .contact-photo {
-  width: 380px;
-  max-width: 80%;
+  width: 100%;
   aspect-ratio: 4 / 5;
-  margin: 0 auto 60px auto;
   overflow: hidden;
 }
 
@@ -150,15 +156,12 @@ body {
   display: block;
 }
 
-.contact-right {
+.contact-bio {
+  max-width: 800px;
+  margin: 80px auto 0 auto;
+  text-align: center;
   font-size: 1.1em;
   line-height: 1.8;
-  margin-bottom: 60px;
-}
-
-.contact-left p {
-  font-size: 1.05em;
-  margin: 8px 0;
 }
  
 
@@ -336,24 +339,26 @@ body {
 
   <div class="contact-container">
 
-  <div class="contact-photo">
-    <img src="ulrikesiemer.jpg" alt="Ulrike Siemer">
+    <div class="contact-left">
+      <p><strong>E-mail:</strong> siemerulrike@gmail.com</p>
+      <p><strong>Phone:</strong> +32 476 83 25 76</p>
+      <p><strong>Instagram:</strong> @ulrikesie</p>
+      <p>Lives and works in Brussels.</p>
+    </div>
+
+    <div class="contact-photo">
+      <img src="ulrikesiemer.jpg" alt="Ulrike Siemer">
+    </div>
+
+    <div></div> <!-- espace volontaire -->
+    
   </div>
 
-  <div class="contact-right">
-    <p>
-      Ulrike creates sculptures and objects in papier-mâché, often used in scenography, window displays, and decor for films or photoshoots. Her work combines playful forms, vibrant colors, and everyday details, exploring how objects can be touched, worn, or used in different contexts.
-    </p>
+  <div class="contact-bio">
+    Ulrike creates sculptures and objects in papier-mâché, often used in scenography, window displays, and decor for films or photoshoots. Her work combines playful forms, vibrant colors, and everyday details, exploring how objects can be touched, worn, or used in different contexts.
   </div>
-
-  <div class="contact-left">
-    <p><strong>E-mail:</strong> <a href="mailto:siemerulrike@gmail.com">siemerulrike@gmail.com</a></p>
-    <p><strong>Phone:</strong> +32 476 83 25 76</p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ulrikesie" target="_blank">@ulrikesie</a></p>
-    <p>Lives and works in Brussels.</p>
-  </div>
-
 </div>
+  
 </div>
 
 <script>
