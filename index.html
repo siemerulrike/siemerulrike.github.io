@@ -169,33 +169,36 @@ body {
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
   .contact-grid {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column;   /* texte au-dessus, photo en dessous */
+    align-items: flex-start;  /* aligne le contenu à gauche */
     gap: 30px;
-    text-align: center;
+    text-align: left;         /* texte aligné à gauche */
   }
 
   .contact-title {
     font-size: 28px;
     margin-bottom: 30px;
-  }
-
-  .contact-image {
-    width: 70%;
-    max-width: 320px;
-    align-items: center;
+    text-align: left;         /* titre aligné à gauche */
   }
 
   .contact-infos {
     font-size: 16px;
+    text-align: left;         /* informations alignées à gauche */
   }
 
   .contact-bio {
     max-width: 90%;
     margin-top: 20px;
+    text-align: left;         /* bio alignée à gauche */
+  }
+
+  .contact-image {
+    width: 70%;
+    max-width: 320px;
+    align-items: center;      /* photo centrée horizontalement */
+    justify-content: center;
   }
 }
-
 /* responsive */
 @media screen and (max-width: 768px) {
   .piknik-grid {
