@@ -116,94 +116,82 @@ body {
   display: block;
 }
 
-
-/* ===== CONTACT NEW LAYOUT ===== */
-
+/* ===== CONTACT SECTION ===== */
 .contact-section {
   max-width: 1100px;
-  margin: 120px auto;
-  padding: 0 40px;
+  margin: 80px auto;
+  padding: 0 20px;
 }
 
 .contact-title {
-  font-size: 48px;
-  margin-bottom: 60px;
+  font-size: 36px; /* réduit pour harmoniser */
+  margin-bottom: 40px;
 }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 80px;
-  align-items: start;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start; /* aligne le haut du texte et de l'image */
+  flex-wrap: wrap; /* pour que ça devienne vertical sur mobile */
 }
 
 .contact-infos {
+  flex: 1;
   font-size: 18px;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 .contact-infos p {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .contact-bio {
-  margin-top: 40px;
+  margin-top: 20px;
   max-width: 600px;
+}
+
+.contact-image {
+  flex: 0 0 250px; /* largeur fixe de la photo */
+  display: flex;
+  align-items: center; /* centre verticalement avec le texte si grand écran */
+  justify-content: center;
 }
 
 .contact-image img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 4px;
 }
- 
 
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
-
-  .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .petitdej-video {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .video-top-text {
-    font-size: 2em;
-  }
-
-  .video-subtitle {
-    font-size: 1.2em;
-  }
-
-  .contact-container {
+  .contact-grid {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     text-align: center;
-    grid-template-columns: 1fr;
   }
 
-  .contact-photo {
+  .contact-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .contact-image {
     width: 70%;
     max-width: 320px;
-    margin: 40px auto;
+    align-items: center;
   }
 
-}
+  .contact-infos {
+    font-size: 16px;
+  }
 
-}
-.media-full {
-  width: 100%;
-  height: 65vh;
-  max-height: 800px;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 40px;
-}
+  .contact-bio {
+    max-width: 90%;
+    margin-top: 20px;
+  }
 }
 
 /* responsive */
