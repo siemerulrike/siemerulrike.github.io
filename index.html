@@ -176,11 +176,19 @@ body {
     text-align: left;
   }
   .contact-image {
-    width: 70%;
+    width: 70%;               /* largeur mobile */
     max-width: 320px;
-    align-items: flex-start;
-    justify-content: flex-start; /* photo alignée à gauche sur mobile */
+    display: block;           /* important pour que l’image ne soit pas centrée par le flex */
+    margin-left: 0 !important; /* force l’alignement à gauche */
+    margin-right: auto;       /* optionnel pour garder la marge droite libre */
   }
+
+  .contact-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
 
   /* Grille projets : 2 par ligne */
   .photo-grid {
