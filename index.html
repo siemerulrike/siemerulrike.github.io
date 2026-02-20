@@ -120,26 +120,26 @@ body {
 .contact-section {
   max-width: 1100px;
   margin: 80px auto;
-  padding: 20px 20px 40px 20px; /* espace interne */
+  padding: 20px 20px 40px 20px;
   border: 3px dotted #0033cc; /* cadre bleu */
-  background-color: #ffffff; /* pour bien détacher du fond */
+  background-color: #ffffff;
 }
 
 .contact-title {
-  font-size: 36px; /* réduit pour harmoniser */
+  font-size: 36px;
   margin-bottom: 40px;
 }
 
+/* ===== Desktop ===== */
 .contact-grid {
   display: flex;
   gap: 40px;
-  align-items: flex-start;     /* haut du texte aligné avec le haut de la photo */
-  flex-wrap: nowrap;           /* reste sur une ligne */
-  justify-content: flex-start; /* texte à gauche par défaut */
+  align-items: flex-start;   /* aligne le haut du texte et de la photo */
+  flex-wrap: nowrap;         /* reste horizontal */
 }
 
 .contact-infos {
-  flex: 1;
+  flex: 1;                   /* texte prend tout l’espace disponible à gauche */
   font-size: 18px;
   line-height: 1.6;
 }
@@ -150,14 +150,14 @@ body {
 
 .contact-bio {
   margin-top: 20px;
-  max-width: 600px;
+  max-width: none;           /* permet au bio de s’étendre sur deux lignes jusqu’à la photo */
 }
 
 .contact-image {
-  flex: 0 0 250px;             /* largeur fixe de la photo */
+  flex: 0 0 250px;           /* largeur fixe de la photo */
   display: flex;
-  align-items: flex-start;      /* alignement vertical avec le haut du texte */
-  margin-left: auto;            /* pousse la photo complètement à droite */
+  align-items: flex-start;   /* alignement vertical haut avec le texte */
+  margin-left: auto;          /* pousse la photo complètement à droite */
 }
 
 .contact-image img {
@@ -166,37 +166,39 @@ body {
   display: block;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== Mobile ===== */
 @media screen and (max-width: 768px) {
   .contact-grid {
     flex-direction: column;   /* texte au-dessus, photo en dessous */
-    align-items: flex-start;  /* aligne le contenu à gauche */
+    align-items: flex-start;  /* tout aligné à gauche */
     gap: 30px;
-    text-align: left;         /* texte aligné à gauche */
+    text-align: left;
   }
 
   .contact-title {
     font-size: 28px;
     margin-bottom: 30px;
-    text-align: left;         /* titre aligné à gauche */
+    text-align: left;
   }
 
   .contact-infos {
     font-size: 16px;
-    text-align: left;         /* informations alignées à gauche */
+    text-align: left;
   }
 
   .contact-bio {
     max-width: 90%;
     margin-top: 20px;
-    text-align: left;         /* bio alignée à gauche */
+    text-align: left;
   }
 
   .contact-image {
     width: 70%;
     max-width: 320px;
-    align-items: center;      /* photo centrée horizontalement */
-    justify-content: center;
+    align-items: flex-start;  /* photo alignée à gauche */
+    justify-content: flex-start;
+  }
+}
   }
 }
 /* responsive */
