@@ -206,19 +206,22 @@ justify-content: center;
   }
   /* ===== RESPONSIVE PROJECT DESCRIPTIONS ===== */
 @media screen and (max-width: 768px) {
+  /* Photo & vidéo grid : 2 par ligne */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 éléments par ligne */
+    gap: 15px; /* espace réduit entre éléments */
+  }
 
+  /* Ajustements des titres et descriptions des projets */
   .photo-title {
-    font-size: 1.3em; /* slightly smaller on mobile */
+    font-size: 1.3em; /* légèrement plus petit pour mobile */
     margin-bottom: 8px;
   }
 
   .photo-description {
-    font-size: 0.95em; /* slightly smaller on mobile */
+    font-size: 0.95em; /* légèrement plus petit */
     margin-bottom: 20px;
-  }
-
-  .photo-grid {
-    gap: 15px; /* keeps spacing smaller for narrow screens */
   }
 }
 }
