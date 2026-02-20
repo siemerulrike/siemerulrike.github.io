@@ -133,8 +133,9 @@ body {
 .contact-grid {
   display: flex;
   gap: 40px;
-  align-items: flex-start; /* aligne le haut du texte et de l'image */
-  flex-wrap: wrap; /* pour que ça devienne vertical sur mobile */
+  align-items: flex-start;     /* haut du texte aligné avec le haut de la photo */
+  flex-wrap: nowrap;           /* reste sur une ligne */
+  justify-content: flex-start; /* texte à gauche par défaut */
 }
 
 .contact-infos {
@@ -153,10 +154,10 @@ body {
 }
 
 .contact-image {
-  flex: 0 0 250px; /* largeur fixe de la photo */
+  flex: 0 0 250px;             /* largeur fixe de la photo */
   display: flex;
-align-items: flex-start; /* aligne la photo avec le haut du texte */
-justify-content: center;
+  align-items: flex-start;      /* alignement vertical avec le haut du texte */
+  margin-left: auto;            /* pousse la photo complètement à droite */
 }
 
 .contact-image img {
