@@ -120,48 +120,41 @@ body {
 /* ===== CONTACT NEW LAYOUT ===== */
 
 .contact-section {
-  padding: 80px 8% 140px 8%; /* moins d’espace en haut */
-  background: #f5f5f5;
+  max-width: 1100px;
+  margin: 120px auto;
+  padding: 0 40px;
 }
 
-.contact-section h2 {
-  font-size: 2.2em;
-  margin-bottom: 50px;
+.contact-title {
+  font-size: 48px;
+  margin-bottom: 60px;
 }
 
-.contact-container {
+.contact-grid {
   display: grid;
-  grid-template-columns: 1fr 420px 1fr;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  gap: 40px;
+  grid-template-columns: 1fr 400px;
+  gap: 80px;
+  align-items: start;
 }
 
-.contact-left {
-  font-size: 1.05em;
+.contact-infos {
+  font-size: 18px;
   line-height: 1.8;
 }
 
-.contact-photo {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-}
-
-.contact-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.contact-infos p {
+  margin-bottom: 20px;
 }
 
 .contact-bio {
-  max-width: 800px;
-  margin: 80px auto 0 auto;
-  text-align: center;
-  font-size: 1.1em;
-  line-height: 1.8;
+  margin-top: 40px;
+  max-width: 600px;
+}
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
  
 
@@ -336,30 +329,34 @@ body {
 </div>
   
 <!-- CONTACT -->
-<div id="contact-section" class="contact-section">
-  <h2>Contact</h2>
+<section class="contact-section">
 
-  <div class="contact-container">
+  <h1 class="contact-title">Contact</h1>
 
-    <div class="contact-left">
-      <p><strong>E-mail:</strong> siemerulrike@gmail.com</p>
-      <p><strong>Phone:</strong> +32 476 83 25 76</p>
-      <p><strong>Instagram:</strong> @ulrikesie</p>
-      <p>Lives and works in Brussels.</p>
+  <div class="contact-grid">
+
+    <div>
+      <div class="contact-infos">
+        <p><strong>E-mail:</strong> siemerulrike@gmail.com</p>
+        <p><strong>Phone:</strong> +32 476 83 25 76</p>
+        <p><strong>Instagram:</strong> @ulrikesie</p>
+        <p>Lives and works in Brussels.</p>
+      </div>
+
+      <div class="contact-bio">
+        <p>
+    Ulrike creates sculptures and objects in papier-mâché, often used in scenography, window displays, and decor for films or photoshoots. Her work combines playful forms, vibrant colors, and everyday details, exploring how objects can be touched, worn, or used in different contexts.
+        </p>
+      </div>
     </div>
 
-    <div class="contact-photo">
+    <div class="contact-image">
       <img src="ulrikesiemer.jpg" alt="Ulrike Siemer">
     </div>
 
-    <div></div> <!-- espace volontaire -->
-    
   </div>
 
-  <div class="contact-bio">
-    Ulrike creates sculptures and objects in papier-mâché, often used in scenography, window displays, and decor for films or photoshoots. Her work combines playful forms, vibrant colors, and everyday details, exploring how objects can be touched, worn, or used in different contexts.
-  </div>
-</div>
+</section>
   
 </div>
 
