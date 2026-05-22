@@ -3,28 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ulrike Siemer – papier mâché art, scenography, set design</title>
+
 <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 /* ===== GLOBAL ===== */
-  body {
+
+body {
   margin: 0;
   background: white;
   color: #0033cc;
   font-family: 'Playfair Display', serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
-}
-  footer {
-  margin-top: 80px;
-  font-size: 12px;
-  text-align: center;
-  opacity: 0.6;
+  cursor: crosshair;
 }
 
-/* ===== CONTACT BUTTON (BOTTOM RIGHT) ===== */
+footer {
+  margin-top: 120px;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.5;
+  padding-bottom: 40px;
+}
+
+a {
+  color: #0033cc;
+}
+
+/* ===== CONTACT BUTTON ===== */
+
 .contact-button {
   position: fixed;
   bottom: 20px;
@@ -37,75 +50,97 @@
   text-decoration: none;
   border-radius: 5px;
   z-index: 9999;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
+
 .contact-button:hover {
-  background: #002299;
   transform: translateY(-2px);
 }
 
 /* ===== VIDEO SECTION ===== */
+
 .video-section {
   width: 100%;
-  padding-top: 60px;
+  padding-top: 50px;
   text-align: center;
+  margin-bottom: 120px;
 }
+
 .video-top-text {
-  font-size: 2.8em;
+  font-size: 3em;
   font-weight: 600;
   margin-bottom: 10px;
 }
+
 .video-subtitle {
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: 300;
   margin-bottom: 40px;
 }
+
 .video-section video {
   width: 100%;
-  height: 65vh;
-  max-height: 800px;
+  height: 70vh;
   object-fit: cover;
   display: block;
 }
 
-/* ===== SECTION TITLES ===== */
+/* ===== SECTION TITLE ===== */
+
 .section-title {
-  padding: 100px 5% 40px 5%;
+  padding: 0 5% 80px 5%;
   font-size: 2.2em;
   font-weight: 600;
 }
 
-/* ===== PHOTO SECTION ===== */
+/* ===== PROJECT SECTION ===== */
+
 .photo-section {
-  padding: 0 5% 80px 5%;
+  padding: 0 5% 180px 5%;
+  position: relative;
 }
+
 .photo-title {
-  font-size: 1.8em;
-  margin-bottom: 40px;
+  font-size: 1.9em;
+  margin-bottom: 20px;
   font-weight: 300;
-  line-height: 1.4;
+  max-width: 700px;
+  line-height: 1.3;
 }
+
 .photo-description {
   font-size: 1em;
   font-weight: 300;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  color: #0033cc;
+  line-height: 1.6;
+  margin-bottom: 60px;
+  max-width: 700px;
 }
+
+/* ===== EXPERIMENTAL GRID ===== */
+
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  align-items: start;
 }
+
+/* ===== ITEMS ===== */
+
 .photo-item {
+  overflow: hidden;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(60px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
+
 .photo-item.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 .photo-item img,
 .photo-item video {
   width: 100%;
@@ -114,99 +149,171 @@
   display: block;
 }
 
-/* ===== CONTACT SECTION ===== */
+/* ===== SIZES ===== */
+
+.large {
+  grid-column: span 7;
+  height: 90vh;
+}
+
+.medium {
+  grid-column: span 5;
+  height: 48vh;
+}
+
+.small {
+  grid-column: span 3;
+  height: 28vh;
+}
+
+.tall {
+  grid-column: span 4;
+  height: 78vh;
+}
+
+.wide {
+  grid-column: span 8;
+  height: 40vh;
+}
+
+/* ===== OFFSETS ===== */
+
+.offset-up {
+  margin-top: -70px;
+}
+
+.offset-down {
+  margin-top: 100px;
+}
+
+.offset-left {
+  margin-left: -30px;
+}
+
+.offset-right {
+  margin-left: 40px;
+}
+
+/* ===== CROPS ===== */
+
+.crop-top img,
+.crop-top video {
+  object-position: top;
+}
+
+.crop-left img,
+.crop-left video {
+  object-position: left;
+}
+
+.zoom img,
+.zoom video {
+  transform: scale(1.15);
+}
+
+/* ===== HOVER ===== */
+
+.photo-item:hover img,
+.photo-item:hover video {
+  transform: scale(1.02) rotate(0.3deg);
+  transition: transform 0.8s ease;
+}
+
+/* ===== CONTACT ===== */
+
 .contact-section {
   max-width: 1100px;
-  margin: 80px auto;
-  padding: 20px 20px 40px 20px;
-  border: 3px dotted #0033cc; /* cadre bleu clair pointillé */
-  background-color: #ffffff;
+  margin: 120px auto;
+  padding: 30px;
+  border: 2px dotted #0033cc;
 }
+
 .contact-title {
   font-size: 36px;
   margin-bottom: 40px;
 }
 
-/* Desktop contact */
 .contact-grid {
   display: flex;
   gap: 40px;
   align-items: flex-start;
-  flex-wrap: nowrap;
 }
+
 .contact-infos {
   flex: 1;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
-.contact-infos p {
-  margin-bottom: 16px;
-}
+
 .contact-bio {
-  margin-top: 20px;
-  max-width: none; /* bio peut s’étendre jusqu’à la photo */
+  margin-top: 30px;
 }
+
 .contact-image {
-  flex: 0 0 250px;
-  display: flex;
-  align-items: flex-start;
-  margin-left: auto; /* photo collée à droite */
+  flex: 0 0 260px;
 }
+
 .contact-image img {
   width: 100%;
-  height: auto;
   display: block;
 }
 
-/* ===== RESPONSIVE MOBILE ===== */
+/* ===== MOBILE ===== */
+
 @media screen and (max-width: 768px) {
 
-  /* Contact */
-  .contact-grid {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
-    text-align: left;
+  .video-top-text {
+    font-size: 2.2em;
   }
 
-  .contact-title {
-    font-size: 28px;
-    margin-bottom: 30px;
-    text-align: left;
+  .video-subtitle {
+    font-size: 1em;
   }
 
-  .contact-infos {
-    font-size: 16px;
-  }
-
-  .contact-bio {
-    max-width: 90%;
-    margin-top: 20px;
-  }
-
-  .contact-image {
-    width: 70%;
-    max-width: 320px;
-    margin-left: 0;
-    margin-right: auto;
-  }
-
-  /* ✅ Grille projets : 2 images par ligne sur mobile */
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 12px;
+  }
+
+  .large,
+  .medium,
+  .small,
+  .tall,
+  .wide {
+    grid-column: span 1 !important;
+    height: auto;
+  }
+
+  .offset-up,
+  .offset-down,
+  .offset-left,
+  .offset-right {
+    margin: 0;
+  }
+
+  .photo-section {
+    padding-bottom: 100px;
   }
 
   .photo-title {
-    font-size: 1.3em;
-    margin-bottom: 8px;
+    font-size: 1.4em;
   }
 
   .photo-description {
     font-size: 0.95em;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
+
+  .contact-grid {
+    flex-direction: column;
+  }
+
+  .contact-image {
+    width: 70%;
+  }
+
 }
+
 </style>
 </head>
 
@@ -214,168 +321,322 @@
 
 <a href="#contact-section" class="contact-button">Contact</a>
 
-<!-- VIDEO SECTION -->
+<!-- VIDEO -->
+
 <div class="video-section">
-  <div class="video-top-text">Ulrike Siemer</div>
+
+  <div class="video-top-text">
+    Ulrike Siemer
+  </div>
+
   <div class="video-subtitle">
     Sculptural Installations, Set Design and Scenography
   </div>
+
   <video id="video1" muted autoplay loop playsinline>
     <source src="oceanobjects.mp4" type="video/mp4">
   </video>
+
 </div>
 
-<div class="section-title">Recent Projects</div>
+<div class="section-title">
+  Recent Projects
+</div>
 
-  <!-- PROJECT 1 -->
+<!-- PROJECT 1 -->
+
 <div class="photo-section">
-  <div class="photo-title">The Shapes of Smell, 2025</div>
+
+  <div class="photo-title">
+    The Shapes of Smell, 2025
+  </div>
+
   <div class="photo-description">
     A scent can hold an entire moment: coffee in the morning, a familiar flower, the warmth of freshly ironed fabric.<br>
     This window installation at Smell Stories transforms fragrances into sculptural forms. Through the Smell Generator, visitors discover a scent’s drawn shape, spray the matching perfume, and take home a small scented memory.
   </div>
+
   <div class="photo-grid">
-    <div class="photo-item"><img src="smell1.jpg"></div>
-    <div class="photo-item"><img src="smell2.jpg"></div>
-    <div class="photo-item"><img src="smell3.jpg"></div>
-    <div class="photo-item"><img src="smell4.jpg"></div>
+
+    <div class="photo-item large offset-up">
+      <img src="smell1.jpg">
+    </div>
+
+    <div class="photo-item small offset-down">
+      <img src="smell2.jpg">
+    </div>
+
+    <div class="photo-item tall crop-top">
+      <img src="smell3.jpg">
+    </div>
+
+    <div class="photo-item medium offset-right">
+      <img src="smell4.jpg">
+    </div>
+
   </div>
+
 </div>
+
 <!-- PROJECT 2 -->
+
 <div class="photo-section">
-  <div class="photo-title">Cardboard Outfits, 2026</div>
+
+  <div class="photo-title">
+    Cardboard Outfits, 2026
+  </div>
+
   <div class="photo-description">
     Telling stories with clothes and objects made out of cardboard and paint.
   </div>
+
   <div class="photo-grid">
-    <div class="photo-item"><img src="Cardboardoutfit1.jpg"></div>
-    <div class="photo-item"><img src="Cardboardoutfit2.jpg"></div>
-    <div class="photo-item"><img src="Cardboardoutfit3.jpg"></div>
-    <div class="photo-item"><img src="Cardboardoutfit4.jpg"></div>
+
+    <div class="photo-item wide">
+      <img src="Cardboardoutfit1.jpg">
+    </div>
+
+    <div class="photo-item small offset-up">
+      <img src="Cardboardoutfit2.jpg">
+    </div>
+
+    <div class="photo-item tall zoom">
+      <img src="Cardboardoutfit3.jpg">
+    </div>
+
+    <div class="photo-item medium offset-down">
+      <img src="Cardboardoutfit4.jpg">
+    </div>
+
   </div>
+
 </div>
-  
+
 <!-- PROJECT 3 -->
+
 <div class="photo-section">
-  <div class="photo-title">J'ai perdu mes clés, 2025</div>
+
+  <div class="photo-title">
+    J'ai perdu mes clés, 2025
+  </div>
+
   <div class="photo-description">
     Have you ever lost your keys, eaten pasta with tomato sauce until your mouth turned orange, smoked a cigarette, cracked an egg, danced in cowboy boots?<br>
     This exhibition and window display at Chien Andalou, a coffee and art space, unfolds sculptural scenes in papier-mâché. Everyday gestures and familiar objects become intimate installations, inviting visitors to reconnect with their own memories.
   </div>
+
   <div class="photo-grid">
-    <div class="photo-item"><img src="cles1.jpg"></div>
-    <div class="photo-item"><img src="cles2.jpg"></div>
-    <div class="photo-item"><img src="cles3.jpg"></div>
-    <div class="photo-item"><img src="cles4.jpg"></div>
+
+    <div class="photo-item medium">
+      <img src="cles1.jpg">
+    </div>
+
+    <div class="photo-item tall offset-up">
+      <img src="cles2.jpg">
+    </div>
+
+    <div class="photo-item small">
+      <img src="cles3.jpg">
+    </div>
+
+    <div class="photo-item large offset-right">
+      <img src="cles4.jpg">
+    </div>
+
   </div>
+
 </div>
 
 <!-- PROJECT 4 -->
+
 <div class="photo-section">
-  <div class="photo-title">Petit Déjeuner, 2025</div>
+
+  <div class="photo-title">
+    Petit Déjeuner, 2025
+  </div>
+
   <div class="photo-description">
     An installation and performance exploring the poetry of everyday life. Papier-mâché objects and staged gestures transform ordinary moments into intimate, playful scenes.
   </div>
+
   <div class="photo-grid">
-    <div class="photo-item"><img src="petitdej1.jpg"></div>
-    <div class="photo-item"><video autoplay muted loop playsinline><source src="petitdej2.mp4" type="video/mp4"></video></div>
-    <div class="photo-item"><img src="petitdej4.jpg"></div>
-    <div class="photo-item"><video autoplay muted loop playsinline><source src="petitdej3.mp4" type="video/mp4"></video></div>
+
+    <div class="photo-item tall">
+      <img src="petitdej1.jpg">
+    </div>
+
+    <div class="photo-item medium offset-down">
+      <video autoplay muted loop playsinline>
+        <source src="petitdej2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="photo-item large crop-left">
+      <img src="petitdej4.jpg">
+    </div>
+
+    <div class="photo-item small offset-up">
+      <video autoplay muted loop playsinline>
+        <source src="petitdej3.mp4" type="video/mp4">
+      </video>
+    </div>
+
   </div>
+
 </div>
 
 <!-- PROJECT 5 -->
+
 <div class="photo-section">
-  <div class="photo-title">Piknikdouille, 2025</div>
+
+  <div class="photo-title">
+    Piknikdouille, 2025
+  </div>
+
   <div class="photo-description">
     A drag performance takes the form of a picnic in the park. In collaboration with drag artist Kidzmoon, the project unfolds a playful and strange story, blending performance, storytelling, and outdoor spectacle.
   </div>
+
   <div class="photo-grid">
-    <div class="photo-item"><img src="picnic1.jpg"></div>
-    <div class="photo-item"><video autoplay muted loop playsinline><source src="picnic2.mp4" type="video/mp4"></video></div>
-    <div class="photo-item"><img src="picnic3.jpg"></div>
-    <div class="photo-item"><video autoplay muted loop playsinline><source src="picnic4.mp4" type="video/mp4"></video></div>
+
+    <div class="photo-item large">
+      <img src="picnic1.jpg">
+    </div>
+
+    <div class="photo-item small offset-down">
+      <video autoplay muted loop playsinline>
+        <source src="picnic2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="photo-item medium">
+      <img src="picnic3.jpg">
+    </div>
+
+    <div class="photo-item tall offset-up">
+      <video autoplay muted loop playsinline>
+        <source src="picnic4.mp4" type="video/mp4">
+      </video>
+    </div>
+
   </div>
+
 </div>
 
 <!-- CONTACT -->
+
 <section class="contact-section" id="contact-section">
-  <h1 class="contact-title">Contact</h1>
+
+  <h1 class="contact-title">
+    Contact
+  </h1>
+
   <div class="contact-grid">
+
     <div>
+
       <div class="contact-infos">
+
         <p>
-          <strong>E-mail:</strong> 
+          <strong>E-mail:</strong>
           <a href="mailto:siemerulrike@gmail.com">
             siemerulrike@gmail.com
           </a>
         </p>
 
         <p>
-          <strong>Phone:</strong> 
+          <strong>Phone:</strong>
           <a href="tel:+32476832576">
             +32 476 83 25 76
           </a>
         </p>
 
         <p>
-          <strong>Instagram:</strong> 
-          <a href="https://www.instagram.com/ulrikesie/" target="_blank" rel="noopener">
+          <strong>Instagram:</strong>
+          <a href="https://www.instagram.com/ulrikesie/" target="_blank">
             @ulrikesie
           </a>
         </p>
 
-        <p>Lives and works in Brussels.</p>
+        <p>
+          Lives and works in Brussels.
+        </p>
+
       </div>
 
       <div class="contact-bio">
+
         <p>
           Ulrike creates sculptures and objects in papier-mâché, often used in scenography, window displays, and decor for films or photoshoots. Her work combines playful forms, vibrant colors, and everyday details, exploring how objects can be touched, worn, or used in different contexts.
         </p>
+
       </div>
+
     </div>
 
     <div class="contact-image">
       <img src="ulrikesiemer.jpg" alt="Ulrike Siemer">
     </div>
+
   </div>
+
 </section>
 
+<footer>
+  © 2026 Ulrike Siemer
+  <br>
+  <a href="legal-notice.html">Legal Notice</a>
+</footer>
+
 <script>
-/* Vidéo auto-play quand visible */
+
+/* VIDEO */
+
 function setupVideoScroll(videoId) {
+
   const video = document.getElementById(videoId);
+
   const observer = new IntersectionObserver(entries => {
+
     entries.forEach(entry => {
+
       if(entry.isIntersecting){
         video.play().catch(e => console.log(e));
       } else {
         video.pause();
       }
+
     });
+
   }, { threshold: 0.1 });
+
   observer.observe(video);
+
 }
+
 setupVideoScroll('video1');
 
-/* Animation fade-in photos */
+/* FADE-IN */
+
 const photos = document.querySelectorAll('.photo-item');
+
 const photoObserver = new IntersectionObserver(entries => {
+
   entries.forEach(entry => {
+
     if(entry.isIntersecting){
       entry.target.classList.add('visible');
     }
+
   });
-}, { threshold: 0.2 });
+
+}, { threshold: 0.15 });
+
 photos.forEach(photo => {
   photoObserver.observe(photo);
 });
+
 </script>
 
-  <footer>
-  © 2026 Ulrike Siemer
-  <br>
-  <a href="legal-notice.html">Legal Notice</a>
-</footer>
 </body>
 </html>
