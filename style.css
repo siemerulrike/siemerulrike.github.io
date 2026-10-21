@@ -105,11 +105,12 @@
 /* VIDÉO CAFÉ */
 
 .item-cafe {
-  left: 2%;
+  left: 35%;
   top: 5%;
   width: 27%;
   aspect-ratio: 3 / 4;
   transform: none;
+   z-index: 2;
 }
 
 /* VIDÉO TABLE */
@@ -145,7 +146,7 @@
 /* PHOTO B : SEULE PHOTO INCLINÉE */
 
 .item-photo-b {
-  left: -8%;
+  left: -4%;
   top: 18%;
   width: 30%;
   aspect-ratio: 2 / 3;
