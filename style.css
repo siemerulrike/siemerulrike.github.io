@@ -259,4 +259,61 @@
   border: 0;
   outline: none;
 }
+  /* TEXTE SOUS LE TITRE */
+
+.project-note {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 35%;
+  max-width: 400px;
+  margin: -35px 0 65px 4vw;
+  padding: 18px 22px;
+  color: var(--pink);
+  border: 2px solid var(--pink);
+  transform: none;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* MÉDIAS DROITS */
+
+.item-cafe,
+.item-table,
+.item-tartine,
+.item-photo-a,
+.item-photo-b {
+  transform: none;
+}
+
+/* Une seule photo inclinée */
+.item-photo-b {
+  transform: rotate(-4deg);
+}
+
+/* Éviter les bords irréguliers */
+.item {
+  overflow: hidden;
+}
+
+.item video,
+.item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  outline: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .project-note {
+    width: 90%;
+    max-width: none;
+    margin: 0 0 40px;
+    font-size: 15px;
+  }
+}
 }
