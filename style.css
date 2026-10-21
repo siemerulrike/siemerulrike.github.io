@@ -116,11 +116,12 @@
 /* VIDÉO TABLE */
 
 .item-table {
-  left: 39%;
-  top: 10%;
-  width: 39%;
+  left: 55%;
+  top: 42%;
+  width: 27%;
   aspect-ratio: 1 / 1;
   transform: none;
+  z-index: 2;
 }
 
 /* VIDÉO TARTINE */
