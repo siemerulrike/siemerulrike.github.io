@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Ulli";
-  src: url("ulli.otf") format("opentype");
+  src: url("Ulli-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,7 +16,7 @@
   background: white;
   overflow-x: hidden;
   margin: 0;
-  font-family: "Ulli", sans-serif;
+  font-family: "Ulli-Regular", sans-serif;
 }
 
 /* HEADER */
