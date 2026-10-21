@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Ulli";
+  font-family: "Ulli-Regular";
   src: url("Ulli-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
@@ -31,7 +31,7 @@
 
 .project-title {
   color: var(--pink);
-  font-family: "Playfair Display", serif;
+  font-family: "Ulli-Regular", serif;
   font-size: 42px;
   text-decoration: none;
 }
