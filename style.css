@@ -82,6 +82,7 @@
   max-width: none;
   min-height: 1150px;
   margin: 0;
+  z-index: 2;
 }
 
 .item {
@@ -144,11 +145,12 @@
 /* PHOTO B : SEULE PHOTO INCLINÉE */
 
 .item-photo-b {
-  right: 5%;
-  top: 65%;
-  width: 27%;
+  left: -8%;
+  top: 18%;
+  width: 30%;
   aspect-ratio: 2 / 3;
-  transform: rotate(-4deg);
+  transform: rotate(-6deg);
+  z-index: 5;
 }
 
 /* FOOTER */
@@ -204,7 +206,10 @@
     margin: 0 0 40px;
     padding: 16px;
     font-size: 15px;
-  }
+  position: sticky;
+  top: 40px;
+  z-index: 1;
+}
 
   .project-collage {
     display: grid;
