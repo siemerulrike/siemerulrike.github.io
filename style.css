@@ -203,44 +203,50 @@
   }
   /* Nouvelle composition : Petit déjeuner */
 
+/* VIDÉO 1 : verticale, taille moyenne */
 .item-cafe {
-  left: 8%;
-  top: 5%;
-  width: 17%;
+  left: 5%;
+  top: 2%;
+  width: 25%;
   aspect-ratio: 3 / 4;
-  transform: none;
+  transform: none !important;
 }
 
+/* VIDÉO 2 : carrée, grande */
 .item-table {
   left: 43%;
-  top: 17%;
-  width: 13%;
-  aspect-ratio: 1 / 1;
-  transform: none;
-}
-
-.item-tartine {
-  left: 27%;
-  top: 57%;
+  top: 8%;
   width: 34%;
+  aspect-ratio: 1 / 1;
+  transform: none !important;
+}
+
+/* VIDÉO 3 : horizontale, très grande */
+.item-tartine {
+  left: 12%;
+  top: 58%;
+  width: 43%;
   aspect-ratio: 4 / 3;
-  transform: none;
+  transform: none !important;
 }
 
+/* PHOTO 1 : verticale, petite */
 .item-photo-a {
-  right: 7%;
-  top: 2%;
-  width: 11%;
+  right: 5%;
+  top: 0;
+  width: 15%;
   aspect-ratio: 2 / 3;
-  transform: rotate(5deg);
+  transform: none !important;
 }
 
+/* PHOTO 2 : verticale, grande et légèrement inclinée */
 .item-photo-b {
-  right: 10%;
-  top: 64%;
-  width: 21%;
+  right: 9%;
+  top: 65%;
+  width: 25%;
   aspect-ratio: 2 / 3;
-  transform: rotate(-3deg);
+  transform: rotate(-4deg) !important;
+}
 }
 
 /* Bords des médias */
