@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Ulrike Font";
-  src: url("Ulrike Font.otf") format("opentype");
+  font-family: "Ulrike-font";
+  src: url("Ulrike-font.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -32,7 +32,7 @@
 
 .project-title {
   color: var(--pink);
-  font-family: "Ulrike Fontr", serif;
+  font-family: "Ulrike-font", serif;
   font-size: 42px;
   text-decoration: none;
 }
