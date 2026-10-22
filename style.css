@@ -25,15 +25,16 @@
 .project-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 20px;
-  margin: 0 4vw 35px;
+  margin: 0 4vw 35px 0;
   color: var(--pink);
 }
 
 .project-heading {
   position: relative;
-  top: 12px;
+  top: 35px;
+  margin-left: 2vw;
 }
 
 .project-nav {
