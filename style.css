@@ -190,17 +190,21 @@
 
 .project-footer {
   display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 30px auto;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 50px 0 30px;
+  padding: 0 2vw;
+  box-sizing: border-box;
   color: var(--pink);
 }
 
 .project-footer a {
-  color: inherit;
+  color: var(--pink);
   text-decoration: none;
+  font-family: "Ulrike-font", sans-serif;
+  font-size: clamp(12px, 1.1vw, 15px);
+  font-weight: bold;
 }
-
 /* MOBILE */
 
 @media (max-width: 700px) {
@@ -327,5 +331,6 @@
 
   .project-footer {
     margin-top: 40px;
+  padding: 0;
   }
 }
