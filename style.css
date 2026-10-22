@@ -40,8 +40,10 @@
 .project-nav {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 22px;
   margin-left: auto;
+  margin-right: 0;
 }
 
 .all-projects {
