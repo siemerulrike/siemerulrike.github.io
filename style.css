@@ -32,14 +32,13 @@
 }
 
 .project-heading {
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
+  position: relative;
+  top: 12px;
 }
 
 .project-nav {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 22px;
   margin-left: auto;
 }
@@ -50,7 +49,7 @@
   font-size: 15px;
   font-weight: bold;
   white-space: nowrap;
-  padding-top: 12px;
+  padding-top: 0;
 }
 
 .contact-button {
@@ -222,12 +221,13 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  top: 8px;
 }
 
 .project-nav {
   margin-left: auto;
   gap: 12px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .all-projects {
