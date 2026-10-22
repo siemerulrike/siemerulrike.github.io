@@ -39,17 +39,32 @@
 
 .project-nav {
   display: flex;
-  align-items: center;
-  gap: 25px;
-  white-space: nowrap;
+  align-items: flex-start;
+  gap: 22px;
+  margin-left: auto;
 }
 
-.project-nav a {
+.all-projects {
   color: var(--pink);
   text-decoration: none;
-  font-size: clamp(12px, 1.1vw, 16px);
-  font-family: "Ulrike-font", sans-serif;
+  font-size: 15px;
   font-weight: bold;
+  white-space: nowrap;
+  padding-top: 12px;
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  height: 85px;
+  background: var(--pink);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  clip-path: path("M 52.5 80 C 42 69 5 48 5 28 C 5 5 32 0 52.5 20 C 73 0 100 5 100 28 C 100 48 63 69 52.5 80 Z");
 }
 
 .project-title {
@@ -210,13 +225,19 @@
 }
 
 .project-nav {
-  display: flex;
-  gap: 12px;
   margin-left: auto;
-  padding-top: 5px;
+  gap: 12px;
+  align-items: flex-start;
 }
 
-.project-nav a {
+.all-projects {
+  font-size: 10px;
+  padding-top: 10px;
+}
+
+.contact-button {
+  width: 75px;
+  height: 65px;
   font-size: 11px;
 }
 
