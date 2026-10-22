@@ -352,14 +352,22 @@
 
   /* FOOTER */
 
-  .project-footer {
-    margin: 35px 0 20px;
-    padding: 0;
-  }
+ .project-footer {
+  display: flex;
+  justify-content: flex-start;
+  margin: 35px 0 20px;
+  padding: 0;
+  width: 100%;
+}
 
-  .project-footer a {
-    font-size: 12px;
-  }
+.project-footer a {
+  color: var(--pink);
+  text-decoration: none;
+  font-family: "Ulrike-font", sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+}
 
 }
 
