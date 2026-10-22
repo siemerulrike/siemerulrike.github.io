@@ -201,6 +201,7 @@
   ..project-layout {
   display: flex;
   flex-direction: column;
+ width: 100%;
 }
 
 .project-collage {
@@ -214,18 +215,9 @@
   width: 100%;
   max-width: none;
   margin: 40px 0 0;
-  }
-
-  .project-note {
-    position: relative;
-    width: 95%;
-    max-width: none;
-    margin: 0 0 40px;
-    padding: 16px;
-    font-size: 15px;
-  position: sticky;
-  top: 40px;
-  z-index: 1;
+  padding: 16px;
+  box-sizing: border-box;
+  font-size: 15px;
 }
 
   .project-collage {
