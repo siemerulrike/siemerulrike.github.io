@@ -17,7 +17,7 @@
   overflow-x: hidden;
   margin: 0;
   font-family: "Ulrike-font", sans-serif;
-  font-weight: bold;
+  font-weight: regular;
 }
 
 /* HEADER */
@@ -33,12 +33,12 @@
 .project-title {
   color: var(--pink);
   font-family: "Ulrike-font", serif;
-  font-size: 42px;
+  font-size: clamp(24px, 3vw, 42px);
   text-decoration: none;
 }
 
 .project-type {
-  font-size: 18px;
+  font-size: clamp(13px, 1.3vw, 18px);
   font-weight: bold;
 }
 
@@ -46,6 +46,7 @@
   margin-left: auto;
   color: var(--pink);
   text-decoration: none;
+  font-size: clamp(12px, 1.1vw, 16px);
 }
 
 /* LAYOUT : TEXTE À GAUCHE, IMAGES À DROITE */
@@ -70,7 +71,7 @@
   box-sizing: border-box;
   color: var(--pink);
   border: 1px solid var(--pink);
-  font-size: 16px;
+  font-size: clamp(12px, 1.15vw, 16px);
   line-height: 1.6;
 }
 
@@ -197,8 +198,22 @@
     margin-left: 0;
   }
 
-  .project-layout {
-    display: block;
+  ..project-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-collage {
+  order: 1;
+  width: 100%;
+}
+
+.project-note {
+  order: 2;
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 40px 0 0;
   }
 
   .project-note {
