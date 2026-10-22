@@ -58,10 +58,11 @@
   align-items: center;
   justify-content: center;
   width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  background: var(--pink);
-  color: white;
+  height: 38px;
+  border: 1px solid var(--pink);
+  border-radius: 0;
+  background: white;
+  color: var(--pink);
   text-decoration: none;
   font-family: "Ulrike-font", sans-serif;
   font-size: 14px;
@@ -260,12 +261,12 @@
     padding: 0;
   }
 
-  .contact-button {
-    width: 58px;
-    height: 58px;
-    font-size: 10px;
-    flex-shrink: 0;
-  }
+ .contact-button {
+  width: 65px;
+  height: 30px;
+  font-size: 10px;
+  flex-shrink: 0;
+}
 
   /* LAYOUT : IMAGES PUIS TEXTE */
 
