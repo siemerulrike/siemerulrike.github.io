@@ -23,6 +23,8 @@
 /* HEADER */
 
 .project-header {
+  position: relative;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -32,9 +34,11 @@
 }
 
 .project-heading {
-  position: relative;
-  top: 35px;
-  margin-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 25px;
 }
 
 .project-nav {
@@ -71,9 +75,14 @@
 }
 
 .project-title {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
   color: var(--pink);
   font-family: "Ulrike-font", serif;
-  font-size: clamp(24px, 3vw, 42px);
+  font-size: clamp(14px, 10cqi, 42px);
+  font-weight: bold;
+  -webkit-text-stroke: 0.5px var(--pink);
   text-decoration: none;
 }
 
@@ -81,22 +90,22 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  white-space: nowrap;
 }
 
 .project-type,
 .project-year {
-  font-size: clamp(11px, 1.1vw, 15px);
+  font-size: clamp(12px, 1.2vw, 16px);
   font-weight: bold;
 }
 
-/* LAYOUT : TEXTE À GAUCHE, IMAGES À DROITE */
+/* LAYOUT COMMUN DES PAGES PROJET */
 
 .project-layout {
   display: grid;
-  grid-template-columns: 27% 73%;
-  width: 100%;
+  grid-template-columns: minmax(220px, 25%) minmax(0, 1fr);
+  gap: 30px;
   align-items: start;
-  gap: 0;
 }
 
 /* TEXTE */
@@ -104,45 +113,88 @@
 .project-note {
   position: sticky;
   top: 40px;
-  width: 88%;
+  align-self: start;
+  width: 100%;
+  min-width: 0;
   max-width: 390px;
   margin: 45px 0 0 2vw;
-  padding: 20px;
+  padding: 0;
   box-sizing: border-box;
+  container-type: inline-size;
   color: var(--pink);
-  border: 1px solid var(--pink);
+  border: none;
   font-size: clamp(12px, 1.15vw, 16px);
   line-height: 1.6;
 }
 
-/* COLLAGE */
+/* GALERIE AUTOMATIQUE */
 
-.project-collage {
-  position: relative;
+.project-collage.auto-collage {
+  margin-top: 30px;
   width: 100%;
-  max-width: none;
-  min-height: 1150px;
-  margin: 0;
-  z-index: 2;
+  columns: 3;
+  column-gap: 22px;
+  min-height: 0;
 }
 
-.item {
-  position: absolute;
-  margin: 0;
-  overflow: hidden;
-  background: white;
+.project-collage.auto-collage .item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 22px;
+  break-inside: avoid;
+  overflow: visible;
+  background: transparent;
 }
 
-.item img,
-.item video {
+.project-collage.auto-collage .item img,
+.project-collage.auto-collage .item video {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: none;
-  outline: none;
+  height: auto;
+  object-fit: contain;
 }
 
+/* COLLAGE : INCLINAISONS ET CHEVAUCHEMENTS */
+
+/* La majorité des images restent droites */
+
+.project-collage.auto-collage .item {
+  position: relative;
+  transform: none;
+}
+
+/* Quelques images inclinées */
+
+.project-collage.auto-collage .item:nth-child(4n + 2) {
+  transform: rotate(4deg);
+  z-index: 3;
+}
+
+.project-collage.auto-collage .item:nth-child(7n + 4) {
+  transform: rotate(-3deg);
+  z-index: 4;
+}
+
+.project-collage.auto-collage .item.item:nth-child(10n + 6) {
+  transform: rotate(2deg);
+  z-index: 3;
+}
+
+/* Quelques chevauchements */
+
+.project-collage.auto-collage .item:nth-child(7n + 2) {
+  margin-left: -15px;
+  margin-bottom: -20px;
+  z-index: 3;
+}
+
+.project-collage.auto-collage .item:nth-child(8n + 1) {
+  margin-top: -25px;
+  margin-left: 12px;
+  z-index: 4;
+}
 /* VIDÉO CAFÉ */
 
 .item-cafe {
@@ -376,6 +428,160 @@
   font-weight: bold;
   line-height: 1;
 }
-
 }
 
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .project-page {
+    padding: 20px 18px;
+    overflow-x: hidden;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin: 0 0 30px;
+  }
+
+  .project-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    top: 0;
+    margin-left: 0;
+    min-width: 0;
+  }
+
+  .project-title {
+    font-size: clamp(23px, 6vw, 32px);
+  }
+
+  .project-type {
+    font-size: 12px;
+  }
+
+  .project-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .all-projects {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .contact-button {
+    width: 65px;
+    height: 30px;
+    font-size: 10px;
+    flex-shrink: 0;
+  }
+
+  /* LAYOUT MOBILE */
+
+  .project-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+  }
+
+  .project-collage.auto-collage {
+    order: 1;
+    columns: 2;
+    column-gap: 12px;
+  }
+
+  .project-collage.auto-collage .item {
+    margin-bottom: 14px;
+    transform: none;
+  }
+
+  .project-note {
+    order: 2;
+    position: relative;
+    top: auto;
+    width: 100%;
+    max-width: none;
+    margin: 10px 0 0;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* PETIT DÉJEUNER */
+
+  .project-collage:not(.auto-collage) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 25px 14px;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .project-collage:not(.auto-collage) .item {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    transform: none;
+    overflow: hidden;
+  }
+
+  .project-collage:not(.auto-collage) .item img,
+  .project-collage:not(.auto-collage) .item video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .item-tartine {
+    grid-column: 1 / -1;
+    width: 90% !important;
+    justify-self: center;
+  }
+
+  .item-photo-a {
+    grid-column: 1;
+    width: 90% !important;
+  }
+
+  .item-photo-b {
+    grid-column: 2;
+    width: 90% !important;
+    margin-top: 25px;
+  }
+
+  /* FOOTER */
+
+  .project-footer {
+    display: flex;
+    justify-content: flex-start;
+    margin: 35px 0 20px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .project-footer a {
+    color: var(--pink);
+    text-decoration: none;
+    font-family: "Ulrike-font", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1;
+  }
+}
