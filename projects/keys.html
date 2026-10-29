@@ -5,18 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>J'ai perdu mes clés</title>
   <link rel="stylesheet" href="../style.css">
+
+ <script defer>
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector(".auto-collage");
+  if (!gallery) return;
+
+  const items = [...gallery.querySelectorAll(".item")];
+
+  function layoutGallery() {
+    const rowHeight = 4;
+    const gap = 12;
+
+    items.forEach(item => {
+      const media = item.querySelector("img, video");
+      if (!media) return;
+
+      if (!media.complete && media.tagName === "IMG") {
+        media.addEventListener("load", layoutGallery, { once: true });
+        return;
+      }
+
+      if (media.tagName === "VIDEO" && !media.videoWidth) {
+        media.addEventListener("loadedmetadata", layoutGallery, { once: true });
+        return;
+      }
+
+      const height = item.getBoundingClientRect().height;
+      const span = Math.ceil((height + gap) / (rowHeight + gap));
+
+      item.style.gridRowEnd = `span ${span}`;
+    });
+  }
+
+  items.forEach(item => {
+    const media = item.querySelector("img, video");
+    if (media) {
+      media.addEventListener("load", layoutGallery);
+      media.addEventListener("loadedmetadata", layoutGallery);
+    }
+  });
+
+  window.addEventListener("resize", layoutGallery);
+  layoutGallery();
+});
+</script>
+
 </head>
 
 <body class="project-page keys-page">
 
- <header class="project-header">
+
+<header class="project-header">
+
+  <a href="../index.html" class="all-projects">
+    ← ALL PROJECTS
+  </a>
+
+  <a href="../index.html" class="site-name">
+    Ulrike Siemer
+  </a>
 
   <nav class="project-nav">
-    <a href="../index.html" class="all-projects">← ALL PROJECTS</a>
-    <a href="#" class="contact-button">CONTACT</a>
+    <a href="#" class="shop-archives">
+      SHOP THE ARCHIVES
+    </a>
+
+    <a href="#" class="contact-button">
+      CONTACT
+    </a>
   </nav>
 
 </header>
+
 
 <div class="project-layout">
 
@@ -46,39 +107,36 @@
      <!-- PHOTO 7 -->
     <figure class="item">
       <img
-        src="../images/keys/keys-windowclose.JPG"
+        src="../images/keys/keys-close.JPG"
         alt="J'ai perdu mes clés - photo 7">
     </figure>
-
-
-     <!-- VIDEO CARREE -->
-    <figure class="item">
-      <video autoplay muted loop playsinline preload="metadata">
-        <source src="../images/keys/keys1.mp4" type="video/mp4">
-      </video>
-    </figure>
-
 
 
     <!-- PHOTO 1 -->
     <figure class="item">
       <img
-        src="../images/keys/keys-keys.JPG"
+        src="../images/keys/keys-windowclose.JPG"
         alt="J'ai perdu mes clés - photo 1">
     </figure>
 
+    <!-- VIDEO Verticale -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../images/keys/keys2.mp4" type="video/mp4">
+      </video>
+    </figure>
 
     <!-- PHOTO 2 -->
     <figure class="item">
       <img
-        src="../images/keys/keys-vitrinehaut.JPG"
+        src="../images/keys/keys-keys.JPG"
         alt="J'ai perdu mes clés - photo 2">
     </figure>
 
    <!-- PHOTO 3 -->
     <figure class="item">
       <img
-        src="../images/keys/keys-spaghetti.JPG"
+        src="../images/keys/keys-watch.jpg"
         alt="J'ai perdu mes clés - photo 3">
     </figure>
 
@@ -96,38 +154,45 @@
         alt="J'ai perdu mes clés - photo 5">
     </figure>
 
+    <!-- VIDEO carre -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../images/keys/keys1.mp4" type="video/mp4">
+      </video>
+    </figure>
+
      <!-- PHOTO 6 -->
     <figure class="item">
       <img
-        src="../images/keys/keys-windowfull.JPG"
+        src="../images/keys/keys-culotte.jpg"
         alt="J'ai perdu mes clés - photo 6">
-    </figure>
-
-    <!-- VIDEO VERTICALE -->
-    <figure class="item">
-      <video autoplay muted loop playsinline preload="metadata">
-        <source src="../images/keys/keys2.mp4" type="video/mp4">
-      </video>
     </figure>
 
     <!-- PHOTO 8 -->
     <figure class="item">
       <img
-        src="../images/keys/keys-culotte.jpg"
+        src="../images/keys/keys-sdb.JPG"
         alt="J'ai perdu mes clés - photo 8">
+    </figure>
+
+     <!-- PHOTO 11 -->
+    <figure class="item">
+      <img
+        src="../images/keys/keys-spaghettis.jpg"
+        alt="J'ai perdu mes clés - photo 11">
     </figure>
 
      <!-- PHOTO 9 -->
     <figure class="item">
       <img
-        src="../images/keys/keys-close.JPG"
+        src="../images/keys/keys-vitrinehaut.JPG"
         alt="J'ai perdu mes clés - photo 9">
     </figure>
 
      <!-- PHOTO 10 -->
-    <figure class="item">
+    <figure class="item landscape">
       <img
-        src="../images/keys/keys-sdb.JPG"
+        src="../images/keys/keys-windowfull.JPG"
         alt="J'ai perdu mes clés - photo 10">
     </figure>
   
