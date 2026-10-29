@@ -45,9 +45,16 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 22px;
-  margin-left: auto;
-  margin-right: 0;
+  gap: 18px;
+  white-space: nowrap;
+}
+.project-nav a {
+  color: var(--pink);
+  text-decoration: none;
+  font-family: "Ulrike-font", sans-serif;
+  font-size: clamp(11px, 1vw, 15px);
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .all-projects {
@@ -586,6 +593,19 @@
   font-size: 23px;
   font-weight: bold;
 }
+.home-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.home-subtitle {
+  color: var(--pink);
+  font-family: "Ulrike-font", sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
 
 .home-nav {
   display: flex;
@@ -618,7 +638,7 @@
   min-width: 0;
   height: auto;
   align-self: start;
-  overflow: hidden;
+  cursor: pointer;
 }
 
 .project-large {
@@ -647,12 +667,13 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(239, 101, 183, 0);
   transition: background 0.3s ease;
+  pointer-events: none;
 }
 
 .home-project:hover::after {
-  background: rgba(0, 0, 0, 0.22);
+  background: rgba(239, 101, 183, 0.4);
 }
 
 .home-project:hover img,
@@ -707,6 +728,9 @@
   .home-name {
     font-size: 17px;
   }
+  .home-subtitle {
+  font-size: 9px;
+}
 
   .home-nav {
     gap: 12px;
@@ -743,6 +767,136 @@
 
   .home-project-year {
     font-size: 11px;
+  }
+}
+
+/* ABOUT PAGE */
+
+.about-page {
+  margin: 0;
+  padding: 30px 3vw;
+  background: white;
+  color: var(--pink);
+  font-family: "Ulrike-font", sans-serif;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  align-items: start;
+  max-width: 1100px;
+  margin: 12vh auto 0;
+}
+
+.about-text {
+  max-width: 430px;
+}
+
+.about-text h1 {
+  font-size: clamp(30px, 4vw, 48px);
+  margin: 0 0 30px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 430px;
+}
+
+.about-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .about-page {
+    padding: 20px 18px;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 8vh 0 0;
+  }
+
+  .about-text h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+  }
+
+  .about-image {
+    max-width: 100%;
+  }
+}
+/* CONTACT PAGE */
+
+.contact-page {
+  margin: 0;
+  padding: 30px 3vw;
+  background: white;
+  color: var(--pink);
+  font-family: "Ulrike-font", sans-serif;
+}
+
+.contact-content {
+  margin: 18vh 0 0 8vw;
+  max-width: 500px;
+}
+
+.contact-content h1 {
+  font-size: clamp(30px, 4vw, 48px);
+  margin-bottom: 25px;
+}
+
+.contact-content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.contact-link {
+  display: block;
+  width: fit-content;
+  color: var(--pink);
+  text-decoration: none;
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .contact-page {
+    padding: 20px 18px;
+  }
+
+  .contact-content {
+    margin: 18vh 0 0;
+  }
+
+  .contact-content h1 {
+    font-size: 30px;
+  }
+
+  .contact-content p,
+  .contact-link {
+    font-size: 14px;
   }
 }
 
