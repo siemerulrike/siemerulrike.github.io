@@ -185,9 +185,24 @@
   object-fit: contain;
 }
 
+
 /* Images paysage */
 .project-collage.auto-collage .item.landscape {
   grid-column: span 2;
+}
+
+/* IMAGE PLEINE LARGEUR */
+
+.project-collage.auto-collage .item.full-width {
+  grid-column: 1 / -1;
+}
+
+/* IMAGE CENTREE AVEC ESPACES BLANCS */
+
+.project-collage.auto-collage .item.centered {
+  grid-column: 1 / -1;
+  width: 60%;
+  justify-self: center;
 }
 
 /* FOOTER */
@@ -302,6 +317,16 @@
   .project-collage.auto-collage .item.landscape {
     grid-column: span 2;
   }
+  
+  .project-collage.auto-collage .item.full-width {
+  grid-column: span 2;
+}
+
+.project-collage.auto-collage .item.centered {
+  grid-column: span 2;
+  width: 80%;
+  justify-self: center;
+}
 
   /* TEXTE */
 
