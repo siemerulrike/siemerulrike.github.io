@@ -615,7 +615,7 @@
   color: var(--pink);
   text-decoration: none;
   font-family: "Ulrike-font", sans-serif;
-  font-size: 23px;
+  font-size: 24px;
   font-weight: bold;
 }
 .home-brand {
@@ -628,7 +628,7 @@
 .home-subtitle {
   color: var(--pink);
   font-family: "Ulrike-font", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: normal;
 }
 
@@ -649,7 +649,7 @@
 
 .home-mosaic {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(16, minmax(0, 1fr));
   grid-auto-rows: auto;
   grid-auto-flow: dense;
   gap: 16px 12px;
@@ -657,27 +657,17 @@
   align-items: start;
 }
 
-.home-project {
-  position: relative;
-  display: block;
-  min-width: 0;
-  height: auto;
-  align-self: start;
-  cursor: pointer;
-}
-
 .project-large {
-  grid-column: span 5;
-}
-
-.project-medium {
   grid-column: span 4;
 }
 
-.project-small {
+.project-medium {
   grid-column: span 3;
 }
 
+.project-small {
+  grid-column: span 2;
+}
 .home-project img,
 .home-project video {
   display: block;
@@ -688,17 +678,14 @@
 }
 /* HOVER */
 
-.home-project::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(239, 101, 183, 0);
-  transition: background 0.3s ease;
-  pointer-events: none;
+.home-project {
+  position: relative;
+  overflow: hidden;
 }
 
-.home-project:hover::after {
-  background: rgba(239, 101, 183, 0.4);
+.home-project img,
+.home-project video {
+  transition: transform 0.4s ease;
 }
 
 .home-project:hover img,
@@ -706,36 +693,47 @@
   transform: scale(1.025);
 }
 
-/* TITLE AND YEAR */
+
+//* TITLE AND YEAR */
 
 .project-overlay {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
+  position: static;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 18px;
-  color: white;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.home-project:hover .project-overlay {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 0 0;
+  color: var(--pink);
   opacity: 1;
+  background: transparent;
+  pointer-events: none;
 }
 
 .home-project-title {
-  font-size: clamp(16px, 1.6vw, 24px);
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: normal;
 }
 
 .home-project-year {
-  font-size: 13px;
-  margin-top: 4px;
+  font-size: 10px;
+  margin: 0;
 }
 
+.home-project {
+  color: #00e1ff;
+  text-decoration: none;
+}
+
+.home-project:visited {
+  color: #00e1ff;
+  text-decoration: none;
+}
+
+.home-project-title,
+.home-project-year {
+  color: #00e1ff;
+  text-decoration: none;
+}
 
 /* MOBILE */
 
