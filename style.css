@@ -616,7 +616,7 @@
   color: var(--pink);
   text-decoration: none;
   font-family: "Ulrike-font", sans-serif;
-  font-size: 42px;
+  font-size: 46px;
   font-weight: bold;
 }
 .home-brand {
@@ -629,7 +629,7 @@
 .home-subtitle {
   color: var(--pink);
   font-family: "Ulrike-font", sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: normal;
 }
 
@@ -655,6 +655,7 @@
   gap: 45px;
   width: 100%;
   padding: 50px 4vw 30px;
+  padding-right: 0;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
@@ -670,8 +671,8 @@
 
 .home-project {
   display: block;
-  flex: 0 0 300px;
-  width: 300px;
+  flex: 0 0 18vw;
+  width: 18vw;
   color: #ef65b7;
   text-decoration: none;
 }
@@ -718,13 +719,43 @@
   }
 
   .home-project {
-    flex: 0 0 75vw;
-    width: 75vw;
-  }
+  flex: 0 0 75vw;
+  width: 75vw;
+}
 
   .home-project-title {
     font-size: 13px;
   }
+}
+
+/* GALLERY PROGRESS */
+
+.gallery-progress {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0 4vw;
+  padding: 10px 0;
+  color: var(--pink);
+}
+
+.gallery-progress-track {
+  flex: 1;
+  height: 6px;
+  background: #f5d5e9;
+  overflow: hidden;
+}
+
+.gallery-progress-bar {
+  width: 8%;
+  height: 100%;
+  background: var(--pink);
+  transition: width 0.15s ease;
+}
+
+.gallery-arrow {
+  font-size: 30px;
+  line-height: 1;
 }
 
 /* ABOUT PAGE */

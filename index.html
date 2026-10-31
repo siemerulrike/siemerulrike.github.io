@@ -75,6 +75,33 @@
   
 
 </main>
+<div class="gallery-progress">
+  <div class="gallery-progress-track">
+    <div class="gallery-progress-bar"></div>
+  </div>
+  <span class="gallery-arrow">→</span>
+</div>
 
+<script>
+const gallery = document.querySelector('.home-gallery');
+const progressBar = document.querySelector('.gallery-progress-bar');
+
+function updateGalleryProgress() {
+  const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
+  if (maxScroll <= 0) {
+    progressBar.style.width = '100%';
+    return;
+  }
+
+  const progress = gallery.scrollLeft / maxScroll;
+  progressBar.style.width = Math.max(8, progress * 100) + '%';
+}
+
+gallery.addEventListener('scroll', updateGalleryProgress);
+window.addEventListener('resize', updateGalleryProgress);
+
+updateGalleryProgress();
+</script>
 </body>
 </html>
