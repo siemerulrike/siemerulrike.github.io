@@ -64,6 +64,14 @@
     </div>
   </a>
 
+   <a href="projects/the-shapes-of-smell.html" class="home-project">
+    <img src="images/dress-up/dress-up1.jpg" alt="Dress Up">
+    <div class="project-overlay">
+      <span class="home-project-title">Dress Up</span>
+      <span class="home-project-year">2025</span>
+    </div>
+  </a>
+
   <a href="projects/feu.html" class="home-project">
     <img src="images/cardboard-outfits/Cardboardoutfit4.jpg" alt="Objects x Ocean">
     <div class="project-overlay">
@@ -84,21 +92,68 @@
 
 <script>
 const gallery = document.querySelector('.home-gallery');
-const progressBar = document.querySelector('.gallery-progress-bar');
+const track = document.querySelector('.gallery-progress-track');
+const bar = document.querySelector('.gallery-progress-bar');
 
 function updateGalleryProgress() {
   const maxScroll = gallery.scrollWidth - gallery.clientWidth;
 
-  if (maxScroll <= 0) {
-    progressBar.style.width = '100%';
-    return;
-  }
+  if (maxScroll <= 0) return;
 
-  const progress = gallery.scrollLeft / maxScroll;
-  progressBar.style.width = Math.max(8, progress * 100) + '%';
+  const visibleRatio = gallery.clientWidth / gallery.scrollWidth;
+  const barWidth = Math.max(8, visibleRatio * 100);
+  const maxBarMove = track.clientWidth - bar.offsetWidth;
+  const position = (gallery.scrollLeft / maxScroll) * maxBarMove;
+
+  bar.style.width = barWidth + '%';
+  bar.style.left = position + 'px';
 }
 
+// Défilement de la galerie
 gallery.addEventListener('scroll', updateGalleryProgress);
+
+// Molette de souris
+gallery.addEventListener('wheel', (event) => {
+  if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+    event.preventDefault();
+    gallery.scrollLeft += event.deltaY;
+  }
+}, { passive: false });
+
+// Cliquer et tirer la barre
+let dragging = false;
+
+track.addEventListener('pointerdown', (event) => {
+  dragging = true;
+  track.setPointerCapture(event.pointerId);
+  moveSlider(event);
+});
+
+track.addEventListener('pointermove', (event) => {
+  if (dragging) moveSlider(event);
+});
+
+track.addEventListener('pointerup', () => {
+  dragging = false;
+});
+
+track.addEventListener('pointercancel', () => {
+  dragging = false;
+});
+
+function moveSlider(event) {
+  const rect = track.getBoundingClientRect();
+  const barWidth = bar.offsetWidth;
+  const maxBarMove = track.clientWidth - barWidth;
+
+  let position = event.clientX - rect.left - barWidth / 2;
+  position = Math.max(0, Math.min(position, maxBarMove));
+
+  const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
+  gallery.scrollLeft = (position / maxBarMove) * maxScroll;
+}
+
 window.addEventListener('resize', updateGalleryProgress);
 
 updateGalleryProgress();

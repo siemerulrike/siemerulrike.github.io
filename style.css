@@ -740,21 +740,32 @@
 }
 
 .gallery-progress-track {
+  position: relative;
   flex: 1;
-  height: 6px;
+  height: 5px;
   background: #f5d5e9;
-  overflow: hidden;
+  cursor: pointer;
+  touch-action: none;
 }
 
 .gallery-progress-bar {
-  width: 8%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 5px;
   background: var(--pink);
-  transition: width 0.15s ease;
+  cursor: grab;
+  border-radius: 3px;
+}
+
+.gallery-progress-bar:active {
+  cursor: grabbing;
 }
 
 .gallery-arrow {
-  font-size: 30px;
+  font-size: 28px;
+  font-weight: bold;
   line-height: 1;
 }
 
