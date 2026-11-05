@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dress-up — Ulrike Siemer</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const gallery = document.querySelector(".auto-collage");
+      if (!gallery) return;
+
+      const items = [...gallery.querySelectorAll(".item")];
+
+      function layoutGallery() {
+        const rowHeight = 4;
+        const gap = 12;
+
+        items.forEach(item => {
+          const media = item.querySelector("img, video");
+          if (!media) return;
+
+          if (media.tagName === "IMG" && !media.complete) {
+            media.addEventListener("load", layoutGallery, { once: true });
+            return;
+          }
+
+          if (media.tagName === "VIDEO" && !media.videoWidth) {
+            media.addEventListener("loadedmetadata", layoutGallery, { once: true });
+            return;
+          }
+
+          const height = item.getBoundingClientRect().height;
+          const span = Math.ceil((height + gap) / (rowHeight + gap));
+
+          item.style.gridRowEnd = `span ${span}`;
+        });
+      }
+
+      items.forEach(item => {
+        const media = item.querySelector("img, video");
+        if (media) {
+          media.addEventListener("load", layoutGallery);
+          media.addEventListener("loadedmetadata", layoutGallery);
+        }
+      });
+
+      window.addEventListener("resize", layoutGallery);
+      layoutGallery();
+    });
+  </script>
+</head>
+
+<body class="project-page dress-up-page">
+
+  <header class="project-header">
+
+  <a href="../index.html" class="all-projects">
+    ← ALL PROJECTS
+  </a>
+
+  <a href="../index.html" class="site-name">
+    Ulrike Siemer
+  </a>
+
+  <nav class="project-nav">
+  <a href="../about.html">ABOUT</a>
+  <a href="../shop-the-archives.html">SHOP THE ARCHIVES</a>
+  <a href="../contact.html">CONTACT</a>
+</nav>
+
+</header>
+
+  <div class="project-layout">
+
+    <section class="project-note">
+
+      <div class="project-heading">
+        <a href="#" class="project-title">Dress-up</a>
+
+        <div class="project-meta">
+          <span class="project-type">Sculpture/Performance</span>
+          <span class="project-year">2025</span>
+        </div>
+      </div>
+
+      <p>
+        etting dressed, wearing a dress, shoes and a bag made out of papier-mâché.
+Imagining the basic forms of things: how would you draw a dress, a shoe, a bag, so that everyone immediately recognises them? I let my intuition guide me towards the colours. Shoes in my imagination? They are red! The dress? Blue, and a little pastel pink for the handbag.
+When I was a child, I wasn’t allowed to have any Barbies. Sometimes I feel like my work makes me do things I wasn’t able to do as a child, like playing silly dress-up games.
+      </p>
+
+    </section>
+
+    <main class="project-collage auto-collage">
+
+
+        <!-- PHOTO 1 -->
+      <figure class="item">
+        <img
+          src="../images/dress-up/dress-up2.jpg"
+          alt="Dress-up - photo 1">
+      </figure>
+
+<!-- VIDEO VERTICALE -->
+      <figure class="item">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="../images/dress-up/dress-up.mp4" type="video/mp4">
+        </video>
+      </figure>
+    
+     
+
+    </main>
+
+  </div>
+
+  <footer class="project-footer">
+    <a href="../index.html">← ALL PROJECTS</a>
+  </footer>
+
+</body>
+</html>
