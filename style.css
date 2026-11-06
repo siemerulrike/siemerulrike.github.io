@@ -430,13 +430,13 @@
 
 .archive-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 25px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 40px;
   row-gap: 65px;
   width: 100%;
 }
 
-/* ITEMS */
+//* ITEMS */
 
 .archive-item {
   min-width: 0;
@@ -456,13 +456,14 @@
 
 .archive-info {
   margin-top: 12px;
+  text-align: center;
 }
 
 .archive-title-row {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 .archive-title-row h2 {
