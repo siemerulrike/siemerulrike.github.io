@@ -654,13 +654,20 @@
   align-items: flex-start;
   gap: 45px;
   width: 100%;
-  padding: 50px 4vw 30px;
+  padding: 15px 4vw 30px;
   padding-right: 0;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+}
+
+.gallery-heading {
+  color: var(--pink);
+  font-size: 20px;
+  font-weight: normal;
+  margin: 5px 4vw 0;
 }
 
 .home-gallery::-webkit-scrollbar {
@@ -767,6 +774,62 @@
   font-size: 28px;
   font-weight: bold;
   line-height: 1;
+}
+
+/* IN THE STUDIO */
+
+.studio-section {
+  margin: 100px 4vw 80px;
+}
+
+.studio-title {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.studio-heading {
+  color: var(--pink);
+  font-family: "Ulrike-font", sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.studio-title video {
+  display: block;
+  width: 200px;
+  height: 120px;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.studio-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 25px;
+  width: 100%;
+  align-items: start;
+}
+
+.studio-item img,
+.studio-item video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 650px) {
+  .studio-section {
+    margin: 65px 18px 50px;
+  }
+
+   .studio-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
 }
 
 /* ABOUT PAGE */
