@@ -1,0 +1,117 @@
+
+@font-face {
+  font-family: 'Ulrike-font';
+  src: url('Ulrike-font.otf') format('opentype');
+}
+
+:root {
+  --pink: #fa5dd0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Ulrike-font', sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Ulrike-font', sans-serif;
+}
+
+/* BACKGROUND VIDEO */
+
+.home-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.home-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* HEADER */
+
+.home-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 3vw;
+  color: var(--pink);
+}
+
+.home-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-name {
+  font-family: 'Ulrike-font', sans-serif;
+  font-size: 42px;
+  font-weight: bold;
+  color: var(--pink);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.home-subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.project-nav {
+  display: flex;
+  gap: 30px;
+  padding-top: 12px;
+}
+
+.project-nav a {
+  font-family: 'Ulrike-font', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--pink);
+  text-decoration: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .home-header {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .home-identity h1 {
+    font-size: 32px;
+  }
+
+  .home-nav {
+    gap: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .home-video video {
+    object-position: 50% 20%;
+  }
+}
