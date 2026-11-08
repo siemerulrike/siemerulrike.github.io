@@ -85,9 +85,9 @@
 .project-layout {
   display: grid;
   grid-template-columns: minmax(220px, 25%) minmax(0, 1fr);
-  gap: 30px;
+  gap: 50px;
   align-items: start;
-  margin: 70px 3vw 0;
+  margin: 70px 3vw 0 2vw;
 }
 
 /* TEXTE */
@@ -192,6 +192,14 @@
 
   /* HEADER */
 
+  .project-page .page-header {
+  padding-bottom: 10px;
+}
+
+.project-layout {
+  margin-top: 0;
+}
+
   .project-nav {
     display: flex;
     align-items: center;
@@ -228,11 +236,22 @@
   /* LAYOUT */
 
   .project-layout {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 25px;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.project-note {
+  order: 1;
+  width: 100%;
+}
+
+.project-collage {
+  order: 2;
+  width: 100%;
+}
 
   /* GALERIE */
 
@@ -631,57 +650,64 @@
 
 /* IN THE STUDIO */
 
-.studio-section {
-  margin: 100px 4vw 80px;
-}
-
-.studio-title {
-  display: flex;
-  align-items: flex-end;
-  gap: 0;
-  margin-bottom: 20px;
-  line-height: 1;
-}
-
-.studio-heading {
+.studio-page {
+  margin: 0;
+  padding: 0;
+  background: white;
   color: var(--pink);
   font-family: "Ulrike-font", sans-serif;
-  font-size: 20px;
-  font-weight: normal;
-  margin: 0;
 }
 
-.studio-title video {
+.studio-page .page-title,
+.studio-page .studio-description {
+  color: var(--pink);
+}
+
+.studio-description {
+  max-width: 450px;
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* STUDIO PAGE GALLERY */
+
+.studio-page .studio-gallery {
   display: block;
-  width: 200px;
-  height: 120px;
-  object-fit: contain;
-  object-position: bottom;
-}
-
-.studio-gallery {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 25px;
+  columns: 4;
+  column-gap: 18px;
+  padding: 0 4vw;
   width: 100%;
-  align-items: start;
+  box-sizing: border-box;
 }
 
-.studio-item img,
-.studio-item video {
+.studio-page .studio-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 18px;
+  break-inside: avoid;
+}
+
+.studio-page .studio-item img,
+.studio-page .studio-item video {
   display: block;
   width: 100%;
   height: auto;
 }
 
 @media (max-width: 650px) {
-  .studio-section {
-    margin: 65px 18px 50px;
+  .studio-description {
+    font-size: 14px;
   }
 
-   .studio-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
+  .studio-page .studio-gallery {
+    columns: 2;
+    column-gap: 12px;
+    padding: 0 18px;
+  }
+
+  .studio-page .studio-item {
+    margin-bottom: 12px;
   }
 }
 
@@ -697,20 +723,14 @@
 
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 8vw;
   align-items: start;
-  max-width: 1100px;
-  margin: 12vh auto 0;
+  margin: 0 4vw;
 }
 
 .about-text {
   max-width: 430px;
-}
-
-.about-text h1 {
-  font-size: clamp(30px, 4vw, 48px);
-  margin: 0 0 30px;
 }
 
 .about-text p {
@@ -733,20 +753,24 @@
 /* MOBILE */
 
 @media (max-width: 700px) {
+
   .about-page {
-    padding: 20px 18px;
+    padding: 0;
+  }
+
+  .about-page .page-intro {
+    margin: 0 18px 25px;
   }
 
   .about-content {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin: 8vh 0 0;
+    margin: 0 18px;
   }
 
-  .about-text h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
+  .about-text {
+    max-width: 100%;
   }
 
   .about-text p {
@@ -855,6 +879,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
+  transform: translateY(-16px);
 }
 
 .home-name {
@@ -1065,7 +1090,7 @@
 /* COMMON PAGE TITLES */
 
 .page-intro {
-  margin: 0 0 25px 3vw;
+  margin: 0 0 25px 4vw;
 }
 .shop .page-intro {
   margin-bottom: 65px;
@@ -1074,7 +1099,7 @@
 .page-title {
   margin: 0;
   font-family: "Ulrike-font", sans-serif;
-  font-size: clamp(30px, 4vw, 40px);
+  font-size: clamp(26px, 4vw, 34px);
   font-weight: bold;
   line-height: 1.1;
 }
@@ -1100,6 +1125,7 @@
     transform: none;
   }
 }
+
 /* ALIGNEMENT HEADER PAGES */
 
 .page-header {
@@ -1108,5 +1134,18 @@
 @media (min-width: 1001px) {
   .page-header .project-nav {
     transform: translateY(-12px);
+  }
+}
+@media (max-width: 700px) {
+  .page-header {
+    padding: 20px 18px
+  }
+
+  .project-page .page-header {
+    padding-bottom: 10px;
+  }
+
+  .project-page .project-layout {
+    margin-top: 0;
   }
 }

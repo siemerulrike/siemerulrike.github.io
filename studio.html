@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>In the Studio — Ulrike Siemer</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="studio-page">
+
+  <!-- HEADER -->
+
+  <header class="page-header">
+
+    <a href="home.html" class="page-name">Ulrike Siemer</a>
+
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="project-nav">
+      <a href="selected-projects.html">PROJECTS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="studio.html">IN THE STUDIO</a>
+      <a href="shop.html">SHOP</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+
+  </header>
+
+
+  <!-- INTRODUCTION -->
+
+  <main class="studio-main">
+
+    <section class="page-intro">
+      <h1 class="page-title">In the Studio</h1>
+
+      <p class="studio-description">
+        A glimpse into my studio, work in progress. 
+      </p>
+    </section>
+
+
+    <!-- STUDIO GALLERY -->
+
+    <section class="studio-gallery">
+
+
+      <div class="studio-item landscape">
+        <img src="images/studio/studio3.jpeg" alt="Work in progress">
+      </div>
+
+      <div class="studio-item landscape">
+        <img src="images/studio/studio1.jpeg" alt="Work in progress">
+      </div>
+
+      <div class="studio-item">
+        <img src="images/studio/studio2.jpeg" alt="Work in progress">
+      </div>
+
+      <div class="studio-item">
+        <img src="images/studio/studio4.jpeg" alt="Work in progress">
+      </div>
+
+
+<div class="studio-item">
+        <video autoplay muted loop playsinline>
+          <source src="images/studio/dance.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="studio-item landscape">
+        <img src="images/studio/studio5.JPG" alt="Work in progress">
+      </div>
+
+      <div class="studio-item">
+        <img src="images/studio/studio6.jpeg" alt="Work in progress">
+      </div>
+
+      <div class="studio-item">
+        <img src="images/studio/studio7.jpeg" alt="Work in progress">
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- HAMBURGER MENU -->
+
+  <script>
+    document.querySelectorAll('.menu-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const header = button.closest('header');
+        const isOpen = header.classList.toggle('menu-open');
+
+        button.setAttribute('aria-expanded', isOpen);
+        button.innerHTML = isOpen ? '×' : '☰';
+      });
+    });
+  </script>
+
+</body>
+</html>
