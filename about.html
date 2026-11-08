@@ -62,6 +62,16 @@
     </div>
 
   </main>
+<script>
+  document.querySelectorAll('.menu-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const header = button.closest('header');
+      const isOpen = header.classList.toggle('menu-open');
 
+      button.setAttribute('aria-expanded', isOpen);
+      button.innerHTML = isOpen ? '×' : '☰';
+    });
+  });
+</script>
 </body>
 </html>
