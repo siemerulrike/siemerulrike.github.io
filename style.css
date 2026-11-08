@@ -362,8 +362,8 @@
 
 /* SHOP THE ARCHIVES */
 
-.archive-page {
-  padding: 40px 3vw;
+.shop {
+  padding: 30px 3vw;
   margin: 0;
   background: white;
   color: var(--pink);
@@ -371,64 +371,33 @@
   overflow-x: hidden;
 }
 
-/* HEADER */
-
-.archive-header {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 80px;
-}
-
-.archive-back {
-  justify-self: start;
-}
-
-.archive-name {
-  justify-self: center;
-  font-size: clamp(16px, 1.6vw, 23px);
-  font-weight: bold;
-}
-
-.archive-contact {
-  justify-self: end;
-}
-
-.archive-header a {
-  color: var(--pink);
-  text-decoration: none;
-  font-size: clamp(11px, 1vw, 15px);
-  font-weight: bold;
-  white-space: nowrap;
-}
 
 /* INTRODUCTION */
 
-.archive-main {
+.shop-main {
   width: 100%;
 }
 
-.archive-intro {
+.shop-intro {
   max-width: 450px;
   margin: 0 0 65px 2vw;
 }
 
-.archive-intro h1 {
+.shop-intro h1 {
   margin: 0 0 20px;
   font-family: "Ulrike-font", sans-serif;
   font-size: clamp(30px, 4vw, 52px);
   font-weight: bold;
 }
 
-.archive-intro p {
+.shop-intro p {
   font-size: 15px;
   line-height: 1.6;
 }
 
 /* GRID */
 
-.archive-grid {
+.shop-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   column-gap: 40px;
@@ -438,35 +407,35 @@
 
 //* ITEMS */
 
-.archive-item {
+.shop-item {
   min-width: 0;
 }
 
-.archive-image {
+.shop-image {
   width: 100%;
   overflow: hidden;
 }
 
-.archive-image img {
+.shop-image img {
   display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-.archive-info {
+.shop-info {
   margin-top: 12px;
   text-align: center;
 }
 
-.archive-title-row {
+.shop-title-row {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
 }
 
-.archive-title-row h2 {
+.shop-title-row h2 {
   margin: 0;
   font-size: 16px;
   font-weight: bold;
@@ -485,12 +454,12 @@
   color: #999;
 }
 
-.archive-details {
+.shop-details {
   margin: 5px 0;
   font-size: 13px;
 }
 
-.archive-price {
+.shop-price {
   margin: 8px 0 0;
   font-size: 14px;
   font-weight: bold;
@@ -498,22 +467,22 @@
 
 /* CONTACT SECTION */
 
-.archive-contact-section {
+.shop-contact-section {
   margin: 120px 0 50px 2vw;
   max-width: 450px;
 }
 
-.archive-contact-section h2 {
+.shop-contact-section h2 {
   font-size: 24px;
   margin-bottom: 15px;
 }
 
-.archive-contact-section p {
+.shop-contact-section p {
   font-size: 15px;
   line-height: 1.6;
 }
 
-.archive-email {
+.shop-email {
   display: inline-block;
   margin-top: 15px;
   color: var(--pink);
@@ -526,48 +495,39 @@
 
 @media (max-width: 700px) {
 
-  .archive-page {
+  .shop {
     padding: 20px 18px;
   }
 
-  .archive-header {
-    margin-bottom: 55px;
-    gap: 5px;
-  }
-
-  .archive-header a {
-    font-size: 9px;
-  }
-
-  .archive-name {
+  .shop-name {
     font-size: 14px;
   }
 
-  .archive-intro {
+  .shop-intro {
     margin: 0 0 45px;
   }
 
-  .archive-intro h1 {
+  .shop-intro h1 {
     font-size: 32px;
   }
 
-  .archive-intro p {
+  .shop-intro p {
     font-size: 14px;
   }
 
-  .archive-grid {
+  .shop-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 14px;
     row-gap: 40px;
   }
 
-  .archive-title-row {
+  .shop-title-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
   }
 
-  .archive-title-row h2 {
+  .shop-title-row h2 {
     font-size: 14px;
   }
 
@@ -575,19 +535,19 @@
     font-size: 11px;
   }
 
-  .archive-details {
+  .shop-details {
     font-size: 12px;
   }
 
-  .archive-price {
+  .shop-price {
     font-size: 13px;
   }
 
-  .archive-contact-section {
+  .shop-contact-section {
     margin: 75px 0 35px;
   }
 
-  .archive-contact-section h2 {
+  .shop-contact-section h2 {
     font-size: 21px;
   }
 
@@ -595,7 +555,7 @@
 
 /* HOMEPAGE */
 
-.home-page {
+.selected-projects {
   margin: 0;
   padding: 30px 3vw;
   background: rgb(255, 255, 255);
@@ -604,48 +564,6 @@
   overflow-x: hidden;
 }
 
-/* HEADER */
-
-.home-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 45px;
-}
-
-.home-name {
-  color: var(--pink);
-  text-decoration: none;
-  font-family: "Ulrike-font", sans-serif;
-  font-size: 46px;
-  font-weight: bold;
-}
-.home-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-}
-
-.home-subtitle {
-  color: var(--pink);
-  font-family: "Ulrike-font", sans-serif;
-  font-size: 18px;
-  font-weight: normal;
-}
-
-.home-nav {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-.home-nav a {
-  color: var(--pink);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: bold;
-}
 
 /* HORIZONTAL GALLERY */
 
@@ -962,31 +880,6 @@
     font-size: 14px;
   }
 }
-/* PROJECTS HEADER */
-
-.archive-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 3vw;
-}
-
-.archive-name {
-  font-family: 'Ulrike-font', sans-serif;
-  font-size: 16px;
-  font-weight: normal;
-  color: var(--pink);
-  text-decoration: none;
-}
-.video-home-page {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: white;
-  color: var(--pink);
-  font-family: "Ulrike-font", sans-serif;
-}
-
 
 /* HOME VIDEO */
 
@@ -1012,7 +905,8 @@
 
 /* HEADER */
 
-.home-header {
+.home-header,
+.page-header {
   position: relative;
   z-index: 2;
   display: flex;
@@ -1040,6 +934,8 @@
 
 .home-subtitle {
   color: var(--pink);
+    font-family: "Ulrike-font", sans-serif;
+
   font-size: 18px;
   font-weight: bold;
   margin-top: 5px;
@@ -1067,14 +963,9 @@
 
 /* PROJECTS HEADER */
 
-.archive-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 3vw;
-}
+/* SECONDARY PAGES HEADER */
 
-.archive-name {
+.page-name {
   font-family: "Ulrike-font", sans-serif;
   font-size: 16px;
   font-weight: normal;
@@ -1152,7 +1043,7 @@
 @media (max-width: 800px) {
 
     .home-header,
-  .archive-header {
+  .page-header {
     position: relative;
     flex-wrap: wrap;
   }
@@ -1167,7 +1058,7 @@
 
 
   .home-header .project-nav,
-  .archive-header .project-nav {
+  .page-header .project-nav {
     display: none;
     width: 100%;
     flex-direction: column;
@@ -1177,10 +1068,122 @@
   }
 
   .home-header.menu-open .project-nav,
-  .archive-header.menu-open .project-nav {
+  .page-header.menu-open .project-nav {
     display: flex;
   }
 }
 .home-subtitle {
   white-space: nowrap;
+}
+/* GENERAL PAGE HEADER */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 3vw;
+  flex-wrap: nowrap;
+}
+
+/* NAME LEFT */
+
+.page-name {
+  font-family: "Ulrike-font", sans-serif;
+  font-size: 16x;
+  font-weight: bold;
+  color: var(--pink);
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  top: -10px;
+}
+
+/* MENU RIGHT */
+
+.page-header .project-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  padding-top: 0;
+  margin-top: -35px;
+  margin-right: -3vw;
+}
+
+.page-header .project-nav a {
+  color: var(--pink);
+  text-decoration: none;
+  font-family: "Ulrike-font", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* BURGER BUTTON */
+
+.page-header .menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--pink);
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 5px;
+  position: relative;
+  z-index: 10;
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 1000px) {
+
+  .page-header {
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .page-header .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .page-header .project-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 18px;
+    padding: 25px 0 10px;
+  }
+
+  .page-header.menu-open .project-nav {
+    display: flex;
+  }
+}
+/* COMMON PAGE TITLES */
+
+.page-intro {
+  margin: 0 0 25px 3vw;
+}
+.shop .page-intro {
+  margin-bottom: 65px;
+}
+
+.page-title {
+  margin: 0;
+  font-family: "Ulrike-font", sans-serif;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+/* SHOP DESCRIPTION */
+
+.shop-description {
+  max-width: 450px;
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.6;
 }

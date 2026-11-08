@@ -11,31 +11,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="home-page">
+<body class="selected-projects">
 
  
   <!-- HEADER -->
 
-  <header class="archive-header">
+  <header class="page-header">
 
-  <a href="home.html" class="archive-name">Ulrike Siemer</a>
+  <a href="home.html" class="page-name">Ulrike Siemer</a>
 
 <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
   ☰
 </button>
 
   <nav class="project-nav">
-    <a href="projects.html">PROJECTS</a>
+    <a href="selected-projects.html">PROJECTS</a>
     <a href="about.html">ABOUT</a>
     <a href="studio.html">IN THE STUDIO</a>
-    <a href="shop-the-archives.html">SHOP</a>
+    <a href="shop.html">SHOP</a>
     <a href="contact.html">CONTACT</a>
   </nav>
 
 </header>
 
+<main class="selected-projects-main">
 
-  <h2 class="gallery-heading">This is everything I've made so far</h2>
+  <section class="page-intro">
+    <h1 class="page-title">Selected Projects</h1>
+  </section>
 
   <main class="home-gallery">
 
@@ -187,5 +190,20 @@ window.addEventListener('resize', updateGalleryProgress);
 
 updateGalleryProgress();
 </script>
+
+
+<!-- MENU BURGER -->
+<script>
+document.querySelectorAll('.menu-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const header = button.closest('header');
+    const isOpen = header.classList.toggle('menu-open');
+
+    button.setAttribute('aria-expanded', isOpen);
+    button.innerHTML = isOpen ? '×' : '☰';
+  });
+});
+</script>
+
 </body>
 </html>
