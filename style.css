@@ -386,17 +386,20 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  text-align: center;
 }
 
 .shop-title-row h2 {
   margin: 0;
   font-size: 16px;
   font-weight: bold;
+  text-align: center;
 }
 
 .availability {
   font-size: 12px;
   white-space: nowrap;
+  text-align: center;
 }
 
 .available {
@@ -410,12 +413,14 @@
 .shop-details {
   margin: 5px 0;
   font-size: 13px;
+  text-align: center;
 }
 
 .shop-price {
   margin: 8px 0 0;
   font-size: 14px;
   font-weight: bold;
+  text-align: center;
 }
 
 /* CONTACT SECTION */
@@ -476,9 +481,10 @@
 
   .shop-title-row {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 4px;
-  }
+    text-align: center;
+}
 
   .shop-title-row h2 {
     font-size: 14px;
@@ -791,17 +797,28 @@
   font-family: "Ulrike-font", sans-serif;
 }
 
+.contact-page .page-intro {
+  margin: 0 0 25px 4vw;
+}
+
 .contact-content {
-  margin: 18vh 0 0 8vw;
-  max-width: 500px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8vw;
+  align-items: start;
+  margin: 0 4vw;
 }
 
-.contact-content h1 {
+.contact-text {
+  max-width: 430px;
+}
+
+.contact-text h1 {
   font-size: clamp(30px, 4vw, 48px);
-  margin-bottom: 25px;
+  margin: 0 0 20px;
 }
 
-.contact-content p {
+.contact-text p {
   font-size: 16px;
   margin-bottom: 25px;
   line-height: 1.6;
@@ -820,22 +837,51 @@
   text-decoration: underline;
 }
 
+.contact-image {
+  width: 100%;
+  max-width: 430px;
+}
+
+.contact-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* MOBILE */
+
 @media (max-width: 700px) {
+
   .contact-page {
-    padding: 20px 18px;
+    padding: 0;
+  }
+
+  .contact-page .page-intro {
+    margin: 0 18px 25px;
   }
 
   .contact-content {
-    margin: 18vh 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 18px;
   }
 
-  .contact-content h1 {
+  .contact-text {
+    max-width: 100%;
+  }
+
+  .contact-text h1 {
     font-size: 30px;
   }
 
-  .contact-content p,
+  .contact-text p,
   .contact-link {
     font-size: 14px;
+  }
+
+  .contact-image {
+    max-width: 100%;
   }
 }
 
