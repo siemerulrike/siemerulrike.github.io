@@ -842,9 +842,11 @@
   max-width: 430px;
 }
 
-.contact-image img {
+.contact-image img,
+.contact-image video {
   display: block;
   width: 100%;
+  max-width: 350px;
   height: auto;
 }
 
