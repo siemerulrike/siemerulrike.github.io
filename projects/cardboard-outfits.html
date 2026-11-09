@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cardboard Outfits</title>
+  <link rel="stylesheet" href="../style.css">
+
+ <script defer>
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector(".auto-collage");
+  if (!gallery) return;
+
+  const items = [...gallery.querySelectorAll(".item")];
+
+  function layoutGallery() {
+    const rowHeight = 4;
+    const gap = 12;
+
+    items.forEach(item => {
+      const media = item.querySelector("img, video");
+      if (!media) return;
+
+      if (!media.complete && media.tagName === "IMG") {
+        media.addEventListener("load", layoutGallery, { once: true });
+        return;
+      }
+
+      if (media.tagName === "VIDEO" && !media.videoWidth) {
+        media.addEventListener("loadedmetadata", layoutGallery, { once: true });
+        return;
+      }
+
+      const height = item.getBoundingClientRect().height;
+      const span = Math.ceil((height + gap) / (rowHeight + gap));
+
+      item.style.gridRowEnd = `span ${span}`;
+    });
+  }
+
+  items.forEach(item => {
+    const media = item.querySelector("img, video");
+    if (media) {
+      media.addEventListener("load", layoutGallery);
+      media.addEventListener("loadedmetadata", layoutGallery);
+    }
+  });
+
+  window.addEventListener("resize", layoutGallery);
+  layoutGallery();
+});
+</script>
+
+</head>
+
+<body class="project-page cardboard-page">
+
+
+<header class="page-header">
+
+  <a href="../home.html" class="page-name">ULRIKE SIEMER</a>
+
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+    ☰
+  </button>
+
+  <nav class="project-nav">
+    <a href="../selected-projects.html">PROJECTS</a>
+    <a href="../about.html">ABOUT</a>
+    <a href="../studio.html">IN THE STUDIO</a>
+    <a href="../shop.html">SHOP</a>
+    <a href="../contact.html">CONTACT</a>
+  </nav>
+
+</header>
+
+<div class="project-layout">
+
+  <section class="project-note">
+
+    <div class="project-heading">
+      <a href="#" class="project-title">Cardboard Outfits</a>
+
+      <div class="project-meta">
+        <span class="project-type">Set-design, photo and video</span>
+        <span class="project-year">2026</span>
+      </div>
+    </div>
+
+    <p>
+      Experimenting with 2D shapes brought into a photoshoot and a stop-motion video. This is a first step towards broadening my exploration of shapes and forms, while continuing my work with colours and clothing.
+      How do clothes change the way I see myself and the way others see me? Can I imagine all kinds of shapes, or are there limits? Can 2D create the illusion of 3D? And is my papier-mâché work doing the opposite using 3D forms to create the illusion of 2D?
+      This series raises many questions and marks an important step in the ongoing development of my work.
+
+    </p>
+
+  </section>
+
+  <main class="project-collage auto-collage">
+
+    <!-- VIDEO Verticale -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../images/cardboard-outfits/cardboard-egg.mp4" type="video/mp4">
+      </video>
+    </figure>
+    
+    <!-- PHOTO 1 -->
+    <figure class="item landscape">
+      <img
+        src="../images/cardboard-outfits/cardboard-spoon.jpg"
+        alt="J'ai perdu mes clés - photo 1">
+    </figure>
+
+
+    <!-- PHOTO 2 -->
+    <figure class="item">
+      <img
+        src="../images/cardboard-outfits/cardboard-bag.jpg"
+        alt="J'ai perdu mes clés - photo 2">
+    </figure>
+
+  <!-- VIDEO Verticale -->
+    <figure class="item landscape">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../images/cardboard-outfits/cardboard-wash.mp4" type="video/mp4">
+      </video>
+    </figure>
+
+    <!-- VIDEO Verticale -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../images/cardboard-outfits/cardboard-fall.mp4" type="video/mp4">
+      </video>
+    </figure>
+
+    <!-- PHOTO 3 -->
+    <figure class="item">
+      <img
+        src="../images/cardboard-outfits/cardboard-phone.jpg"
+        alt="J'ai perdu mes clés - photo 3">
+    </figure>
+
+   <!-- PHOTO 4 -->
+    <figure class="item landscape">
+      <img
+        src="../images/cardboard-outfits/cardboard-process1.jpg"
+        alt="J'ai perdu mes clés - photo 4">
+    </figure>
+
+     <!-- PHOTO 6 -->
+    <figure class="item landscape">
+      <img
+        src="../images/cardboard-outfits/cardboard-process3.jpg"
+        alt="J'ai perdu mes clés - photo 6">
+    </figure>
+
+    <!-- VIDEO Verticale -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../images/cardboard-outfits/cardboard-dance.mp4" type="video/mp4">
+      </video>
+    </figure>
+
+    <!-- VIDEO Verticale -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../images/cardboard-outfits/cardboard-paint.mp4" type="video/mp4">
+      </video>
+    </figure>
+  
+  </main>
+
+
+ </div>
+
+<footer class="project-footer">
+  <a href="../index.html">← ALL PROJECTS</a>
+</footer>
+<script>
+  document.querySelectorAll('.menu-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const header = button.closest('header');
+      const isOpen = header.classList.toggle('menu-open');
+
+      button.setAttribute('aria-expanded', isOpen);
+      button.innerHTML = isOpen ? '×' : '☰';
+    });
+  });
+</script>
+</body>
+</html>
