@@ -96,46 +96,79 @@
   </h2>
 
   <div class="studio-video-gallery">
-    <!-- Add your videos here -->
 
-<div class="studio-video-gallery">
+    <div class="studio-video-item">
+      <video
+        class="studio-video-thumb"
+        muted
+        playsinline
+        preload="metadata"
+        poster="images/studio/covers/studio-work-update.jpg"
+        data-video="images/studio/studio-work-update.mp4">
+      </video>
+      <p class="studio-video-caption">A day in the studio</p>
+    </div>
 
-  <div class="studio-video-item">
-    <video controls playsinline preload="metadata">
-      <source src="images/studio/studio-work-update.mp4" type="video/mp4">
-    </video>
-    <p class="studio-video-caption">A day in the studio</p>
+    <div class="studio-video-item">
+      <video
+        class="studio-video-thumb"
+        muted
+        playsinline
+        preload="metadata"
+        poster="images/studio/covers/technique-update.jpg"
+        data-video="images/studio/technique-update.mp4">
+      </video>
+      <p class="studio-video-caption">New technique?</p>
+    </div>
+
+    <div class="studio-video-item">
+      <video
+        class="studio-video-thumb"
+        muted
+        playsinline
+        preload="metadata"
+        poster="images/studio/covers/work-garden.jpg"
+        data-video="images/studio/work-garden.mp4">
+      </video>
+      <p class="studio-video-caption">In the garden</p>
+    </div>
+
+    <div class="studio-video-item">
+      <video
+        class="studio-video-thumb"
+        muted
+        playsinline
+        preload="metadata"
+        poster="images/studio/covers/work-dry.jpg"
+        data-video="images/studio/work-dry.mp4">
+      </video>
+      <p class="studio-video-caption">Always waiting for stuff to dry</p>
+    </div>
+
+    <div class="studio-video-item">
+      <video
+        class="studio-video-thumb"
+        muted
+        playsinline
+        preload="metadata"
+        poster="images/studio/covers/piknikdouille-making-of.jpg"
+        data-video="images/studio/piknikdouille-making-of.mp4">
+      </video>
+      <p class="studio-video-caption">Making-of Piknikdouille</p>
+    </div>
+
   </div>
-
-  <div class="studio-video-item">
-    <video controls playsinline preload="metadata">
-      <source src="images/studio/technique-update.mp4" type="video/mp4">
-    </video>
-    <p class="studio-video-caption">New techniaue?</p>
-  </div>
-
-  <div class="studio-video-item">
-    <video controls playsinline preload="metadata">
-      <source src="images/studio/work-garden.mp4" type="video/mp4">
-    </video>
-    <p class="studio-video-caption">In the garden</p>
-  </div>
-
-  <div class="studio-video-item">
-    <video controls playsinline preload="metadata">
-      <source src="images/studio/work-dry.mp4" type="video/mp4">
-    </video>
-    <p class="studio-video-caption">Always waiting for stuff to dry</p>
-  </div>
-
-  <div class="studio-video-item">
-    <video controls playsinline preload="metadata">
-      <source src="images/studio/piknikdouille-making-of.mp4" type="video/mp4">
-    </video>
-    <p class="studio-video-caption">Making-of Piknikdouille</p>
-  </div>
-
 </section>
+
+<!-- VIDEO OVERLAY -->
+
+<div class="studio-video-overlay" id="studioVideoOverlay">
+  <button class="studio-video-close" aria-label="Close video">×</button>
+  <video id="studioActiveVideo" controls playsinline
+    controlsList="nofullscreen nodownload noremoteplayback"
+    disablePictureInPicture>
+  </video>
+</div>
   
   
   </main>
@@ -154,6 +187,47 @@
       });
     });
   </script>
+
+<script>
+  const videoOverlay = document.getElementById("studioVideoOverlay");
+  const activeVideo = document.getElementById("studioActiveVideo");
+  const closeVideo = document.querySelector(".studio-video-close");
+
+  document.querySelectorAll(".studio-video-thumb").forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      activeVideo.src = thumb.dataset.video;
+      activeVideo.load();
+
+      videoOverlay.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+
+      activeVideo.play();
+    });
+  });
+
+  function closeStudioVideo() {
+    activeVideo.pause();
+    activeVideo.removeAttribute("src");
+    activeVideo.load();
+
+    videoOverlay.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+
+  closeVideo.addEventListener("click", closeStudioVideo);
+
+  videoOverlay.addEventListener("click", event => {
+    if (event.target === videoOverlay) {
+      closeStudioVideo();
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeStudioVideo();
+    }
+  });
+</script>
 
 </body>
 </html>
