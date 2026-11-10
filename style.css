@@ -687,6 +687,12 @@
   cursor: pointer;
 }
 
+.studio-video-item {
+  min-width: 0;
+  cursor: pointer;
+  position: relative;
+}
+
 .studio-video-thumb {
   display: block;
   width: 100%;
@@ -698,6 +704,32 @@
 
 .studio-video-item:hover .studio-video-thumb {
   opacity: 0.8;
+}
+
+/* PLAY BUTTON */
+
+.studio-video-item::after {
+  content: "▶";
+  position: absolute;
+  top: calc((100% - 25px) / 2);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding-left: 3px;
+  pointer-events: none;
+}
+
+.studio-video-item:hover::after {
+  background: var(--pink);
+  color: white;
 }
 
 .studio-video-caption {
