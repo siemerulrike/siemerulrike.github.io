@@ -1327,3 +1327,32 @@
   }
 }
 
+/* FOOTER */
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 80px 4vw 25px;
+  padding-top: 15px;
+  border-top: 1px solid var(--pink);
+  font-family: "Ulrike-font", sans-serif;
+  font-size: 14px;
+  color: var(--pink);
+}
+
+.site-footer a {
+  color: var(--pink);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    margin: 60px 18px 20px;
+    font-size: 12px;
+  }
+}
