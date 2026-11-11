@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piknikdouille — Ulrike Siemer</title>
+  <link rel="stylesheet" href="../../style.css">
+
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const gallery = document.querySelector(".auto-collage");
+      if (!gallery) return;
+
+      const items = [...gallery.querySelectorAll(".item")];
+
+      function layoutGallery() {
+        const rowHeight = 4;
+        const gap = 12;
+
+        items.forEach(item => {
+          const media = item.querySelector("img, video");
+          if (!media) return;
+
+          if (media.tagName === "IMG" && !media.complete) {
+            media.addEventListener("load", layoutGallery, { once: true });
+            return;
+          }
+
+          if (media.tagName === "VIDEO" && !media.videoWidth) {
+            media.addEventListener("loadedmetadata", layoutGallery, { once: true });
+            return;
+          }
+
+          const height = item.getBoundingClientRect().height;
+          const span = Math.ceil((height + gap) / (rowHeight + gap));
+
+          item.style.gridRowEnd = `span ${span}`;
+        });
+      }
+
+      items.forEach(item => {
+        const media = item.querySelector("img, video");
+        if (media) {
+          media.addEventListener("load", layoutGallery);
+          media.addEventListener("loadedmetadata", layoutGallery);
+        }
+      });
+
+      window.addEventListener("resize", layoutGallery);
+      layoutGallery();
+    });
+  </script>
+</head>
+
+<body class="project-page piknikdouille-page">
+
+ <header class="page-header">
+
+  <a href="../home.html" class="page-name">ULRIKE SIEMER</a>
+
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    ☰
+  </button>
+
+  <div class="page-navigation">
+    <div class="language-switch">
+      <a href="../../projects/piknikdouille.html">EN</a>
+      <span>/</span>
+      <a href="piknikdouille.html" class="active">FR</a>
+    </div>
+
+    <nav class="project-nav">
+      <a href="../selected-projects.html">PROJETS</a>
+      <a href="../about.html">A PROPOS</a>
+      <a href="../studio.html">A L'ATELIER</a>
+      <a href="../shop.html">BOUTIQUE</a>
+      <a href="../contact.html">CONTACT</a>
+    </nav>
+  </div>
+
+</header>
+
+  <div class="project-layout">
+
+    <section class="project-note">
+
+      <div class="project-heading">
+        <a href="#" class="project-title">Piknikdouille</a>
+
+        <div class="project-meta">
+          <span class="project-type">Scénographie / Performance</span>
+          <span class="project-year">2025</span>
+        </div>
+      </div>
+
+      <p>
+        Une performance drag prend la forme d'un pique-nique dans un parc. En collaboration avec l'artiste drag Kidzmoon, le projet réunit performance, récit et spectacle en plein air pour créer une expérience singulière.
+        Le décor se compose de sculptures colorées en papier mâché, de différentes tailles, dont une bouteille de champagne de deux mètres de haut, des verres surdimensionnés et toute une collection de petits objets de pique-nique.
+        Ensemble, ces éléments transforment un pique-nique ordinaire en une scène insolite et colorée, où les gestes et les situations inattendues donnent vie à l'histoire, quelque part entre le quotidien et l'absurde.
+      </p>
+
+    </section>
+
+    <main class="project-collage auto-collage">
+
+
+        <!-- PHOTO 2 -->
+      <figure class="item">
+        <img
+          src="../../images/Piknikdouille/picnic1.jpg"
+          alt="Piknikdouille - photo 2">
+      </figure>
+
+<!-- VIDEO VERTICALE -->
+      <figure class="item">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="../../images/Piknikdouille/picnic5.mp4" type="video/mp4">
+        </video>
+      </figure>
+
+      <!-- VIDEO horizontale -->
+      <figure class="item">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="../../images/Piknikdouille/picnic4.mp4" type="video/mp4">
+        </video>
+      </figure>
+
+     <!-- VIDEO verticale -->
+     <figure class="item">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="../../images/Piknikdouille/picnic6.mp4" type="video/mp4">
+        </video>
+      </figure>
+
+    <!-- PHOTO 1 -->
+      <figure class="item landscape">
+        <img
+          src="../../images/Piknikdouille/picnic3.jpg"
+          alt="Piknikdouille - photo 1">
+      </figure>
+
+
+    </main>
+
+  </div>
+
+  <footer class="project-footer">
+    <a href="../selected-projects.html">← TOUS LES PROJETS</a>
+  </footer>
+
+<script>
+  document.querySelectorAll('.menu-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const header = button.closest('header');
+      const isOpen = header.classList.toggle('menu-open');
+
+      button.setAttribute('aria-expanded', isOpen);
+      button.innerHTML = isOpen ? '×' : '☰';
+    });
+  });
+</script>
+
+<footer class="site-footer">
+  <span>© Ulrike Siemer 2026</span>
+  <a href="../legal-notice.html">Mentions légales</a>
+</footer>
+
+</body>
+</html>

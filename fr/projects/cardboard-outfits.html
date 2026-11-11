@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cardboard Outfits — Ulrike Siemer</title>
+  <link rel="stylesheet" href="../../style.css">
+
+ <script defer>
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector(".auto-collage");
+  if (!gallery) return;
+
+  const items = [...gallery.querySelectorAll(".item")];
+
+  function layoutGallery() {
+    const rowHeight = 4;
+    const gap = 12;
+
+    items.forEach(item => {
+      const media = item.querySelector("img, video");
+      if (!media) return;
+
+      if (!media.complete && media.tagName === "IMG") {
+        media.addEventListener("load", layoutGallery, { once: true });
+        return;
+      }
+
+      if (media.tagName === "VIDEO" && !media.videoWidth) {
+        media.addEventListener("loadedmetadata", layoutGallery, { once: true });
+        return;
+      }
+
+      const height = item.getBoundingClientRect().height;
+      const span = Math.ceil((height + gap) / (rowHeight + gap));
+
+      item.style.gridRowEnd = `span ${span}`;
+    });
+  }
+
+  items.forEach(item => {
+    const media = item.querySelector("img, video");
+    if (media) {
+      media.addEventListener("load", layoutGallery);
+      media.addEventListener("loadedmetadata", layoutGallery);
+    }
+  });
+
+  window.addEventListener("resize", layoutGallery);
+  layoutGallery();
+});
+</script>
+
+</head>
+
+<body class="project-page cardboard-page">
+
+
+<header class="page-header">
+
+  <a href="../home.html" class="page-name">ULRIKE SIEMER</a>
+
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    ☰
+  </button>
+
+  <div class="page-navigation">
+    <div class="language-switch">
+      <a href="../../projects/cardboard-outfits.html">EN</a>
+      <span>/</span>
+      <a href="cardboard-outfits.html" class="active">FR</a>
+    </div>
+
+    <nav class="project-nav">
+      <a href="../selected-projects.html">PROJETS</a>
+      <a href="../about.html">A PROPOS</a>
+      <a href="../studio.html">A L'ATELIER</a>
+      <a href="../shop.html">BOUTIQUE</a>
+      <a href="../contact.html">CONTACT</a>
+    </nav>
+  </div>
+
+</header>
+
+<div class="project-layout">
+
+  <section class="project-note">
+
+    <div class="project-heading">
+      <a href="#" class="project-title">Cardboard Outfits</a>
+
+      <div class="project-meta">
+        <span class="project-type">Scénographie, photo et vidéo</span>
+        <span class="project-year">2026</span>
+      </div>
+    </div>
+
+    <p>
+      Une expérimentation autour de formes en deux dimensions, intégrées à une séance photo et à une vidéo en stop motion. C'est une première étape dans l'exploration de nouvelles formes et de nouveaux volumes, tout en poursuivant mon travail autour des couleurs et du vêtement.
+
+      Comment les vêtements changent-ils la façon dont je me vois et dont les autres me voient ? Puis-je imaginer toutes sortes de formes, ou existe-t-il des limites ? Le 2D peut-il créer l'illusion du 3D ? Et mon travail en papier mâché fait-il l'inverse, en utilisant des formes en trois dimensions pour créer l'illusion du 2D ?
+
+      Cette série soulève de nombreuses questions et marque une étape importante dans le développement continu de mon travail.
+    </p>
+
+  </section>
+
+  <main class="project-collage auto-collage">
+
+    <!-- VIDEO Verticale -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../../images/cardboard-outfits/cardboard-egg.mp4" type="video/mp4">
+      </video>
+    </figure>
+    
+    <!-- PHOTO 1 -->
+    <figure class="item landscape">
+      <img
+        src="../../images/cardboard-outfits/cardboard-spoon.jpg"
+        alt="Cardboard Outfits - photo 1">
+    </figure>
+
+
+    <!-- PHOTO 2 -->
+    <figure class="item">
+      <img
+        src="../../images/cardboard-outfits/cardboard-bag.jpg"
+        alt="Cardboard Outfits - photo 2">
+    </figure>
+
+  <!-- VIDEO Verticale -->
+    <figure class="item landscape">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../../images/cardboard-outfits/cardboard-wash.mp4" type="video/mp4">
+      </video>
+    </figure>
+
+    <!-- VIDEO Verticale -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../../images/cardboard-outfits/cardboard-fall.mp4" type="video/mp4">
+      </video>
+    </figure>
+
+    <!-- PHOTO 3 -->
+    <figure class="item">
+      <img
+        src="../../images/cardboard-outfits/cardboard-phone.jpg"
+        alt="Cardboard Outfits - photo 3">
+    </figure>
+
+   <!-- PHOTO 4 -->
+    <figure class="item landscape">
+      <img
+        src="../../images/cardboard-outfits/cardboard-process1.jpg"
+        alt="Cardboard Outfits - photo 4">
+    </figure>
+
+     <!-- PHOTO 6 -->
+    <figure class="item landscape">
+      <img
+        src="../../images/cardboard-outfits/cardboard-process3.jpg"
+        alt="Cardboard Outfits - photo 6">
+    </figure>
+
+    <!-- VIDEO Verticale -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../../images/cardboard-outfits/cardboard-dance.mp4" type="video/mp4">
+      </video>
+    </figure>
+
+    <!-- VIDEO Verticale -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../../images/cardboard-outfits/cardboard-paint.mp4" type="video/mp4">
+      </video>
+    </figure>
+  
+  </main>
+
+
+ </div>
+
+<footer class="project-footer">
+  <a href="../selected-projects.html">← TOUS LES PROJETS</a>
+</footer>
+<script>
+  document.querySelectorAll('.menu-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const header = button.closest('header');
+      const isOpen = header.classList.toggle('menu-open');
+
+      button.setAttribute('aria-expanded', isOpen);
+      button.innerHTML = isOpen ? '×' : '☰';
+    });
+  });
+</script>
+
+<footer class="site-footer">
+  <span>© Ulrike Siemer 2026</span>
+  <a href="../legal-notice.html">Mentions légales</a>
+</footer>
+
+</body>
+</html>

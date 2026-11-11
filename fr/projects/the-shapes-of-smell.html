@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Shapes of Smell — Ulrike Siemer</title>
+  <link rel="stylesheet" href="../../style.css">
+
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const gallery = document.querySelector(".auto-collage");
+      if (!gallery) return;
+
+      const items = [...gallery.querySelectorAll(".item")];
+
+      function layoutGallery() {
+        const rowHeight = 4;
+        const gap = 12;
+
+        items.forEach(item => {
+          const media = item.querySelector("img, video");
+          if (!media) return;
+
+          if (media.tagName === "IMG" && !media.complete) {
+            media.addEventListener("load", layoutGallery, { once: true });
+            return;
+          }
+
+          if (media.tagName === "VIDEO" && !media.videoWidth) {
+            media.addEventListener("loadedmetadata", layoutGallery, { once: true });
+            return;
+          }
+
+          const height = item.getBoundingClientRect().height;
+          const span = Math.ceil((height + gap) / (rowHeight + gap));
+
+          item.style.gridRowEnd = `span ${span}`;
+        });
+      }
+
+      items.forEach(item => {
+        const media = item.querySelector("img, video");
+        if (media) {
+          media.addEventListener("load", layoutGallery);
+          media.addEventListener("loadedmetadata", layoutGallery);
+        }
+      });
+
+      window.addEventListener("resize", layoutGallery);
+      layoutGallery();
+    });
+  </script>
+</head>
+
+<body class="project-page the-shapes-of-smell-page">
+
+<header class="page-header">
+
+  <a href="../home.html" class="page-name">ULRIKE SIEMER</a>
+
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    ☰
+  </button>
+
+  <div class="page-navigation">
+    <div class="language-switch">
+      <a href="../../projects/the-shapes-of-smell.html">EN</a>
+      <span>/</span>
+      <a href="the-shapes-of-smell.html" class="active">FR</a>
+    </div>
+
+    <nav class="project-nav">
+      <a href="../selected-projects.html">PROJETS</a>
+      <a href="../about.html">A PROPOS</a>
+      <a href="../studio.html">A L'ATELIER</a>
+      <a href="../shop.html">BOUTIQUE</a>
+      <a href="../contact.html">CONTACT</a>
+    </nav>
+  </div>
+
+</header>
+
+  <div class="project-layout">
+
+    <section class="project-note">
+
+      <div class="project-heading">
+        <a href="#" class="project-title">The Shapes of Smell</a>
+
+        <div class="project-meta">
+          <span class="project-type">Scénographie / Performance</span>
+          <span class="project-year">2025</span>
+        </div>
+      </div>
+
+      <p>
+        Chaque odeur a sa propre forme. Certaines formes peuvent nous rappeler des parfums : le café que l'on a bu ce matin, une fleur que l'on sentait autrefois en rendant visite à ses grands-parents, ou encore ce moment de l'enfance où l'on regardait quelqu'un repasser, à la fois effrayé par la chaleur du fer et fasciné par cette odeur si propre et si chaude.
+        J'ai créé certaines de ces formes olfactives : des objets qui évoquent des moments de vie, notamment à travers les odeurs qui leur sont associées.
+        Un projet réalisé en collaboration avec la parfumerie smell stories à l'occasion du MAD Parcours 2025 à Bruxelles. Les visiteurs étaient invités à découvrir l'installation sculpturale, mais aussi à activer une sculpture pour repartir avec un souvenir sous la forme d'un dessin parfumé.
+      </p>
+
+    </section>
+
+    <main class="project-collage auto-collage">
+
+
+    <!-- PHOTO 1 -->
+      <figure class="item landscape">
+        <img
+          src="../../images/smell-stories/smell4.JPG"
+          alt="The Shapes of Smell - photo 1">
+      </figure>
+
+  <!-- PHOTO 2 -->
+      <figure class="item">
+        <img
+          src="../../images/smell-stories/smell5.JPG"
+          alt="The Shapes of Smell - photo 2">
+      </figure>
+
+       <!-- PHOTO 9 -->
+      <figure class="item">
+        <img
+          src="../../images/smell-stories/smell9.jpg"
+          alt="The Shapes of Smell - photo 9">
+      </figure> 
+
+   <!-- PHOTO 3 -->
+      <figure class="item landscape">
+        <img
+          src="../../images/smell-stories/smell7.jpg"
+          alt="The Shapes of Smell - photo 3">
+      </figure>
+
+       <!-- PHOTO 8 -->
+      <figure class="item">
+        <img
+          src="../../images/smell-stories/smell8.JPG"
+          alt="The Shapes of Smell - photo 8">
+      </figure>
+
+     <!-- VIDEO verticale -->
+     <figure class="item full-width">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="../../images/smell-stories/smell3a.mp4" type="video/mp4">
+        </video>
+      </figure>
+
+     
+   
+
+    </main>
+
+  </div>
+
+  <footer class="project-footer">
+   <a href="../selected-projects.html">← TOUS LES PROJETS</a>
+  </footer>
+
+<script>
+  document.querySelectorAll('.menu-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const header = button.closest('header');
+      const isOpen = header.classList.toggle('menu-open');
+
+      button.setAttribute('aria-expanded', isOpen);
+      button.innerHTML = isOpen ? '×' : '☰';
+    });
+  });
+</script>
+
+<footer class="site-footer">
+  <span>© Ulrike Siemer 2026</span>
+  <a href="../legal-notice.html">Mentions légales</a>
+</footer>
+
+</body>
+</html>

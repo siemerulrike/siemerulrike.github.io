@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Méduse</title>
+  <link rel="stylesheet" href="../style.css">
+
+ <script defer>
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector(".auto-collage");
+  if (!gallery) return;
+
+  const items = [...gallery.querySelectorAll(".item")];
+
+  function layoutGallery() {
+    const rowHeight = 4;
+    const gap = 12;
+
+    items.forEach(item => {
+      const media = item.querySelector("img, video");
+      if (!media) return;
+
+      if (!media.complete && media.tagName === "IMG") {
+        media.addEventListener("load", layoutGallery, { once: true });
+        return;
+      }
+
+      if (media.tagName === "VIDEO" && !media.videoWidth) {
+        media.addEventListener("loadedmetadata", layoutGallery, { once: true });
+        return;
+      }
+
+      const height = item.getBoundingClientRect().height;
+      const span = Math.ceil((height + gap) / (rowHeight + gap));
+
+      item.style.gridRowEnd = `span ${span}`;
+    });
+  }
+
+  items.forEach(item => {
+    const media = item.querySelector("img, video");
+    if (media) {
+      media.addEventListener("load", layoutGallery);
+      media.addEventListener("loadedmetadata", layoutGallery);
+    }
+  });
+
+  window.addEventListener("resize", layoutGallery);
+  layoutGallery();
+});
+</script>
+
+</head>
+
+<body class="project-page meduse-page">
+
+
+<header class="page-header">
+
+  <a href="../home.html" class="page-name">ULRIKE SIEMER</a>
+
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+    ☰
+  </button>
+
+  <nav class="project-nav">
+    <a href="../selected-projects.html">PROJECTS</a>
+    <a href="../about.html">ABOUT</a>
+    <a href="../studio.html">IN THE STUDIO</a>
+    <a href="../shop.html">SHOP</a>
+    <a href="../contact.html">CONTACT</a>
+  </nav>
+
+</header>
+
+<div class="project-layout">
+
+  <section class="project-note">
+
+    <div class="project-heading">
+      <a href="#" class="project-title">La Méduse</a>
+
+      <div class="project-meta">
+        <span class="project-type">Sculpture and video</span>
+        <span class="project-year">2026</span>
+      </div>
+    </div>
+
+    <p>
+Devant moi, la mer.
+Je tourne la tête.
+J’aperçois une petite fille.
+Elle a peut-être 5 ans.
+Et elle porte aux pieds des méduses
+soudain, j’ai un souvenir en tête.
+Celui de sandales en plastique,
+souples et douces,
+parfois roses, bleues, rouges ou oranges.
+On les porte pour se balader,
+mais surtout à la mer, au lac,
+parfois dans une rivière.
+
+Méduse is a jelly shoe that lots of children wear in the summertime. 
+    </p>
+
+  </section>
+
+  <main class="project-collage auto-collage">
+
+    <!-- VIDEO 1 -->
+    <figure class="item landscape centered">
+     <video autoplay muted loop playsinline controls preload="metadata">
+        <source src="../images/meduse/meduse-histoire.mp4" type="video/mp4">
+      </video>
+    </figure>
+    
+    <!-- PHOTO 1 -->
+    <figure class="item centered">
+      <img
+        src="../images/meduse/meduse.jpg"
+        alt="La Méduse - photo 1">
+    </figure>
+
+<!-- VIDEO 2 -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../images/meduse/meduse-process1.mp4" type="video/mp4">
+      </video>
+    </figure>
+
+    <!-- VIDEO 3 -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../images/meduse/meduse-process2.mp4" type="video/mp4">
+      </video>
+    </figure>
+
+  <!-- VIDEO 4 -->
+    <figure class="item">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="../images/meduse/meduse-process3.mp4" type="video/mp4">
+      </video>
+    </figure>
+
+  
+  </main>
+
+
+ </div>
+
+<footer class="project-footer">
+  <a href="../selected-projects.html">← ALL PROJECTS</a>
+</footer>
+<script>
+  document.querySelectorAll('.menu-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const header = button.closest('header');
+      const isOpen = header.classList.toggle('menu-open');
+
+      button.setAttribute('aria-expanded', isOpen);
+      button.innerHTML = isOpen ? '×' : '☰';
+    });
+  });
+</script>
+
+<footer class="site-footer">
+  <span>© Ulrike Siemer 2026</span>
+  <a href="/legal-notice.html">Legal Notice</a>
+</footer>
+
+</body>
+</html>
