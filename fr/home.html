@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ulrike Siemer — sculptures en papier mâché</title>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="home">
+
+  <!-- BACKGROUND VIDEO -->
+  <div class="home-video">
+    <video autoplay muted loop playsinline>
+      <source src="../images/homepage.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- HEADER -->
+  <header class="home-header">
+
+    <div class="home-brand">
+      <a href="home.html" class="home-name">Ulrike Siemer</a>
+      <span class="home-subtitle">Sculptures en papier mâché et scénographie</span>
+    </div>
+
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <div class="home-navigation">
+
+  <div class="language-switch">
+    <a href="../home.html">EN</a>
+    <span>/</span>
+    <a href="home.html" class="active">FR</a>
+  </div>
+
+  <nav class="project-nav">
+    <a href="selected-projects.html">PROJETS</a>
+    <a href="about.html">A PROPOS</a>
+    <a href="studio.html">A L'ATELIER</a>
+    <a href="shop.html">BOUTIQUE</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+</div>
+
+</div>
+
+  </header>
+
+  <script>
+    document.querySelectorAll('.menu-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const header = button.closest('header');
+        const isOpen = header.classList.toggle('menu-open');
+
+        button.setAttribute('aria-expanded', isOpen);
+        button.innerHTML = isOpen ? '×' : '☰';
+      });
+    });
+  </script>
+
+</body>
+</html>

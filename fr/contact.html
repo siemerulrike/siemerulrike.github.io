@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Ulrike Siemer</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="contact-page">
+
+ <!-- HEADER -->
+
+  <header class="page-header">
+
+  <a href="home.html" class="page-name">ULRIKE SIEMER</a>
+
+<button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+  ☰
+</button>
+
+  <div class="page-navigation">
+    <div class="language-switch">
+      <a href="../contact.html">EN</a>
+      <span>/</span>
+      <a href="contact.html" class="active">FR</a>
+    </div>
+
+    <nav class="project-nav">
+      <a href="selected-projects.html">PROJETS</a>
+      <a href="about.html">A PROPOS</a>
+      <a href="studio.html">A L'ATELIER</a>
+      <a href="shop.html">BOUTIQUE</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </div>
+
+</header>
+
+<section class="page-intro">
+  <h1 class="page-title">Contact</h1>
+</section>
+
+<main class="contact-content">
+
+  <div class="contact-text">
+
+  <p class="contact-intro">
+    Pour toute demande, collaboration ou simplement pour dire bonjour :
+  </p>
+
+  <a href="mailto:siemerulrike@gmail.com" class="contact-link contact-email">
+    siemerulrike@gmail.com
+  </a>
+
+  <a href="https://www.instagram.com/ulrikesie/"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="contact-link">
+    Instagram — @ulrikesie
+  </a>
+
+
+</div>
+
+<div class="contact-image">
+  <video autoplay muted loop playsinline preload="metadata">
+    <source src="../images/contact.mp4" type="video/mp4">
+  </video>
+
+  <p class="contact-note">
+    Je vous réponds très vite !!!
+  </p>
+</div>
+
+</main>
+
+<script>
+  document.querySelectorAll('.menu-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const header = button.closest('header');
+      const isOpen = header.classList.toggle('menu-open');
+
+      button.setAttribute('aria-expanded', isOpen);
+      button.innerHTML = isOpen ? '×' : '☰';
+    });
+  });
+</script>
+
+<footer class="site-footer">
+  <span>© Ulrike Siemer 2026</span>
+  <a href="legal-notice.html">Mentions légales</a>
+</footer>
+
+</body>
+</html>

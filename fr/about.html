@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos – Ulrike Siemer</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="about-page">
+
+  <!-- HEADER -->
+
+  <header class="page-header">
+
+    <a href="home.html" class="page-name">ULRIKE SIEMER</a>
+
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <div class="page-navigation">
+
+      <div class="language-switch">
+        <a href="../about.html">EN</a>
+        <span>/</span>
+        <a href="about.html" class="active">FR</a>
+      </div>
+
+      <nav class="project-nav">
+        <a href="selected-projects.html">PROJETS</a>
+        <a href="about.html">A PROPOS</a>
+        <a href="studio.html">A L'ATELIER</a>
+        <a href="shop.html">BOUTIQUE</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- INTRO -->
+
+  <section class="page-intro">
+    <h1 class="page-title">A propos</h1>
+  </section>
+
+
+  <!-- ABOUT CONTENT -->
+
+  <main class="about-content">
+
+    <div class="about-text">
+
+      <p class="about-intro">
+        Ulrike Siemer est une artiste sculptrice basée à Bruxelles,
+        travaillant principalement le papier mâché.
+      </p>
+
+      <p>
+        Sa pratique explore les objets du quotidien, les rituels familiers
+        et les souvenirs partagés à travers des sculptures et des installations.
+        Inspiré de situations ordinaires, son travail mêle nostalgie,
+        humour et une part d'inattendu.
+      </p>
+
+      <p>
+        En parallèle de son travail sculptural, elle développe des projets
+        de scénographie, de vitrines et des collaborations créatives.
+      </p>
+
+    </div>
+
+    <div class="about-image">
+      <img src="../images/about.jpg" alt="Ulrike Siemer">
+    </div>
+
+  </main>
+
+
+  <!-- MENU BURGER -->
+
+  <script>
+    document.querySelectorAll('.menu-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const header = button.closest('header');
+        const isOpen = header.classList.toggle('menu-open');
+
+        button.setAttribute('aria-expanded', isOpen);
+        button.innerHTML = isOpen ? '×' : '☰';
+      });
+    });
+  </script>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+    <span>© Ulrike Siemer 2026</span>
+    <a href="legal-notice.html">Mentions légales</a>
+  </footer>
+
+</body>
+</html>

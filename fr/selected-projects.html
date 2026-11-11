@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Projets — Ulrike Siemer</title>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="selected-projects">
+
+  <!-- HEADER -->
+
+  <header class="page-header">
+
+    <a href="home.html" class="page-name">ULRIKE SIEMER</a>
+
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <div class="page-navigation">
+
+  <div class="language-switch">
+    <a href="../selected-projects.html">EN</a>
+    <span>/</span>
+    <a href="selected-projects.html" class="active">FR</a>
+  </div>
+
+  <nav class="project-nav">
+    <a href="selected-projects.html">PROJETS</a>
+    <a href="about.html">A PROPOS</a>
+    <a href="studio.html">A L'ATELIER</a>
+    <a href="shop.html">BOUTIQUE</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+</div>
+
+  </header>
+
+
+  <!-- PROJECTS -->
+
+  <main class="selected-projects-main">
+
+    <section class="page-intro">
+      <h1 class="page-title">Projets</h1>
+    </section>
+
+   
+<main class="home-gallery">
+
+  <a href="projects/keys.html" class="home-project">
+    <img src="../images/keys/keys-close.JPG" alt="J'ai perdu mes clés">
+    <div class="project-overlay">
+      <span class="home-project-title">J'ai perdu mes clés</span>
+      <span class="home-project-year">2025</span>
+    </div>
+  </a>
+
+  <a href="projects/meduse.html" class="home-project">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="../images/meduse/meduse-debout.mp4" type="video/mp4">
+    </video>
+    <div class="project-overlay">
+      <span class="home-project-title">La Méduse</span>
+      <span class="home-project-year">2026</span>
+    </div>
+  </a>
+
+  <a href="projects/feu.html" class="home-project">
+    <img src="../images/feu/blush.jpg" alt="Feu x Ulrike Siemer">
+    <div class="project-overlay">
+      <span class="home-project-title">Feu x Ulrike Siemer</span>
+      <span class="home-project-year">2026</span>
+    </div>
+  </a>
+
+  <a href="projects/cardboard-outfits.html" class="home-project">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="../images/cardboard-outfits/cardboard-oeuf.mp4" type="video/mp4">
+    </video>
+    <div class="project-overlay">
+      <span class="home-project-title">Cardboard Outfits</span>
+      <span class="home-project-year">2026</span>
+    </div>
+  </a>
+
+  <a href="projects/piknikdouille.html" class="home-project">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="../images/piknikdouille/picnic6.mp4" type="video/mp4">
+    </video>
+    <div class="project-overlay">
+      <span class="home-project-title">Piknikdouille</span>
+      <span class="home-project-year">2025</span>
+    </div>
+  </a>
+
+  <a href="projects/the-shapes-of-smell.html" class="home-project">
+    <img src="../images/smell-stories/smell4.JPG" alt="The Shapes of Smell">
+    <div class="project-overlay">
+      <span class="home-project-title">The Shapes of Smell</span>
+      <span class="home-project-year">2025</span>
+    </div>
+  </a>
+
+  <a href="projects/sport.html" class="home-project">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="../images/sport/sport-drink.mp4" type="video/mp4">
+    </video>
+    <div class="project-overlay">
+      <span class="home-project-title">Sport</span>
+      <span class="home-project-year">2025</span>
+    </div>
+  </a>
+
+  <a href="projects/attente.html" class="home-project">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="../images/attente/attente-clock.mp4" type="video/mp4">
+    </video>
+    <div class="project-overlay">
+      <span class="home-project-title">L'attente</span>
+      <span class="home-project-year">2025</span>
+    </div>
+  </a>
+
+  <a href="projects/voiture.html" class="home-project">
+    <img src="../images/voiture/voiture1.jpg" alt="Voiture volante">
+    <div class="project-overlay">
+      <span class="home-project-title">Voiture volante</span>
+      <span class="home-project-year">2025</span>
+    </div>
+  </a>
+
+  <a href="projects/dress-up.html" class="home-project">
+    <img src="../images/dress-up/dress-up1.jpg" alt="Dress Up">
+    <div class="project-overlay">
+      <span class="home-project-title">Dress Up</span>
+      <span class="home-project-year">2025</span>
+    </div>
+  </a>
+
+</main>
+<div class="gallery-progress">
+  <div class="gallery-progress-track">
+    <div class="gallery-progress-bar"></div>
+  </div>
+  <span class="gallery-arrow">→</span>
+</div>
+
+ 
+<!-- SCRIPTS -->
+
+<script>
+const gallery = document.querySelector('.home-gallery');
+const track = document.querySelector('.gallery-progress-track');
+const bar = document.querySelector('.gallery-progress-bar');
+
+function updateGalleryProgress() {
+  const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
+  if (maxScroll <= 0) return;
+
+  const visibleRatio = gallery.clientWidth / gallery.scrollWidth;
+  const barWidth = Math.max(8, visibleRatio * 100);
+  const maxBarMove = track.clientWidth - bar.offsetWidth;
+  const position = (gallery.scrollLeft / maxScroll) * maxBarMove;
+
+  bar.style.width = barWidth + '%';
+  bar.style.left = position + 'px';
+}
+
+// Défilement de la galerie
+gallery.addEventListener('scroll', updateGalleryProgress);
+
+// Molette de souris
+gallery.addEventListener('wheel', (event) => {
+  if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+    event.preventDefault();
+    gallery.scrollLeft += event.deltaY;
+  }
+}, { passive: false });
+
+// Cliquer et tirer la barre
+let dragging = false;
+
+track.addEventListener('pointerdown', (event) => {
+  dragging = true;
+  track.setPointerCapture(event.pointerId);
+  moveSlider(event);
+});
+
+track.addEventListener('pointermove', (event) => {
+  if (dragging) moveSlider(event);
+});
+
+track.addEventListener('pointerup', () => {
+  dragging = false;
+});
+
+track.addEventListener('pointercancel', () => {
+  dragging = false;
+});
+
+function moveSlider(event) {
+  const rect = track.getBoundingClientRect();
+  const barWidth = bar.offsetWidth;
+  const maxBarMove = track.clientWidth - barWidth;
+
+  let position = event.clientX - rect.left - barWidth / 2;
+  position = Math.max(0, Math.min(position, maxBarMove));
+
+  const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
+  gallery.scrollLeft = (position / maxBarMove) * maxScroll;
+}
+
+window.addEventListener('resize', updateGalleryProgress);
+
+updateGalleryProgress();
+</script>
+
+
+<!-- MENU BURGER -->
+
+<script>
+document.querySelectorAll('.menu-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const header = button.closest('header');
+    const isOpen = header.classList.toggle('menu-open');
+
+    button.setAttribute('aria-expanded', isOpen);
+    button.innerHTML = isOpen ? '×' : '☰';
+  });
+});
+</script>
+
+ <!-- FOOTER -->
+
+  <footer class="site-footer">
+    <span>© Ulrike Siemer 2026</span>
+    <a href="legal-notice.html">Mentions légales</a>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title><Acr></Acr> l'atelier — Ulrike Siemer</title>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="studio-page">
+
+  <!-- HEADER -->
+
+  <header class="page-header">
+
+    <a href="home.html" class="page-name">ULRIKE SIEMER</a>
+
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <div class="page-navigation">
+
+      <div class="language-switch">
+        <a href="../studio.html">EN</a>
+        <span>/</span>
+        <a href="studio.html" class="active">FR</a>
+      </div>
+
+      <nav class="project-nav">
+        <a href="selected-projects.html">PROJETS</a>
+        <a href="about.html">A PROPOS</a>
+        <a href="studio.html">A L'ATELIER</a>
+        <a href="shop.html">BOUTIQUE</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- INTRODUCTION -->
+
+  <main class="studio-main">
+
+    <section class="page-intro">
+      <h1 class="page-title">A l'atelier</h1>
+    </section>
+
+    <div class="studio-description">
+      Un aperçu de mon atelier et de mon travail en cours. Un peu plus bas, tu trouveras aussi des vidéos dans lesquelles je partage quelques réflexions sur mon travail et la vie en général.
+    </div>
+
+
+    <!-- STUDIO GALLERY -->
+
+    <section class="studio-gallery">
+
+      <div class="studio-item landscape">
+        <img src="../images/studio/studio3.jpeg" alt="Travail en cours">
+      </div>
+
+      <div class="studio-item landscape">
+        <img src="../images/studio/studio1.jpeg" alt="Travail en cours">
+      </div>
+
+      <div class="studio-item">
+        <img src="../images/studio/studio2.jpeg" alt="Travail en cours">
+      </div>
+
+      <div class="studio-item">
+        <img src="../images/studio/studio4.jpeg" alt="Travail en cours">
+      </div>
+
+      <div class="studio-item">
+        <video autoplay muted loop playsinline>
+          <source src="../images/studio/dance.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="studio-item landscape">
+        <img src="../images/studio/studio5.JPG" alt="Travail en cours">
+      </div>
+
+      <div class="studio-item">
+        <img src="../images/studio/studio6.jpeg" alt="Travail en cours">
+      </div>
+
+      <div class="studio-item">
+        <img src="../images/studio/studio7.jpeg" alt="Travail en cours">
+      </div>
+
+    </section>
+
+
+    <!-- STUDIO VIDEOS -->
+
+    <section class="studio-video-section">
+
+      <h2 class="studio-video-title">
+        Ici, je parle d'art, de travail, de l'atelier et de tout ce qui se trouve entre les deux. Dans certaines vidéos, tu peux aussi simplement me regarder travailler, superposer couche après couche de papier mâché.
+      </h2>
+
+      <div class="studio-video-gallery">
+
+        <div class="studio-video-item">
+          <video
+            class="studio-video-thumb"
+            muted
+            playsinline
+            preload="metadata"
+            poster="../images/studio/covers/studio-work-update.jpg"
+            data-video="../images/studio/studio-work-update.mp4">
+          </video>
+          <p class="studio-video-caption">Une journée à l'atelier</p>
+        </div>
+
+        <div class="studio-video-item">
+          <video
+            class="studio-video-thumb"
+            muted
+            playsinline
+            preload="metadata"
+            poster="../images/studio/covers/technique-update.jpg"
+            data-video="../images/studio/technique-update.mp4">
+          </video>
+          <p class="studio-video-caption">Nouvelle technique ?</p>
+        </div>
+
+        <div class="studio-video-item">
+          <video
+            class="studio-video-thumb"
+            muted
+            playsinline
+            preload="metadata"
+            poster="../images/studio/covers/work-garden.jpg"
+            data-video="../images/studio/work-garden.mp4">
+          </video>
+          <p class="studio-video-caption">Dans le jardin</p>
+        </div>
+
+        <div class="studio-video-item">
+          <video
+            class="studio-video-thumb"
+            muted
+            playsinline
+            preload="metadata"
+            poster="../images/studio/covers/mess.jpg"
+            data-video="../images/studio/mess.mp4">
+          </video>
+          <p class="studio-video-caption">Pourquoi mon atelier est-il toujours aussi en désordre ?</p>
+        </div>
+
+        <div class="studio-video-item">
+          <video
+            class="studio-video-thumb"
+            muted
+            playsinline
+            preload="metadata"
+            poster="../images/studio/covers/work-dry.jpg"
+            data-video="../images/studio/work-dry.mp4">
+          </video>
+          <p class="studio-video-caption">Toujours en train d'attendre que ça sèche</p>
+        </div>
+
+        <div class="studio-video-item">
+          <video
+            class="studio-video-thumb"
+            muted
+            playsinline
+            preload="metadata"
+            poster="../images/studio/covers/piknikdouille-making-of.jpg"
+            data-video="../images/studio/piknikdouille-making-of.mp4">
+          </video>
+          <p class="studio-video-caption">Making-of Piknikdouille</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- VIDEO OVERLAY -->
+
+    <div class="studio-video-overlay" id="studioVideoOverlay">
+      <button class="studio-video-close" aria-label="Fermer la vidéo">×</button>
+      <video id="studioActiveVideo" controls playsinline
+        controlsList="nofullscreen nodownload noremoteplayback"
+        disablePictureInPicture>
+      </video>
+    </div>
+
+  </main>
+
+
+  <!-- HAMBURGER MENU -->
+
+  <script>
+    document.querySelectorAll('.menu-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const header = button.closest('header');
+        const isOpen = header.classList.toggle('menu-open');
+
+        button.setAttribute('aria-expanded', isOpen);
+        button.innerHTML = isOpen ? '×' : '☰';
+      });
+    });
+  </script>
+
+
+  <!-- STUDIO VIDEO PLAYER -->
+
+  <script>
+    const videoOverlay = document.getElementById("studioVideoOverlay");
+    const activeVideo = document.getElementById("studioActiveVideo");
+    const closeVideo = document.querySelector(".studio-video-close");
+
+    document.querySelectorAll(".studio-video-thumb").forEach(thumb => {
+      thumb.addEventListener("click", () => {
+        activeVideo.src = thumb.dataset.video;
+        activeVideo.load();
+
+        videoOverlay.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+
+        activeVideo.play();
+      });
+    });
+
+    function closeStudioVideo() {
+      activeVideo.pause();
+      activeVideo.removeAttribute("src");
+      activeVideo.load();
+
+      videoOverlay.classList.remove("is-open");
+      document.body.style.overflow = "";
+    }
+
+    closeVideo.addEventListener("click", closeStudioVideo);
+
+    videoOverlay.addEventListener("click", event => {
+      if (event.target === videoOverlay) {
+        closeStudioVideo();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeStudioVideo();
+      }
+    });
+  </script>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+    <span>© Ulrike Siemer 2026</span>
+    <a href="legal-notice.html">Mentions légales</a>
+  </footer>
+
+</body>
+</html>
