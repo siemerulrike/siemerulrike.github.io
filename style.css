@@ -331,11 +331,6 @@
   width: 100%;
 }
 
-.shop-main .page-intro {
-  margin: 0 4vw 45px;
-  max-width: none;
-}
-
 .shop-main .page-title {
   margin: 0 0 25px;
 }
@@ -363,7 +358,7 @@
   width: 100%;
 }
 
-//* ITEMS */
+/* ITEMS */
 
 .shop-item {
   min-width: 0;
@@ -441,10 +436,6 @@
   }
 
   /* INTRODUCTION */
-
-  .shop-main .page-intro {
-    margin: 0 0 35px;
-  }
 
   .shop-main .page-title {
     font-size: 32px;
@@ -645,9 +636,10 @@
 }
 
 .studio-description {
-  margin: 0 4vw 45px;
-  max-width: 450px;
-  font-size: 15px;
+  max-width: 430px;
+  margin: 0 4vw 25px;
+  padding: 0;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -871,6 +863,10 @@
   margin-bottom: 20px;
 }
 
+.about-text .about-intro {
+  margin-top: 0;
+}
+
 .about-image {
   width: 100%;
   max-width: 430px;
@@ -888,10 +884,6 @@
 
   .about-page {
     padding: 0;
-  }
-
-  .about-page .page-intro {
-    margin: 0 18px 25px;
   }
 
   .about-content {
@@ -923,10 +915,6 @@
   font-family: "Ulrike-font", sans-serif;
 }
 
-.contact-page .page-intro {
-  margin: 0 0 25px 4vw;
-}
-
 .contact-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -937,7 +925,7 @@
 
 .contact-text {
   max-width: 500px;
-  padding-top: 25px;
+  padding-top: 0px;
 }
 .contact-intro {
   font-size: 16px;
@@ -967,7 +955,7 @@
 }
 
 .contact-email {
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(18px, 2.2vw, 24px);
   margin-bottom: 22px;
 }
 
@@ -978,7 +966,7 @@
 .contact-note {
   font-size: 16px;
   font-style: italic;
-  margin-top: 90px;
+  margin-top: 5px;
 }
 
 .contact-image {
@@ -1001,10 +989,6 @@
 
   .contact-page {
     padding: 0;
-  }
-
-  .contact-page .page-intro {
-    margin: 0 18px 25px;
   }
 
   .contact-content {
@@ -1293,7 +1277,8 @@
 /* COMMON PAGE TITLES */
 
 .page-intro {
-  margin: 0 0 25px 4vw;
+  margin: 0 4vw 45px;
+  max-width: none;
 }
 
 .page-title {
@@ -1341,3 +1326,4 @@
     margin-top: 0;
   }
 }
+
