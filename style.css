@@ -1404,3 +1404,18 @@
   gap: 8px;
   margin-left: auto;
 }
+
+/* LEGAL NOTICE PAGE */
+
+.legal-back {
+  display: inline-block;
+  margin: 30px 4vw;
+  color: var(--pink);
+  font-family: "Ulrike-font", sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.legal-back:hover {
+  text-decoration: underline;
+}
