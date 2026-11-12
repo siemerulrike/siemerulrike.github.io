@@ -1063,6 +1063,29 @@
   color: var(--pink);
 }
 
+/* DESKTOP */
+@media (min-width: 1001px) {
+  .page-header .page-name {
+    transform: translateY(15px);
+  }
+}
+
+/* TABLETTE ET MOBILE */
+@media (max-width: 1000px) {
+  .page-header .page-name {
+    transform: none;
+  }
+}
+
+/* Alignement du nom avec les liens du menu */
+.page-header {
+  align-items: center;
+}
+
+.page-header {
+  align-items: center;
+}  color: var(--pink);
+
 .home-brand {
   display: flex;
   flex-direction: column;
