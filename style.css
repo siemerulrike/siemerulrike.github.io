@@ -311,6 +311,19 @@
     font-size: 10px;
     line-height: 1;
   }
+    /* ORDRE SUR MOBILE : titre, images, texte */
+
+  .project-note {
+    display: contents;
+  }
+
+  .project-note .project-heading {
+    order: 1;
+  }
+
+  .project-note > *:not(.project-heading) {
+    order: 3;
+  }
 
 }
 
@@ -1441,4 +1454,82 @@
 
 .legal-back:hover {
   text-decoration: underline;
+}
+/* MENU MOBILE PLEIN ÉCRAN */
+
+@media (max-width: 1000px) {
+
+  /* Panneau ouvert : plein écran, fond clair flouté */
+  .home-header.menu-open .home-navigation,
+  .page-header.menu-open .page-navigation {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    padding: 90px 24px 40px;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+
+  /* Liens grands, espacés, centrés */
+  .home-header.menu-open .project-nav,
+  .page-header.menu-open .project-nav {
+    order: 1;
+    width: auto;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .home-header.menu-open .project-nav a,
+  .page-header.menu-open .project-nav a {
+    display: block;
+    padding: 14px 28px;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  /* EN / FR sous les liens */
+  .home-header.menu-open .language-switch,
+  .page-header.menu-open .language-switch {
+    order: 2;
+    margin-top: 28px;
+    font-size: 18px;
+    transform: none;
+  }
+
+  .home-header.menu-open .language-switch a,
+  .page-header.menu-open .language-switch a {
+    padding: 10px 8px;
+  }
+
+  /* La croix reste en haut à droite, au-dessus du panneau */
+  .home-header.menu-open .menu-toggle,
+  .page-header.menu-open .menu-toggle {
+    position: fixed;
+    top: 14px;
+    right: 18px;
+    z-index: 1001;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    font-size: 36px;
+  }
+
+  /* La page ne défile pas derrière le menu */
+  body:has(.menu-open) {
+    overflow: hidden;
+  }
+}
+@media (max-width: 700px) {
+  .page-intro {
+    margin-bottom: 15px;
+  }
 }
