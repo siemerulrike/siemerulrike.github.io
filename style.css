@@ -1116,15 +1116,6 @@
   line-height: 1;
 }
 
-.home-subtitle {
-  color: var(--pink);
-    font-family: "Ulrike-font", sans-serif;
-
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 5px;
-}
-
 /* NAVIGATION COMMUNE */
 
 .project-nav {
@@ -1174,11 +1165,6 @@
     transform: translateY(-10px);
   }
 
-  .home-subtitle {
-    white-space: nowrap;
-    font-size: clamp(10px, 2.5vw, 18px);
-  }
-
   .menu-toggle {
     flex-shrink: 0;
     align-self: center;
@@ -1187,12 +1173,7 @@
   .home-name {
     font-size: 32px;
   }
-
-  .home-subtitle {
-    font-size: 14px;
-  }
   
-
   .project-nav {
     gap: 12px;
     padding-top: 0;
@@ -1274,9 +1255,6 @@
   .page-header.menu-open .project-nav {
     display: flex;
   }
-}
-.home-subtitle {
-  white-space: nowrap;
 }
 /* SECONDARY PAGES HEADER */
 
@@ -1533,11 +1511,6 @@
 @media (max-width: 700px) {
   .page-intro {
     margin-bottom: 15px;
-  }
-}
-@media (min-width: 1001px) {
-  .home-subtitle {
-    margin-left: 24px;
   }
 }
 .home-title {
