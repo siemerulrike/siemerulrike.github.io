@@ -1171,6 +1171,7 @@
 .home-brand {
     min-width: 0;
     flex: 1;
+    transform: translateY(-10px);
   }
 
   .home-subtitle {
@@ -1190,6 +1191,7 @@
   .home-subtitle {
     font-size: 14px;
   }
+  
 
   .project-nav {
     gap: 12px;
