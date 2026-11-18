@@ -1533,3 +1533,8 @@
     margin-bottom: 15px;
   }
 }
+@media (min-width: 1001px) {
+  .home-subtitle {
+    margin-left: 24px;
+  }
+}
