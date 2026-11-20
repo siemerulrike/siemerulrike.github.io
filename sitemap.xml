@@ -1,29 +1,55 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- ENGLISH MAIN PAGES -->
   <url>
     <loc>https://ulrikesiemer.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ulrikesiemer.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ulrikesiemer.com/fr/"/>
   </url>
+  <url><loc>https://ulrikesiemer.com/selected-projects.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/about.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/studio.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/contact.html</loc></url>
 
-  <url>
-    <loc>https://ulrikesiemer.com/home.html</loc>
-  </url>
+  <!-- ENGLISH PROJECTS -->
+  <url><loc>https://ulrikesiemer.com/projects/attente.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/projects/cardboard-outfits.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/projects/dress-up.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/projects/feu.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/projects/keys.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/projects/meduse.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/projects/petit-d%C3%A9jeuner.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/projects/piknikdouille.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/projects/sport.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/projects/the-shapes-of-smell.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/projects/voiture.html</loc></url>
 
+  <!-- FRENCH MAIN PAGES -->
   <url>
-    <loc>https://ulrikesiemer.com/selected-projects.html</loc>
+    <loc>https://ulrikesiemer.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ulrikesiemer.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ulrikesiemer.com/fr/"/>
   </url>
+  <url><loc>https://ulrikesiemer.com/fr/selected-projects.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/about.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/studio.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/contact.html</loc></url>
 
-  <url>
-    <loc>https://ulrikesiemer.com/shop.html</loc>
-  </url>
-
-  <url>
-    <loc>https://ulrikesiemer.com/about.html</loc>
-  </url>
-
-  <url>
-    <loc>https://ulrikesiemer.com/contact.html</loc>
-  </url>
+  <!-- FRENCH PROJECTS -->
+  <url><loc>https://ulrikesiemer.com/fr/projects/attente.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/projects/cardboard-outfits.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/projects/dress-up.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/projects/feu.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/projects/keys.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/projects/meduse.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/projects/petit-d%C3%A9jeuner.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/projects/piknikdouille.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/projects/sport.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/projects/the-shapes-of-smell.html</loc></url>
+  <url><loc>https://ulrikesiemer.com/fr/projects/voiture.html</loc></url>
 
 </urlset>
+
